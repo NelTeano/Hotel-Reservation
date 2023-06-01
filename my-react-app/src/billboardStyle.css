@@ -1,0 +1,63 @@
+.billboardcontainer{
+
+    display: flex;
+    position: relative;
+    align-items: center;
+    left: 0;
+    height: 800px;
+    background-color: rgb(255,245,224);
+}
+
+.billboardcontainer img{
+    display: flex;
+    position: absolute;
+   
+    
+}
+
+.billboardcontainer p, .billboardcontainer h1{
+    position: relative;
+    left: 120px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.billboardcontainer h1{
+    color: #1c1c1c;
+    font-size: 70px;
+}
+
+.billboardcontainer p{
+    color:  rgb(95, 93, 93);
+    font-size: 18px;
+}
+
+
+.roomImg{
+    
+  
+    right: 18%;
+    top: 50%;
+    z-index: 3;
+    width: 500px;
+    height: 300px;
+
+}
+.poolImg{
+
+    
+    right: 20%;
+    top: 15%;
+    z-index: 1;
+    width: 400px;
+    height: 350px;
+}
+.natureImg{
+    
+    
+    right: 5%;
+    top: 25%;
+    z-index: 2;
+    width: 350px;
+    height: 400px;
+}
