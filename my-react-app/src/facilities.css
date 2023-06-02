@@ -1,0 +1,45 @@
+
+.facilities-container{
+   
+    height: 94.5vh;
+    background-color: aqua;
+}
+.board{
+    display: flex;
+    flex-direction: row;
+    background-color: #1c1c1c;
+    height: 70%;
+}
+.img{
+
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+.facilities-content{
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left: 5%;
+    top: 15%;
+
+}
+
+.facilities-content h1{
+    font-size:  80px;
+    
+}
+
+.facilities-content  button{
+    margin-top: 40px;
+    text-decoration: none;
+    color: #c8c8c8;
+    background-color: #151515;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+}
