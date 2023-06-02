@@ -1,17 +1,26 @@
 import Navigation from './navigation';
 import About from './about';
 import Billboard from './billboard';
+import Footer from './footer';
 import './App.css';
 
 
 function App() {
 
+
+  
+
   return (
-    <>
-      <Navigation/>
+    <><>
+      <Navigation />
       <About />
-      <Billboard/>
-    </>
+      <Billboard />
+    </><>
+
+        <Footer />
+      </></>
+    
+
   );
 }
 

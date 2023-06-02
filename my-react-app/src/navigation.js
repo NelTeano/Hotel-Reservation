@@ -9,7 +9,6 @@ export default function navigation() {
       </div>
       <div class="nav-right">
         <span ><a href='/#'>Home</a></span>
-        <span ><a href='/#'>About</a></span>
         <span ><a href='/#'>Contacts</a></span>
       </div>
         
