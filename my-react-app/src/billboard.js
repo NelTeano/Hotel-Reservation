@@ -37,6 +37,7 @@ export default function billboard() {
             <img className='poolImg' alt='hotel facilities images' src='https://www.travelonline.com/fiji/accommodation/with-free-activities/pool-volleyball-70999-ws.jpg'></img>
             <img className='natureImg' alt='hotel facilities images' src='https://hotelnikkobali-benoabeach.com/wp-content/uploads/2020/08/Yoga_Hotel-Nikko-Bali-opt.jpg'></img>
         </div>
+        
     </div>
 
 
