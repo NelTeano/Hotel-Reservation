@@ -12,10 +12,9 @@ admin.get('/test', (req, res) => {
       console.log('admin query error', err);
     } else {
       console.log('affected rows = ', result.affectedRows);
+      res.send('GET REQUEST RESPONSE FROM ADMIN');
     }
   });
-
-  res.send('GET REQUEST RESPONSE FROM ADMIN');
 });
 
 module.exports = admin;

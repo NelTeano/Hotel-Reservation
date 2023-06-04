@@ -12,10 +12,9 @@ client.get('/test', (req, res) => {
       console.log('client query error', err);
     } else {
       console.log('affected rows = ', result.affectedRows);
+      res.send('get request response from client');
     }
   });
-
-  res.send('get request response from client');
 });
 
 module.exports = client;
