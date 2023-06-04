@@ -88,7 +88,7 @@ export default function footer() {
                 <p>&#169;CopyRights 2023 Group11BSCS. All Rights Reserve</p>
             </div>
             <div>
-                <img alt='brandsLogo' src={brandLogos} style={{height: '63px'}}></img>
+                <img alt='brandsLogo' src={brandLogos} style={{height: '100%', maxHeight: '60px'}}></img>
             </div>
         </div>
     </div>
