@@ -20,6 +20,20 @@ booking.get('/test', (req, res) => {
   });
 });
 
+booking.get('/get/:id', (req,res) =>{
+  const book_id = req.params.id;
+  pool.execute('SELECT * FROM `hotel_bookings` WHERE id=?',[book_id], (err, result) =>{
+    if (err) {
+      console.log('booking query error', err);
+    } else {
+      console.log('affected rows = ', result.affectedRows);
+      res.send(result);
+    }
+  } )
+
+
+
+})
 
 
 module.exports = booking;
