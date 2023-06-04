@@ -4,16 +4,7 @@ import rooms from './images/rooms.png'
 
 export default function facilities() {
 
-    const footStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        height: '30%',
-        textAlign: 'center',
-        fontSize: '24px'
-
-    }
+    
 
     const SeparateText = {
         display: 'flex',
@@ -73,7 +64,7 @@ export default function facilities() {
             </div>
         </div>
 
-        <div style={footStyle}>
+        <div className='facilities-foot'>
             <p>Lorem ipsum dolor sit amet, consectetur
                  adipiscing elit. Aenean euismod convallis
                   consequat. Aenean <br></br>a augue accumsan, 
