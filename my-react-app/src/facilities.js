@@ -57,7 +57,7 @@ export default function facilities() {
                 </div>
 
                 <div>
-                    <button>CHECK ALL PACKAGES</button>
+                    <a href='/rooms'><button >CHECK ALL PACKAGES</button></a>
                 </div>
 
 

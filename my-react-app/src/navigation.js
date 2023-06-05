@@ -18,7 +18,7 @@ export default function navigation() {
       <div className='navbar-header'>
           <div className='logo' ><a href='/#'><img style={Logo.size} alt={Logo.alt} src={Logo.src}></img></a></div>
       </div>
-      <div class="nav-right">
+      <div className="nav-right">
         <span ><a href='/#'>Home</a></span>
         <span ><a href='/#'>Contacts</a></span>
       </div>

@@ -15,12 +15,16 @@
     font-size: 1.2vw;
 }
 
+.combo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .box-container{
     width: 100%;
     height: 100%;
     max-width: 1200px;
-    
-    
     
 }
 
@@ -73,9 +77,10 @@ img{
 }
 
 
-.right-content a{
-    text-decoration: none;
-    color: black;
+.right-content button{
+    background-color: transparent;
+    border: none;
+    font-size: 1vw;
     
 }
 
@@ -85,3 +90,4 @@ img{
     height: 200px;
     width: 100%;
 }
+

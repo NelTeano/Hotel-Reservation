@@ -29,7 +29,7 @@ export default function billboard() {
                 <br></br><button style={buttonStyle} className='showaboutBTN'>ABOUT US</button> </p>
                 
         </div>
-
+      
         
        
         <div>

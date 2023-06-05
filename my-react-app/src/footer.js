@@ -48,7 +48,7 @@ export default function footer() {
 
             <a href='/#'>
                 <svg xmlns={instagramIcon} 
-                width={iconSize.width} height={iconSize.height} fill="currentColor" class="bi bi-instagram" 
+                width={iconSize.width} height={iconSize.height} fill="currentColor" className="bi bi-instagram" 
                 viewBox="0 0 16 16">
                 <path d={instagramIcon.path}/></svg>      
             </a>
@@ -56,21 +56,21 @@ export default function footer() {
             <a href='/#'>
                 <svg xmlns={facebookIcon.xmlns} 
                 width={iconSize.width} height={iconSize.height} fill="currentColor" 
-                class="bi bi-facebook" 
+                className="bi bi-facebook" 
                 viewBox="0 0 16 16">
                 <path d={facebookIcon.path}/></svg>
             </a>
 
             <a href='/#'>
                 <svg xmlns={messengerIcon.xmlns} 
-                width={iconSize.width} height={iconSize.height} fill="currentColor" class="bi bi-messenger" 
+                width={iconSize.width} height={iconSize.height} fill="currentColor" className="bi bi-messenger" 
                 viewBox="0 0 16 16">
                 <path d={messengerIcon.path}/></svg>
             </a>
 
             <a href='/#'>
                 <svg xmlns={TwitterIcon.xmlns}
-                width={iconSize.width} height={iconSize.height} fill="currentColor" class="bi bi-twitter" 
+                width={iconSize.width} height={iconSize.height} fill="currentColor" className="bi bi-twitter" 
                 viewBox="0 0 16 16">
                 <path d={TwitterIcon.path}/></svg>
             </a>
