@@ -14,5 +14,5 @@ app.listen(PORT, () => {
 
 // routes section
 app.use('/', require('./routes/booking'));
-app.use('/admin', require('./routes/admin'));
+
 
