@@ -1,5 +1,5 @@
 import React from 'react'
-import './billboardStyle.css'
+import './styles/billboardStyle.css'
 
 
 export default function billboard() {

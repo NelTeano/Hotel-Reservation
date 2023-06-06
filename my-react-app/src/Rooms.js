@@ -1,5 +1,5 @@
 import React from "react";
-import "./Rooms.css";
+import './styles/Rooms.css'
 import SampleRoom from "./images/roomsamplelogo.jpg";
 import CarouselComponent from "./Carousel";
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import './facilities.css'
+import './styles/facilities.css'
 import rooms from './images/rooms.png'
 
 export default function facilities() {

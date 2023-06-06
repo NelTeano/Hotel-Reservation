@@ -1,5 +1,5 @@
 import React from 'react'
-import './navigation.css'
+import './styles/navigation.css'
 import SampleLogo from './images/SampleLogo.png'
 
 export default function navigation() {
