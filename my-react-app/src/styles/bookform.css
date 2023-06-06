@@ -1,0 +1,41 @@
+.form-container{
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    height: 80vh;
+    width: 50vw;
+    border: 1px solid black;
+
+}
+
+.form-container input{
+    width: 20vw;
+    font-size: 1vw;
+    margin-left: 10px;
+    margin-top: 30px;
+    padding: 13px;
+}
+
+.policyBox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+
+.policyBox input{
+    position: relative;
+    left: 25%;
+    font-size: 1.2vw;
+}
+
+.policyBox p {
+    margin-top: 5%;
+    margin-left: 20px;
+    margin-right: 20px;
+}

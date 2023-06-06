@@ -12,7 +12,7 @@ export default function navigation2() {
             <h1>Logo</h1>
         </div>
         <div className='closeIcon'>
-            <a href='/#'> X</a>
+            <a href='/homepage'> X</a>
         </div>
     </nav>
   )

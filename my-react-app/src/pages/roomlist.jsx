@@ -4,19 +4,22 @@ import EditBox from '../editbox'
 import ShowRooms from '../Rooms'
 import Footer from '../footer'
 
-export default function roomlist() {
+export default function roomlist({arriveDate, departDate}) {
 
   const filterText = {
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: '20px'
+    marginBottom: '30px',
+    marginTop: '30px'
   }
+
+  
 
   return (
     <>
         <Navbar />
-        <EditBox />
-        <p style={filterText} >FILTER</p>
+        <EditBox arriveDate={arriveDate} departDate={departDate} />
+        <p style={filterText} > FILTER</p>
         <ShowRooms />
         <Footer />
 
