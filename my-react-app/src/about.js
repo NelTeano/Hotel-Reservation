@@ -7,7 +7,7 @@ export default function about() {
         <p>Luxury Hotel & Best Resort</p>
         <p>_____</p>
         <h1>Enjoy a Luxury <br></br>Experience</h1>
-      <button onClick={console.log("Working")}>ROOM E SUITES</button>
+      <button onClick={() => { console.log("Working") }}>ROOM E SUITES</button>
     </div>
   )
 }

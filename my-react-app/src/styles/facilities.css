@@ -1,96 +1,78 @@
-
 .facilities-container{
-   
-    height: 94.5vh;
+    height: clamp(400px, 100vh, 800px);
     background-color: aqua;
 }
+
 .board{
     display: flex;
     flex-direction: row;
     background-color: #1c1c1c;
     height: 70%;
 }
-img{
 
-    display: flex;
-    height: auto;
-    width: 100%;
+.facilities-image, .facilities-content {
+    width: 50%;
+    height: 100%;
 }
 
-.facilities-content{
-
+.facilities-content {
+    padding: 2em;
+    /* border: solid red 3px; */
     display: flex;
-    position: relative;
+    gap: 2em;
+    justify-content: center;
     flex-direction: column;
-    left: 5%;
-    top: 10%;
+}
 
+/* .facilities-content .top {
+    border: solid aquamarine 3px;
+} */
+
+.facilities-container .bottom .right-text {
+    text-align: left;
+    /* border: solid blue 2px; */
+}
+
+.facilities-container .bottom .left-text {
+    text-align: left;
+    /* border: solid orange 2px; */
+}
+
+.facilities-content .bottom {
+    display: flex;
+    gap: 3em;
+    /* border: solid green 3px; */
 }
 
 .facilities-content h1{
-    font-size:  80px;
-    
+    font-size: 3.7em;
 }
 
-.facilities-content  button{
-    margin-top: 40px;
+.facilities-content .btn-container {
+    height: 4em;
+    width: 15em;
+    /* border: solid pink 5px; */
+}
+
+.facilities-content button{
     text-decoration: none;
     color: #c8c8c8;
     background-color: #151515;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    height: 100%;
-    width: 100%; 
+    height: 4em;
+    width: 15em;
     max-width: 200px;
     max-height: 100px;
-    
 }
 
 .facilities-foot{
     display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        height: 30%;
-        text-align: center;
-        font-size: 1.3vw;
-}
-
-@media (min-width: 1000px) and (max-width: 1300px ) {
-    .facilities-container{
-   
-        height: 68vh;
-        background-color: aqua;
-    }
-    
-    
-    img{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        max-width: 800px;
-    }
-
-    .facilities-content h1{
-        font-size:  45px;
-        
-    }
-
-    .facilities-content p {
-        
-        font-size: 0.7vw;
-    }
-
-    .facilities-content  button{
-        font-size: 0.8vw;
-        max-width: 15vw;
-        max-height: 4vh;
-
-    }
-
-    
-
-    
-
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 30%;
+    text-align: center;
+    font-size: 1.2em;
 }

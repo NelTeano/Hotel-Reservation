@@ -3,15 +3,10 @@ import './styles/facilities.css'
 import rooms from './images/rooms.png'
 
 export default function facilities() {
-
-    
-
     const SeparateText = {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: '40px'
-
+        justifyContent: 'space-between'
     }
 
     const TextColors = {
@@ -20,47 +15,42 @@ export default function facilities() {
         gray: '#4b4b4b'
     }
     
-
   return (
     <div className='facilities-container'>
         <div className='board'>
-            <div>
+            <div className='facilities-image'>
                 <img alt='roomsPictures' src={rooms} ></img>
             </div >
 
             <div className='facilities-content'>
-                <div>
-                    <p style={{color: TextColors.white,marginBottom: '20px'}}>Luxury Hotel and Resort</p>
+                <div className='top'>
+                    <p style={{color: TextColors.white}}>Luxury Hotel and Resort</p>
                     <h1 style={{color: TextColors.white}}>Discover our</h1>
                     <h1 style={{color: TextColors.gold}}>Locations</h1>
                 </div>
 
-                <div style={SeparateText}>
-                    <p style={{
-                        marginRight: '20px',
-                        color: TextColors.gray
-                }}>Lorem ipsum dolor sit amet,consectetur <br></br> 
-                        . Aenean euismod convallis  Sed dapibus <br></br>
-                        ortor urna, non facilisis elit laoreet nec. <br></br>
-                         augue a nunc vehicula scelerisque et vitae quam.
-                    
-                    </p>
+                <div className='bottom' style={SeparateText}>
+                    <div className='left-text'>
+                        <p style={{color: TextColors.gray}}>
+                            Lorem ipsum dolor sit amet,consectetur
+                            . Aenean euismod convallis  Sed dapibus
+                            ortor urna, non facilisis elit laoreet nec.
+                            augue a nunc vehicula scelerisque et vitae quam.
+                        </p>
+                    </div>
 
-                    <p style={{color: TextColors.gray}} >Lorem ipsum dolor sit amet,consectetur <br></br> 
-                        . Aenean euismod convallis  Sed dapibus <br></br>
-                        ortor urna, non facilisis elit laoreet nec. <br></br>
-                         augue a nunc vehicula scelerisque et vitae quam.
-                    </p>
-
-                    
-                    
+                    <div className='right-text'>
+                        <p style={{color: TextColors.gray}} >Lorem ipsum dolor sit amet,consectetur
+                            . Aenean euismod convallis  Sed dapibus
+                            ortor urna, non facilisis elit laoreet nec.
+                            augue a nunc vehicula scelerisque et vitae quam.
+                        </p>
+                    </div>
                 </div>
 
-                <div>
+                <div className='btn-container'>
                     <a href='/rooms'><button >CHECK ALL PACKAGES</button></a>
                 </div>
-
-
             </div>
         </div>
 

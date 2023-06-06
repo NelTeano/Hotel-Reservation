@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Farro&family=Ubuntu:wght@500&display=swap');
 
-
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,24 +10,21 @@
 /* SCROLL BARS */
 
 ::-webkit-scrollbar {
-    width: 10px;
-    
-  }
-  
- 
-  ::-webkit-scrollbar-track {
+    width: 0.30em;
+}
+
+::-webkit-scrollbar-track {
     background: rgb(39, 38, 38);
-  }
-  
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+
+::-webkit-scrollbar-thumb {
     background: rgb(100, 98, 93);
-  }
+}
 
-
-
-body{
-
+body {
+    width: 100vw;
+    height: 100vh;
     background-color: white;
 }
 
@@ -37,33 +32,31 @@ body{
 /*---------------------WELCOME WINDOW HOMEPAGE CSS------------------------------*/
 
 
-.aboutcontainer{
-
+.aboutcontainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 800px;
+    height: clamp(400px, 100vh, 800px);
 }
+
 .aboutcontainer h1{
     color: white;
-    font-size: 4vw; 
+    font-size: 3.25em; 
     text-align: center;
 }
 
 .aboutcontainer p{
-    font-size: 1.3vw; 
+    font-size: 1.25em; 
     color: white;
 }
-
-
 
 .aboutcontainer button{
     border: solid white;
     background-color: transparent;
     color : white;
     margin-top: 100px;
-    font-size: 1vw;
+    font-size: 0.7em;
     height: 100%;
     max-height: 60px;
     width: 100%;
