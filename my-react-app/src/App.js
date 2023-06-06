@@ -19,7 +19,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/homepage"  element={<><Homepage/></>}></Route>
+        
+      <Route path="/"  element={<><Homepage/></>}></Route>
       <Route path="/rooms" element={<RoomList arriveDate={getDateTesting.arrivingDate} departDate={getDateTesting.departingDate}/>}></Route>
       <Route path="/form" element={<BookingPage arriveDate={getDateTesting.arrivingDate} departDate={getDateTesting.departingDate}/>}></Route>
       </Routes>
