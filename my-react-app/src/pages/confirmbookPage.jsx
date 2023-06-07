@@ -4,6 +4,7 @@ import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import SummaryBox from '../summaryBox'
 import SampleImg from '../images/roomsamplelogo.jpg'
+import Footer from '../footer'
 import '../styles/bookingpage.css'
 
 export default function confirmbookPage({arriveDate, departDate}) {
@@ -23,8 +24,10 @@ export default function confirmbookPage({arriveDate, departDate}) {
         <div>
           {/*  Value from other pages can just pass it via props  ex. IMG value will be the one you selected room earlier will change its src*/}
             <SummaryBox Image={SampleImg} numofChild={"2"} numofAdults={"1"}/>
+            
         </div>
     </div>
+    <Footer />
     </>
     
   )

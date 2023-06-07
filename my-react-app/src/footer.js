@@ -80,9 +80,9 @@ export default function footer() {
         </div>
         <div className='toe'>
             <div>
-                <span>Home</span>
-                <span>About Us</span>
-                <span>Contact</span>
+                <span><a href='/homepage'>Home</a></span>
+                <span><a href='/#'>About Us</a></span>
+                <span><a href='/#'>Contacts</a></span>
             </div>
             <div>
                 <p>&#169;CopyRights 2023 Group11BSCS. All Rights Reserve</p>
