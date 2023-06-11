@@ -3,7 +3,6 @@ import Form from '../bookform'
 import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import SummaryBox from '../summaryBox'
-import SampleImg from '../images/roomsamplelogo.jpg'
 import '../styles/bookingpage.css'
 
 export default function confirmbookPage({

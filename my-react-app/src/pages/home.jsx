@@ -221,7 +221,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                     cuisine, <br></br> creating unforgettable memories against the backdrop of<br></br>
                      crashing waves  and golden sunsets.
                      </p>
-                   <a href='/rooms'><button>Book Now!</button></a> 
+                   <Link className='linkBtn' to='/calendar'><button>Book Now!</button></Link> 
                 </div> 
 
             </content>
@@ -250,7 +250,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                     yourself in a lively atmosphere as you dance barefoot<br></br>
                     in the sand and celebrate the beach life like never before.
                      </p>
-                     <a href='/rooms'><button>Book Now!</button></a> 
+                     <Link className='linkBtn' to='/calendar'><button>Book Now!</button></Link> 
                 </div> 
 
                 <div>
@@ -265,7 +265,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
         data-aos="zoom-out-up"
         >
                 <p>A super experience to tell</p>
-                <a href='/rooms'><button>Reserve Now</button></a> 
+                <Link className='linkBtn' to='/calendar'><button>Reserve Now</button></Link> 
         </div>
 
         <div 
@@ -358,17 +358,6 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
             </div>   
             
         </footer>
-
-        <div>
-            <br/><br/><br/>
-            <h1>Just a test - Remove this later</h1>
-            <ul>
-                <li><Link to='/homepage'>Old Homepage</Link></li>
-                <li><Link to='/calendar'>Calendar</Link></li>
-                <li><Link to='/rooms'>Rooms</Link></li>
-                <li><Link to='/form'>Booking</Link></li>
-            </ul>            
-        </div>    
     </>
   )
 }

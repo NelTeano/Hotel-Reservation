@@ -11,5 +11,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1.15em;
+}
+
+.rooms-booknow-btn {
+    border: solid black 0.1em;
+    padding: 0.75em;
+}
+
+.rooms-booknow-btn:hover {
+    background-color: black;
+    color: white;
 }

@@ -3,7 +3,10 @@ import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import ShowRooms from '../Rooms'
 
-export default function roomlist({arriveDate, departDate, setSelectedRoom, setSelectedRoomData}) {
+export default function roomlist({
+  arriveDate, departDate,
+  availableRooms,
+  setSelectedRoom, setSelectedRoomData}) {
 
   const filterText = {
     display: 'flex',
@@ -18,6 +21,7 @@ export default function roomlist({arriveDate, departDate, setSelectedRoom, setSe
         <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/calendar'} />
         <p style={filterText} > FILTER</p>
         <ShowRooms
+          availableRooms={availableRooms}
           setSelectedRoom={setSelectedRoom}
           setSelectedRoomData={setSelectedRoomData}
         />

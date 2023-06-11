@@ -29,9 +29,16 @@
 }
 
 .policyBox input{
+    transition: ease 0.15s;
     position: relative;
     left: 25%;
     font-size: 1.2vw;
+    border: none;
+    outline: none;
+}
+
+.policyBox input:hover {
+    outline: 3px solid black;
 }
 
 .policyBox p {

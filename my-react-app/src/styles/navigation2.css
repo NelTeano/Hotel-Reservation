@@ -1,8 +1,4 @@
-
-
-
 nav{
-
     display: flex;
     position: fixed;
     align-items: center;
@@ -23,6 +19,7 @@ nav{
 
 .closeIcon{
     margin-right: 50px;
+    transition: ease 0.15s;
 }
 
 .closeIcon a{
@@ -32,3 +29,6 @@ nav{
     font-weight: 100;
 }
 
+.closeIcon:hover {
+    scale: 1.15;
+}

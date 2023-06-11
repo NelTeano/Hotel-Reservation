@@ -4,17 +4,21 @@ import EditBox from '../editbox'
 import Footer from '../footer'
 import { Link } from 'react-router-dom';
 
+import availableRooms from '../dev-data/available-rooms';
+
 import '../styles/TemporaryDatePicker.css';
 
 export default function TemporaryDatePicker({
   arriveDate, setArriveDate,
   departDate, setDepartDate,
-  setPaxChild, setPaxAdult}) {
+  setPaxChild, setPaxAdult,
+  setAvailableRooms}) {
 
   return (
     <>
       <Navbar />
       <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/'} />
+      <h3 style={{textAlign: 'center'}}>Temporary Date Picker</h3>
       <div className='mainDatePickerContainer'>
         <label>Arrive date : </label>
         <input type='date' onChange={ (e) => {
@@ -38,7 +42,7 @@ export default function TemporaryDatePicker({
         </select>
 
         <label>Number of child : </label>
-        <select onChange={(e) => setPaxChild(e.target.value)}>
+        <select defaultValue={0} onChange={(e) => setPaxChild(e.target.value)}>
           <option key={0}>{0}</option>
           <option key={1}>{1}</option>
           <option key={2}>{2}</option>
@@ -51,10 +55,14 @@ export default function TemporaryDatePicker({
           to='/rooms'
           className="rooms-booknow-btn"
           onClick={() => {
-            
+
+            // pretend 'availableRooms' is an array that came from a post request.
+            // the server should implement a post request route where it will look for the only
+            // available rooms at a given date range.
+            setAvailableRooms(availableRooms);
           }}
         >
-          Continue
+          View Available Rooms
         </Link>
       </div>
       <Footer />

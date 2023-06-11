@@ -67,8 +67,6 @@ img{
 }
 
 
-
-
 .right-content{
     display: flex;
     flex-direction: column;
@@ -108,10 +106,13 @@ img{
     margin-bottom: 20px;
 }
 
+/* ------ BOOK NOW BUTTON ------ */
+
 .rooms-booknow-btn {
     transition: ease 0.15s;
     text-decoration: none;
     color: black;
+    background-color: white;
 }
 
 .rooms-booknow-btn:visited {
@@ -123,5 +124,17 @@ img{
 }
 
 .rooms-booknow-btn:hover {
+    scale: 1.075;
+    color: white;
+    background-color: black;
+}
+
+/* ------ ADDITIONAL DETAILS BUTTON ------ */
+
+.additional-details-btn {
+    transition: ease 0.15s;
+}
+
+.additional-details-btn:hover {
     scale: 1.075;
 }

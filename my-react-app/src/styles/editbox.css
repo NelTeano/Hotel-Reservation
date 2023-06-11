@@ -1,0 +1,7 @@
+.edit-box-link-btn {
+    transition: ease 0.15s;
+}
+
+.edit-box-link-btn:hover {
+    scale: 1.075;
+}

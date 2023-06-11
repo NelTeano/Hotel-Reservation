@@ -60,7 +60,6 @@ export default function Bookform({setFirstName, setLastName, setEmail, setPhone,
 
           <input style={{
               backgroundColor: 'transparent',
-              border:  'none',
               textDecoration: 'Underline',
               fontWeight: '300',
             }}

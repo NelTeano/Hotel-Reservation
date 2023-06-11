@@ -24,22 +24,18 @@ function ScrollToTop() {
 
 function App() {
 
-  // testing if able to pass value from the value gets from another page to another page
-  const getDateTesting = {
-    arrivingDate: "05/20/2023",
-    departingDate: "06/23/2023"
-  }
-
   // ---------- booking data ----------
 
   // callendar
   const [arriveDate, setArriveDate] = React.useState((new Date()).toLocaleDateString());
   const [departDate, setDepartDate] = React.useState((new Date()).toLocaleDateString());
 
-  const [paxAdult, setPaxAdult] = React.useState(0);
+  const [paxAdult, setPaxAdult] = React.useState(1);
   const [paxChild, setPaxChild] = React.useState(0);
 
-  const [availableRooms, setAvailableRooms] = React.useState([]);
+  // the array of available rooms sent by the server after choosing a
+  // range of date in the calendar page.
+  const [availableRooms, setAvailableRooms] = React.useState(null);
 
   // rooms
   const [selectedRoom, setSelectedRoom] = React.useState(null);
@@ -60,9 +56,13 @@ function App() {
 
   // form post request
   const submitBookingForm = (e) => {
-    // server/booking.js : line 7 - post method.
-    // localhost:PORT/book/submit
-    if (firstName && lastName && email && phone) {
+    // server/booking.js --> localhost:PORT/book/submit
+    const validDateRange = new Date(arriveDate) < new Date(departDate);
+
+    if (!validDateRange) {
+      e.preventDefault();
+      alert('please pick a valid date range');
+    } else if (firstName && lastName && email && phone) {
       e.preventDefault();
       fetch('/book/submit', {
         headers: {
@@ -75,19 +75,20 @@ function App() {
           departDate: departDate,
           paxAdult: paxAdult,
           paxChild: paxChild,
-          selectedRoom: selectedRoom,
+          selectedRoomData: selectedRoomData,
           firstName: firstName,
           lastName: lastName,
           email: email,
-          phoneNo: phone,
-          selectedRoom: selectedRoom
+          phoneNo: phone
         })
       }).then(response => {
         console.log('response = ', response);
         if (response.status === 200) {
           console.log('booking success');
+          alert('booking success');
         } else {
           console.log('booking failed : response = ', response);
+          alert('booking failed');
         }
       });
     }
@@ -114,6 +115,7 @@ function App() {
             departDate={departDate} setDepartDate={setDepartDate}
             setPaxChild={setPaxChild}
             setPaxAdult={setPaxAdult}
+            setAvailableRooms={setAvailableRooms}
           />
         }/>
 
@@ -122,6 +124,7 @@ function App() {
             arriveDate={arriveDate}
             departDate={departDate}
 
+            availableRooms={availableRooms}
             setSelectedRoom={setSelectedRoom}
             setSelectedRoomData={setSelectedRoomData}
           />

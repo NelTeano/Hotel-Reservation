@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './styles/editbox.css'
 
 export default function editbox({arriveDate, departDate, previousPage}) {
 
@@ -25,26 +26,24 @@ export default function editbox({arriveDate, departDate, previousPage}) {
         top: '30%'
     }
 
-    
-
   return (
     <div style={containerFormat} className='container'>
         <div style={boxSize} className='edit-box'>
 
-          <div style={{marginRight: '3vw',
+          <div className='edit-box-link-btn' style={{marginRight: '3vw',
             marginLeft: '5%',
             borderRight: '1px solid #e2e2e2',
             height: '100%',
             paddingRight: '20px'
                }}>
-            <Link  style={{textDecoration: 'none', color: 'black', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
+            <Link style={{textDecoration: 'none', color: 'black', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
             <p style={{fontSize: '1vw'}}>EDIT</p></Link>
-            </div>
+          </div>
 
-            <div>
-                <h2 style={{textAlign: 'center', fontSize: '1vw'}}>HOTEL NAME</h2>
-                <p style={{fontSize: '1vw' }}>ARRIVE: {arriveDate} | DEPART : {departDate} </p> 
-            </div>
+          <div>
+              <h2 style={{textAlign: 'center', fontSize: '1vw'}}>HOTEL NAME</h2>
+              <p style={{fontSize: '1vw' }}>ARRIVE: {arriveDate} | DEPART : {departDate} </p> 
+          </div>
         </div>
     </div>
   )
