@@ -7,28 +7,37 @@ import SampleImg from '../images/roomsamplelogo.jpg'
 import Footer from '../footer'
 import '../styles/bookingpage.css'
 
-export default function confirmbookPage({arriveDate, departDate}) {
-
-    
-
+export default function confirmbookPage({
+  arriveDate, departDate,
+  paxAdult, paxChild,
+  setFirstName, setLastName,
+  setEmail, setPhone,
+  submitHandler
+})
+{
   return (
     <>
     <Navbar></Navbar>
-    <EditBox arriveDate={arriveDate} departDate={departDate} />
+    <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
     <div  className='booking-container' >
 
         <div >
-            <Form />
+            <Form
+              setFirstName={setFirstName}
+              setLastName={setLastName}
+              setEmail={setEmail}
+              setPhone={setPhone}
+              submitHandler={submitHandler}
+            />
         </div>
             
         <div>
           {/*  Value from other pages can just pass it via props  ex. IMG value will be the one you selected room earlier will change its src*/}
-            <SummaryBox Image={SampleImg} numofChild={"2"} numofAdults={"1"}/>
+            <SummaryBox Image={SampleImg} numofChild={paxChild} numofAdults={paxAdult}/>
             
         </div>
     </div>
     <Footer />
     </>
-    
   )
 }

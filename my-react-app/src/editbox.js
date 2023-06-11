@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function editbox({arriveDate, departDate}) {
+export default function editbox({arriveDate, departDate, previousPage}) {
 
     const containerFormat = {
         display: 'flex',
@@ -36,8 +37,8 @@ export default function editbox({arriveDate, departDate}) {
             height: '100%',
             paddingRight: '20px'
                }}>
-            <a  style={{textDecoration: 'none', color: 'black', fontSize: '1vw'}} href='/#'> <h2>←</h2>
-            <p style={{fontSize: '1vw'}}>EDIT</p></a>
+            <Link  style={{textDecoration: 'none', color: 'black', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
+            <p style={{fontSize: '1vw'}}>EDIT</p></Link>
             </div>
 
             <div>

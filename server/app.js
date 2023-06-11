@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 require('dotenv').config();
 
@@ -8,11 +9,16 @@ require('./shownet')(PORT);
 
 app.use(express.json());
 
+app.use(express.static('public'));
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
 // routes section
+app.get('/', (req, res) => {
+  res.status(200).sendFile('index.html', { root: './public' });
+});
+
 app.use('/book', require('./routes/booking'));
-app.use('/admin', require('./routes/admin'));
 

@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/home.css'
 import Carousel from '../Carousel'
 import SampleRoom from "../images/roomsamplelogo.jpg";
+import { Link } from 'react-router-dom';
 
 
 
@@ -318,7 +319,17 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
                 </span>
             </div>   
             
-        </footer>            
+        </footer>
+
+        <div>
+            <br/><br/><br/>
+            <h1>Just a test - Remove this later</h1>
+            <ul>
+                <li><Link to='/homepage'>Old Homepage</Link></li>
+                <li><Link to='/rooms'>Rooms</Link></li>
+                <li><Link to='/form'>Booking</Link></li>
+            </ul>            
+        </div>    
     </>
   )
 }

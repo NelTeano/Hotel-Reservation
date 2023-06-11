@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/bookform.css'
 
 
-export default function Bookform() {
+export default function Bookform({setFirstName, setLastName, setEmail, setPhone, submitHandler}) {
 
    
 
@@ -27,15 +27,15 @@ export default function Bookform() {
                  
                   <input
                     type="text"
-                    name='firstName'
                     placeholder='FIRST NAME'
+                    onChange={(e) => setFirstName(e.target.value)}
                     required
                   />
                   
                   <input
                     type="text"
-                    name='lastName'
                     placeholder='LAST NAME'
+                    onChange={(e) => setLastName(e.target.value)}
                     required
                   />
                  
@@ -45,18 +45,18 @@ export default function Bookform() {
                
                   <input
                     type="text"
-                    name='email'
                     placeholder='EMAIL'
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
 
                 
-                <input
-                type="tel"
-                name='phoneNo'
-                placeholder='PHONE'
-                required
-                />
+                  <input
+                    type="tel"
+                    placeholder='PHONE'
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
                 
           </div>
       </div>
@@ -80,7 +80,7 @@ export default function Bookform() {
               textDecoration: 'Underline',
               fontWeight: '300',
           }}
-          type='submit' name='submit' value='CONFIRM YOUR STAY' />
+          type='submit' value='CONFIRM YOUR STAY' onClick={(e) => submitHandler(e)}/>
 
       </div>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/facilities.css'
 import rooms from './images/rooms.png'
+import { Link } from 'react-router-dom'
 
 export default function facilities() {
     const SeparateText = {
@@ -49,7 +50,7 @@ export default function facilities() {
                 </div>
 
                 <div className='btn-container'>
-                    <a href='/rooms'><button >CHECK ALL PACKAGES</button></a>
+                    <Link to='/rooms'><button >CHECK ALL PACKAGES</button></Link>
                 </div>
             </div>
         </div>

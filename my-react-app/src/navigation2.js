@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles/navigation2.css'
+import { Link } from 'react-router-dom'
 
 
 export default function navigation2() {
@@ -12,7 +13,7 @@ export default function navigation2() {
             <h1>Logo</h1>
         </div>
         <div className='closeIcon'>
-            <a href='/homepage'> X</a>
+            <Link to='/'>X</Link>
         </div>
     </nav>
   )
