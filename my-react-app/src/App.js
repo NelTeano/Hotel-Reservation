@@ -10,6 +10,7 @@ import reserveCover from "./images/reserveCover.png"
 import React from "react";
 
 import './styles/App.css';
+import TemporaryDatePicker from "./pages/TemporaryDatePicker";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,14 +33,20 @@ function App() {
   // ---------- booking data ----------
 
   // callendar
-  const [dateArrive, setDateArrive] = React.useState('07/20/2077');
-  const [dateDepart, setDateDepart] = React.useState('07/23/2077');
+  const [arriveDate, setArriveDate] = React.useState((new Date()).toLocaleDateString());
+  const [departDate, setDepartDate] = React.useState((new Date()).toLocaleDateString());
 
   const [paxAdult, setPaxAdult] = React.useState(0);
   const [paxChild, setPaxChild] = React.useState(0);
 
+  const [availableRooms, setAvailableRooms] = React.useState([]);
+
   // rooms
-  const [selectedRoom, setSelectedRoom] = React.useState('?');
+  const [selectedRoom, setSelectedRoom] = React.useState(null);
+  
+  // room data to be sent to the post request route after successful booking.
+  const [selectedRoomData, setSelectedRoomData] = React.useState(null);
+
   // ...
 
   // form
@@ -53,35 +60,37 @@ function App() {
 
   // form post request
   const submitBookingForm = (e) => {
-    e.preventDefault();
-
-    // booking.js : line 75 - post method.
-    // localhost:PORT/book/api/book/test
-    fetch('/book/api/book/test', {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'post',
-      body: JSON.stringify({
-        dateArrive: dateArrive,
-        dateDepart: dateDepart,
-        paxAdult: paxAdult,
-        paxChild: paxChild,
-        selectedRoom: selectedRoom,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phoneNo: phone
-      })
-    }).then(response => {
-      console.log('response = ', response);
-      if (response.status === 200) {
-        console.log('booking success');
-      } else {
-        console.log('booking failed : response = ', response);
-      }
-    });
+    // server/booking.js : line 7 - post method.
+    // localhost:PORT/book/submit
+    if (firstName && lastName && email && phone) {
+      e.preventDefault();
+      fetch('/book/submit', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({
+          arriveDate: arriveDate,
+          departDate: departDate,
+          paxAdult: paxAdult,
+          paxChild: paxChild,
+          selectedRoom: selectedRoom,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNo: phone,
+          selectedRoom: selectedRoom
+        })
+      }).then(response => {
+        console.log('response = ', response);
+        if (response.status === 200) {
+          console.log('booking success');
+        } else {
+          console.log('booking failed : response = ', response);
+        }
+      });
+    }
   }
 
   return (
@@ -99,18 +108,29 @@ function App() {
 
         <Route path="/login"    element={<Login />} />
 
+        <Route path="/calendar" element={
+          <TemporaryDatePicker
+            arriveDate={arriveDate} setArriveDate={setArriveDate}
+            departDate={departDate} setDepartDate={setDepartDate}
+            setPaxChild={setPaxChild}
+            setPaxAdult={setPaxAdult}
+          />
+        }/>
 
         <Route path="/rooms"    element={
           <RoomList
-            arriveDate={dateArrive}
-            departDate={dateDepart}
+            arriveDate={arriveDate}
+            departDate={departDate}
+
+            setSelectedRoom={setSelectedRoom}
+            setSelectedRoomData={setSelectedRoomData}
           />
         }/>
         
         <Route path="/form"     element={
           <BookingPage
-            arriveDate={dateArrive}
-            departDate={dateDepart}
+            arriveDate={arriveDate}
+            departDate={departDate}
 
             paxAdult={paxAdult}
             paxChild={paxChild}
@@ -121,6 +141,7 @@ function App() {
             setEmail={setEmail}
             setPhone={setPhone}
 
+            selectedRoom={selectedRoom}
             // -----
             submitHandler={submitBookingForm}
           />

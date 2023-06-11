@@ -364,6 +364,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
             <h1>Just a test - Remove this later</h1>
             <ul>
                 <li><Link to='/homepage'>Old Homepage</Link></li>
+                <li><Link to='/calendar'>Calendar</Link></li>
                 <li><Link to='/rooms'>Rooms</Link></li>
                 <li><Link to='/form'>Booking</Link></li>
             </ul>            

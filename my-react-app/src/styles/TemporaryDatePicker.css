@@ -1,0 +1,15 @@
+* {
+    padding: 0px;
+    margin: 0xp;
+    box-sizing: border-box;
+}
+
+.mainDatePickerContainer {
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+}

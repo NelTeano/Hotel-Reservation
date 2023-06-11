@@ -108,3 +108,20 @@ img{
     margin-bottom: 20px;
 }
 
+.rooms-booknow-btn {
+    transition: ease 0.15s;
+    text-decoration: none;
+    color: black;
+}
+
+.rooms-booknow-btn:visited {
+    text-decoration: none;
+}
+
+.rooms-booknow-btn:active {
+    text-decoration: none;
+}
+
+.rooms-booknow-btn:hover {
+    scale: 1.075;
+}
