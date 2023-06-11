@@ -12,7 +12,7 @@ export default function confirmbookPage({
   paxAdult, paxChild,
   setFirstName, setLastName,
   setEmail, setPhone,
-  submitHandler
+  selectedRoom, submitHandler
 })
 {
   return (
@@ -33,7 +33,13 @@ export default function confirmbookPage({
             
         <div>
           {/*  Value from other pages can just pass it via props  ex. IMG value will be the one you selected room earlier will change its src*/}
-            <SummaryBox Image={SampleImg} numofChild={paxChild} numofAdults={paxAdult}/>
+            <SummaryBox
+              arriveDate={arriveDate} 
+              departDate={departDate}
+              paxAdult={paxAdult} 
+              paxChild={paxChild}
+              selectedRoom={selectedRoom}
+            />
             
         </div>
     </div>

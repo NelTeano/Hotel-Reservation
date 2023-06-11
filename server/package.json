@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node app.js",
-    "build": "mkdir public & cd ../my-react-app && npm run build && cp -r ./build/* ../server/public || robocopy ./build/ ../server/public /s"
+    "clean-build": "rm -r public || rd /s /q public",
+    "build-windows" : "mkdir public && cd ../my-react-app && npm run build && robocopy ./build/ ../server/public /s",
+    "build-ubuntu" : "mkdir public && cd ../my-react-app && npm run build && cp -r ./build/* ../server/public",
+    "build": "mkdir public && cd ../my-react-app && npm run build && cp -r ./build/* ../server/public || robocopy ./build/ ../server/public /s"
   },
   "author": "group11",
   "license": "ISC",

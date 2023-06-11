@@ -4,24 +4,12 @@ import './styles/summaryBox.css'
 
 
 export default function summaryBox({
-    Image, 
-    arrivingDate, 
+    arriveDate, 
     departDate,
-    numofAdults, 
-    numofChild,
-    TotalPrice,
-    roomType
-    }) {
-
-    const props = {
-        roomImage: Image,
-        arriving: arrivingDate,
-        depart: departDate,
-        price: TotalPrice,
-        roomtype: roomType,
-        adults: numofAdults,
-        childrens: numofChild
-    }
+    paxAdult, 
+    paxChild,
+    selectedRoom
+}) {
 
   return (
     <div className='sumBox-container'>
@@ -37,17 +25,17 @@ export default function summaryBox({
         </div>
 
         <div>
-            <img  alt='RoomLook' src={props.roomImage}></img>
+            {(selectedRoom) ? <img alt='RoomLook' src={selectedRoom.images[0].image} /> : <img alt='RoomLook' src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Blank_image.jpg' />}
         </div>
             
         <div className='details' style={{
                 textAlign: 'center',
 
         }}>
-            <p>Arriving: {props.arriving}</p>
-            <p>Room Type: {props.roomtype}</p>
-            <p>Depart: {props.depart}</p>
-            <p>Adult: {props.adults} / Children: {props.childrens}</p>
+            <p>Arriving: {arriveDate}</p>
+            <p>Room Type: {(selectedRoom) ? selectedRoom.type : 'N/A'}</p>
+            <p>Depart: {departDate}</p>
+            <p>Adult: {paxAdult} / Children: {paxChild}</p>
            
         </div>
 
@@ -57,7 +45,7 @@ export default function summaryBox({
                 marginTop: '5%',
                 marginBottom:'40px',
                 marginRight: '40px',
-        }}>TOTAL : {props.price}</p>
+        }}>TOTAL : {(selectedRoom) ? selectedRoom.price : '0.0'}</p>
         </div>
     </div>
   )
