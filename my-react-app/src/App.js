@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Homepage from "./pages/homepage";
 import RoomList from "./pages/roomlist";
 import BookingPage from './pages/confirmbookPage'
 import Home from './pages/home'
@@ -100,7 +99,6 @@ function App() {
 
         <Route path="/login"    element={<Login />} />
 
-        <Route path="/homepage" element={<Homepage/>} />
 
         <Route path="/rooms"    element={
           <RoomList

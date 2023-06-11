@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import ShowRooms from '../Rooms'
-import Footer from '../footer'
 
 export default function roomlist({arriveDate, departDate}) {
 
@@ -21,7 +20,6 @@ export default function roomlist({arriveDate, departDate}) {
         <EditBox arriveDate={arriveDate} departDate={departDate} />
         <p style={filterText} > FILTER</p>
         <ShowRooms />
-        <Footer />
 
     </>
     

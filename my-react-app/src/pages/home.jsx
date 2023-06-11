@@ -1,12 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import '../styles/home.css'
 import Carousel from '../Carousel'
 import SampleRoom from "../images/roomsamplelogo.jpg";
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
-export default function home({coverImg, facilityImg1, facilityImg2, smallRectangle}) {
+export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle}) {
+
+    useEffect(() => {
+        AOS.init();
+      }, [])
+
 
     const imgSrc = {
         cover: coverImg,
@@ -90,32 +97,7 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
         {
             type: "Solo",
             name: "Vip Suite",
-            price: 500,
-            bedtype: '1 Bedroom, 2 Comfort Rooms with Balcony',
-            images: [
-              {
-                  id: 1,
-                  name: "Bedroom",
-                  image: SampleRoom,
-                },
-                {
-                  id: 2,
-                  name: "Living Area",
-                  image: SampleRoom,
-                },
-                {
-                  id: 3,
-                  name: "Kitchen",
-                  image: SampleRoom,
-                },
-            ],
-          },
-
-
-          {
-            type: "Solo",
-            name: "Vip Suite",
-            price: 500,
+            price: 1500,
             bedtype: '1 Bedroom, 2 Comfort Rooms with Balcony',
             images: [
               {
@@ -136,26 +118,26 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
             ],
           },
           {
-            type: "Solo",
-            name: "Vip Suite",
-            price: 500,
-            bedtype: '1 Bedroom, 2 Comfort Rooms with Balcony',
+            type: "Type",
+            name: "Extra Rooms",
+            price: 9999,
+            bedtype: 'No. Beds',
             images: [
               {
-                  id: 1,
-                  name: "Bedroom",
-                  image: SampleRoom,
-                },
-                {
-                  id: 2,
-                  name: "Living Area",
-                  image: SampleRoom,
-                },
-                {
-                  id: 3,
-                  name: "Kitchen",
-                  image: SampleRoom,
-                },
+                id: 1,
+                name: "Bedroom",
+                image: SampleRoom,
+              },
+              {
+                id: 2,
+                name: "Living Area",
+                image: SampleRoom,
+              },
+              {
+                id: 3,
+                name: "Kitchen",
+                image: SampleRoom,
+              },
             ],
           },
       ];
@@ -163,12 +145,19 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
 
   return (
     <>
-        <div className='navbar-home'>
+        <div
+            className='navbar-home'
+            data-aos="fade-down"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="400"
+         
+        >
             <span>
-                <a style={{fontSize:'2vw'}} href='/#'>CayoBeach</a>
+                <a style={{fontSize:'2vw'}} href='/#'>CayoHotel</a>
             </span>
 
-            <span>
+            <span className='navbar-links'>
                 <a  style={{fontSize:'1.1vw'}} href='/#'>Home</a>
                 <a  style={{fontSize:'1.1vw'}} href='/#'>Services</a>
                 <a  style={{fontSize:'1.1vw'}} href='/#'>Contacts</a>
@@ -176,8 +165,13 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
         </div>
 
         <div style={{ backgroundImage: `url(${imgSrc.cover})` }} className='homecover'>
-            <div>
-                <p>"Vive una experiencia<br></br> única en nuestros eventos multitudinarios"</p>
+            <div
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1200"
+            >
+                <p>"Live an experience <br></br> unique in our multitudinous events"</p>
             </div>
         </div>
 
@@ -190,43 +184,73 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
 
             </div>
 
-            <div>
+            <div  data-aos="zoom-out" >
                 <h1 style={{
                     textAlign: "center",
                     fontWeight: '700',
                     fontSize: '56px',
                     lineHeight: '125%',
-            }}>¡Disfruta con nosotros! </h1>
+            }}>Enjoy with us! </h1>
                 <p style={{
                     textAlign: "center",
                     lineHeight: '125%'
-                }}>Realizamos todo tipo de eventos</p>
+                }}> <br></br>We do all kinds of events</p>
             </div>
 
-            <content>
+            <content 
+                data-aos="fade-left"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="500"
+            >
                 <div>
                     <img alt='facilities' src={facilityImg1}></img>
                 </div>
 
-                <div className='facilities-context'>
-                    <h2>Tomorrowland Beach</h2>
+                <div 
+                    className='facilities-context'
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1300"
+                >
+                    <h2>Beach Bonanza</h2>
                     <p>
-                    Breve descripción del evento que puede ocupara hasta<br></br>
-                     3 líneas de texto.
+                    Join us for a sun-soaked extravaganza on the sandy shores. Indulge <br></br>
+                     in beachside activities, live music, and mouthwatering 
+                    cuisine, <br></br> creating unforgettable memories against the backdrop of<br></br>
+                     crashing waves  and golden sunsets.
                      </p>
-                    <button>Check</button>
+                   <a href='/rooms'><button>Book Now!</button></a> 
                 </div> 
 
             </content>
-            <footer>
 
-                <div className='facilities-context'>
-                    <h2>World Tropical</h2>
+            <footer
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="500"
+            >
+
+                <div
+                    className='facilities-context'
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                    data-aos-duration="1300"
+                    
+                >
+                    <h2>Tropical Rhythms</h2>
                     <p>
-                    Breve descripción del evento que puede ocupara <br></br>
-                    hasta 3 líneas de texto. 3 líneas de texto.
+                    Experience the ultimate beach hotel party extravaganza.<br></br>
+                    Get ready for a night of vibrant beats, captivating<br></br>
+                    performances, and a fusion of tropical flavors.<br></br>
+                    From fire dancers to pulsating music, immerse <br></br>
+                    yourself in a lively atmosphere as you dance barefoot<br></br>
+                    in the sand and celebrate the beach life like never before.
                      </p>
-                    <button>Check</button>
+                     <a href='/rooms'><button>Book Now!</button></a> 
                 </div> 
 
                 <div>
@@ -235,26 +259,40 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
             </footer>
         </div>
 
-        <div style={{ backgroundImage: `url(${imgSrc.facilityfoot})` }} className='reserve-box'>
-                <p>Una super experiencia para contar</p>
-                <button>Reserve Now</button>
+        <div 
+        style={{ backgroundImage: `url(${imgSrc.facilityfoot})` }} 
+        className='reserve-box'
+        data-aos="zoom-out-up"
+        >
+                <p>A super experience to tell</p>
+                <a href='/rooms'><button>Reserve Now</button></a> 
         </div>
 
-        <div className='rooms-details'>
+        <div 
+            className='rooms-details'
+            data-aos="fade-down"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="700"
+        >
             <div >
                 <h1 style={{
                     textAlign: "center",
                     lineHeight: '125%'
                 }} 
-                    >Habitaciones de lujo</h1>
+                    >Luxury Rooms</h1>
                 <p style={{
                     textAlign: "center",
                     lineHeight: '125%' 
                 }}
-                >Vea todo nuestro catálogo de habitaciones</p>
+                >See our entire catalog of rooms</p>
             </div>
 
-            <div className='carousel-rooms'>
+            <div
+                className='carousel-rooms'
+                data-aos="fade-left"
+                data-aos-easing="linear"
+                data-aos-duration="700"
+             >
                     {roomInteriors.map((room) => RoomItem(room))}
             </div>
         </div>
@@ -262,7 +300,7 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
         <footer>
         <div className='home-footer'>
             <span>
-                <a href='/#'><h1>Logo</h1></a>
+                <a href='/#'><h1>CayoHotel</h1></a>
             </span>
 
             <span><p>Connect with Us</p>
@@ -309,7 +347,7 @@ export default function home({coverImg, facilityImg1, facilityImg2, smallRectang
 
             <div className='feet'>
                 <span>
-                    <p>© Logo Hotel 2023. Derechos reservados</p>
+                    <p>© CayoHotel 2023. All rights reserved</p>
                 </span>
 
                 <span className='links'>

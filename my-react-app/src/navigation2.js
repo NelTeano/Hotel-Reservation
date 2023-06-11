@@ -10,7 +10,7 @@ export default function navigation2() {
   return (
     <nav >
         <div className='logo'>
-            <h1>Logo</h1>
+            <h1>CayoHotel</h1>
         </div>
         <div className='closeIcon'>
             <Link to='/'>X</Link>

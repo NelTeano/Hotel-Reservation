@@ -1,14 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import './styles/Rooms.css'
 import SampleRoom from "./images/roomsamplelogo.jpg";
 import CarouselComponent from "./Carousel";
 
 export default function Rooms() {
+
+  
+
   const roomInteriors = [
     {
       type: "deluxe",
       name: "Deluxe Suite",
       price: 1000,
+      BedroomDetails:"Soundproofing to ensure a quiet environment and High-quality bedding and linens with Flat-screen TV",
+      kitchenDetails:"Cookware, utensils, and dishware provided for guests' convenience.",
+      BathroomDetails:"Private bathroom with a shower & bathtub with Toiletries such as shampoo, conditioner, soap, and lotion.",
       images: [
         {
           id: 1,
@@ -31,6 +37,9 @@ export default function Rooms() {
       type: "junior",
       name: "Junior Suite",
       price: 500,
+      BedroomDetails:"Comfortable and spacious bed with quality mattress and pillows with Flat-screen TV",
+      kitchenDetails:"Fully equipped kitchenette with appliances such as a stove, microwave, refrigerator, and dishwasher.",
+      BathroomDetails:"Private bathroom with a shower & bathtub with Toiletries such as shampoo, conditioner and soap.",
       images: [
         {
             id: 1,
@@ -54,17 +63,22 @@ export default function Rooms() {
   return (
     <>
       <div className="combo-box">
-        <select>
-          <option value="default">Room Type</option>
-          <option value="default">Room</option>
-          <option value="default">Suite</option>
-          <option value="default">Accesible</option>
+        <select >
+          <option value="default" selected>Room Type</option>
+          <option value="default">Deluxe</option>
+          <option value="default">Junior</option>
         </select>
       </div>
-      {roomInteriors.map((room) => RoomItem(room))}
+
+
+       {roomInteriors.map((room) => RoomItem(room))} 
     </>
   );
 }
+
+
+
+
 
 
 
@@ -89,6 +103,16 @@ function RoomItem(room) {
     marginLeft: "28%",
     cursor: " pointer"
   };
+
+  const [isShown, setIsShown] = useState(false);
+
+  const handleClick = event => {
+    
+    setIsShown(current => !current);
+    
+    
+  };
+
 
   return (
     <div className="rooms-container">
@@ -149,14 +173,36 @@ function RoomItem(room) {
               </div>
 
               <div style={{ marginBottom: "20px" }}>
-                <button  >ADDITIONAL DETAILS ↓</button> 
+                <button onClick={handleClick} >ADDITIONAL DETAILS ↓</button> 
               </div>
             </div>
           </div>
         </div>
 
-        <div className="feautures"></div>
+        {isShown && 
+      <div className="feautures">
+            <div>
+              <img alt="featureslogos" src={SampleRoom}></img>
+              <p>{room.BedroomDetails}</p> 
+            </div>
+
+            <div>
+              <img alt="featureslogos" src={SampleRoom}></img>
+              <p>{room.kitchenDetails}</p> 
+            </div>
+
+            <div>
+              <img alt="featureslogos" src={SampleRoom}></img>
+              <p>{room.BathroomDetails}</p> 
+            </div>
+            
+    </div>
+    }
       </div>
     </div>
   );
 }
+
+
+
+
