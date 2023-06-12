@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles/footer.css'
-import brandLogos from './images/brandslogo.png'
-import SampleLogo from './images/SampleLogo.png'
+
 
 export default function footer() {
 
@@ -34,8 +33,7 @@ export default function footer() {
     <div className='footer-container'>
         <div className='foot'>
             <span>
-                <img alt='hotelLogo' src={SampleLogo} 
-                style={{height: '12vh', width: 'auto'}}></img>
+            <a href='/'><h1>CayoHotel</h1></a>
             </span>
 
             <span><p>Connect with Us</p>
@@ -79,16 +77,14 @@ export default function footer() {
 
         </div>
         <div className='toe'>
-            <div>
-                <span><a href='/homepage'>Home</a></span>
-                <span><a href='/#'>About Us</a></span>
-                <span><a href='/#'>Contacts</a></span>
-            </div>
+           
             <div>
                 <p>&#169;CopyRights 2023 Group11BSCS. All Rights Reserve</p>
             </div>
             <div>
-                <img alt='brandsLogo' src={brandLogos} style={{height: '100%', maxHeight: '60px'}}></img>
+                <span><a href='/'>Home</a></span>
+                <span><a href='/#'>Services</a></span>
+                <span><a href='/#'>Contacts</a></span>
             </div>
         </div>
     </div>

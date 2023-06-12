@@ -36,7 +36,7 @@ export default function Login() {
         >
           <div>
             <Typography level="h4" component="h1">
-              <b>Welcome!</b>
+              <b>Administrator</b>
             </Typography>
             <Typography level="body2">Sign in to continue.</Typography>
           </div>
@@ -78,8 +78,8 @@ export default function Login() {
         mt: 1 /* margin top */,
         backgroundColor: 'black',
       '&:hover': {
-        color: '#c8c8c8',
-        backgroundColor: '#1c1c1c',
+        color: 'white',
+        backgroundColor: '#b82693',
       }  }}>Log in</Button>
           <Typography
             endDecorator={<Link 

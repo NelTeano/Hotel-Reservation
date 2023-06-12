@@ -19,7 +19,16 @@
     z-index: 100;
 }
 
-.navbar-links a:hover{
+.navbar-home button{
+    background-color: transparent;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.navbar-links a:hover , .navbar-links button:hover{
     color: black;
     transition: 0.4s;
 }

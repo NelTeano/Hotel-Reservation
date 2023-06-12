@@ -15,7 +15,7 @@
     top: -15%;
     transform: rotate(-0.14deg);
     border-radius: 50%;
-    background: radial-gradient(farthest-corner at 10px 10px, #E7EA59, #FFF066, #FFE484, #FDFFB4);
+    background: radial-gradient(farthest-corner at 10px 10px, #b82693, #800d6c, #660c62, #a10e8e);
     
 }
 
@@ -38,5 +38,5 @@
     bottom: 10%;
     transform: rotate(-0.14deg);
     border-radius: 50%;
-    background: radial-gradient(farthest-corner at 100px 40px,#FFE484, #FFF066, #FFE484, #FDFFB4);
+    background: radial-gradient(farthest-corner at 10px 10px, #b82693, #800d6c, #660c62, #a10e8e);
 }

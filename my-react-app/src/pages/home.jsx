@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react'
+import {useRef} from 'react';
 import '../styles/home.css'
 import Carousel from '../Carousel'
 import SampleRoom from "../images/roomsamplelogo.jpg";
@@ -13,6 +14,12 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
     useEffect(() => {
         AOS.init();
       }, [])
+
+      const ref = useRef(null);
+
+      const handleClick = () => {
+        ref.current?.scrollIntoView({behavior: 'smooth'});
+      };
 
 
     const imgSrc = {
@@ -159,7 +166,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
 
             <span className='navbar-links'>
                 <a  style={{fontSize:'1.1vw'}} href='/#'>Home</a>
-                <a  style={{fontSize:'1.1vw'}} href='/#'>Services</a>
+                <button  style={{fontSize:'1.1vw'}} href='/' onClick={handleClick}>Services</button>
                 <a  style={{fontSize:'1.1vw'}} href='/#'>Contacts</a>
             </span>
         </div>
@@ -280,14 +287,14 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                     lineHeight: '125%'
                 }} 
                     >Luxury Rooms</h1>
-                <p style={{
+                <p ref={ref} style={{
                     textAlign: "center",
                     lineHeight: '125%' 
                 }}
                 >See our entire catalog of rooms</p>
             </div>
 
-            <div
+            <div 
                 className='carousel-rooms'
                 data-aos="fade-left"
                 data-aos-easing="linear"
@@ -300,7 +307,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
         <footer>
         <div className='home-footer'>
             <span>
-                <a href='/#'><h1>CayoHotel</h1></a>
+                <a href='/'><h1>CayoHotel</h1></a>
             </span>
 
             <span><p>Connect with Us</p>
@@ -351,8 +358,8 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                 </span>
 
                 <span className='links'>
-                    <a href='/#'>Home</a>
-                    <a href='/#'>Services</a>
+                    <a href='/'>Home</a>
+                    <a href='/'>Services</a>
                     <a href='/#'>Contacts</a>
                 </span>
             </div>   

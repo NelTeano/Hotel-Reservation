@@ -1,34 +1,36 @@
 .footer-container{
     display: flex;
     flex-direction: column;
+    
+   
 }
 .foot{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1c1c1c;
+    background-color: #FFF5EB ;
     height: 23vh;
     
 }
 
 .foot p{
-    color: #c8c8c8;
+    color: black;
     font-size: 1.3vw;
 }
 
 .foot a{
 
     text-decoration: none;
-    color: white;
+    color: black;
     margin-right: 11%;
 }
 
 
 .toe{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    background-color: #151515;
+    background-color: #FFF5EB ;
     height: 7vh;
     color: #c8c8c8;
     
@@ -36,12 +38,21 @@
 
 .toe p{
     font-size: 0.8vw;
+    color: black;
 }
 
 .toe a{
+    margin-left: 30px;
     text-decoration: none;
-    color: white;
-    font-size: 0.8vw;
+    color: black;
+    font-size: 1vw;
+}
+
+.toe a:hover, footer a:hover{
+ 
+        color: #319194;
+        transition: 0.6s;
+       
 }
 
 

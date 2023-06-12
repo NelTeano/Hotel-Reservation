@@ -15,7 +15,7 @@ export default function TemporaryDatePicker({
   setAvailableRooms}) {
 
   return (
-    <>
+    < >
       <Navbar />
       <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/'} />
       <h3 style={{textAlign: 'center'}}>Temporary Date Picker</h3>

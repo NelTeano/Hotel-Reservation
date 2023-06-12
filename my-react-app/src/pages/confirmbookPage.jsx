@@ -3,6 +3,7 @@ import Form from '../bookform'
 import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import SummaryBox from '../summaryBox'
+import Footer from '../footer'
 import '../styles/bookingpage.css'
 
 export default function confirmbookPage({
@@ -41,6 +42,7 @@ export default function confirmbookPage({
             
         </div>
     </div>
+    <Footer />
     </>
   )
 }

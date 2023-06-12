@@ -1,17 +1,19 @@
 * {
     padding: 0px;
-    margin: 0xp;
+    margin: 0px;
     box-sizing: border-box;
 }
 
 .mainDatePickerContainer {
     display: flex;
-    height: 80vh;
+    height: 90vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1.15em;
+    background: linear-gradient(180deg, #FFFFFF 80%, #FFF5EB 100%);
+
 }
 
 .rooms-booknow-btn {
