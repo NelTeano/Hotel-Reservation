@@ -3,7 +3,7 @@ import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
-export default function Rooms({availableRooms, setSelectedRoom, setSelectedRoomData}) {
+export default function Rooms({availableRooms, setSelectedRoom, setSelectedRoomID}) {
   
   // the json data was moved in the 'dev-data/available-rooms.js'.
   // the previous calendar page should load that data emulating a post request from the server.
@@ -22,14 +22,14 @@ export default function Rooms({availableRooms, setSelectedRoom, setSelectedRoomD
           key={room.roomID}
           room={room}
           setSelectedRoom={setSelectedRoom}
-          setSelectedRoomData={setSelectedRoomData}
+          setSelectedRoomID={setSelectedRoomID}
         />
       }) : <div style={{textAlign: 'center', padding: '2em'}}>NO ROOMS AVAILABLE</div>}
     </>
   );
 }
 
-function RoomItem({room, setSelectedRoom, setSelectedRoomData}) {
+function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
 
   //BUTTON DESIGN
   const buttonStyle = {
@@ -115,9 +115,7 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomData}) {
                   className="rooms-booknow-btn"
                   onClick={() => {
                     setSelectedRoom(room);
-                    setSelectedRoomData({
-                      roomID: room.roomID
-                    });
+                    setSelectedRoomID(room.roomID);
                   }}
                 >
                   BOOK NOW

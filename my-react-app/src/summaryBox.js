@@ -6,8 +6,7 @@ import './styles/summaryBox.css'
 export default function summaryBox({
     arriveDate, 
     departDate,
-    paxAdult, 
-    paxChild,
+    guests,
     selectedRoom
 }) {
 
@@ -35,7 +34,7 @@ export default function summaryBox({
             <p>Arriving: {arriveDate}</p>
             <p>Room Type: {(selectedRoom) ? selectedRoom.type : 'N/A'}</p>
             <p>Depart: {departDate}</p>
-            <p>Adult: {paxAdult} / Children: {paxChild}</p>
+            <p>Guests: {guests} </p>
            
         </div>
 

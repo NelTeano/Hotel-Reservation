@@ -30,8 +30,7 @@ function App() {
   const [arriveDate, setArriveDate] = React.useState((new Date()).toLocaleDateString());
   const [departDate, setDepartDate] = React.useState((new Date()).toLocaleDateString());
 
-  const [paxAdult, setPaxAdult] = React.useState(1);
-  const [paxChild, setPaxChild] = React.useState(0);
+  const [guests, setGuests] = React.useState(1);
 
   // the array of available rooms sent by the server after choosing a
   // range of date in the calendar page.
@@ -41,7 +40,7 @@ function App() {
   const [selectedRoom, setSelectedRoom] = React.useState(null);
   
   // room data to be sent to the post request route after successful booking.
-  const [selectedRoomData, setSelectedRoomData] = React.useState(null);
+  const [selectedRoomID, setSelectedRoomID] = React.useState(null);
 
   // ...
 
@@ -73,9 +72,8 @@ function App() {
         body: JSON.stringify({
           arriveDate: arriveDate,
           departDate: departDate,
-          paxAdult: paxAdult,
-          paxChild: paxChild,
-          selectedRoomData: selectedRoomData,
+          guests: guests,
+          selectedRoomID: selectedRoomID,
           firstName: firstName,
           lastName: lastName,
           email: email,
@@ -113,8 +111,7 @@ function App() {
           <TemporaryDatePicker
             arriveDate={arriveDate} setArriveDate={setArriveDate}
             departDate={departDate} setDepartDate={setDepartDate}
-            setPaxChild={setPaxChild}
-            setPaxAdult={setPaxAdult}
+            setGuests={setGuests}
             setAvailableRooms={setAvailableRooms}
           />
         }/>
@@ -126,7 +123,7 @@ function App() {
 
             availableRooms={availableRooms}
             setSelectedRoom={setSelectedRoom}
-            setSelectedRoomData={setSelectedRoomData}
+            setSelectedRoomID={setSelectedRoomID}
           />
         }/>
         
@@ -135,8 +132,7 @@ function App() {
             arriveDate={arriveDate}
             departDate={departDate}
 
-            paxAdult={paxAdult}
-            paxChild={paxChild}
+            guests={guests}
 
             // form field onChange handlers.
             setFirstName={setFirstName}

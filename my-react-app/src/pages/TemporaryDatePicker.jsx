@@ -11,11 +11,12 @@ import '../styles/TemporaryDatePicker.css';
 export default function TemporaryDatePicker({
   arriveDate, setArriveDate,
   departDate, setDepartDate,
-  setPaxChild, setPaxAdult,
-  setAvailableRooms}) {
+  setGuests,
+  setAvailableRooms
+}) {
 
   return (
-    < >
+    <>
       <Navbar />
       <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/'} />
       <h3 style={{textAlign: 'center'}}>Temporary Date Picker</h3>
@@ -32,23 +33,16 @@ export default function TemporaryDatePicker({
           }
         }/>
 
-        <label>Number of adult : </label>
-        <select onChange={(e) => setPaxAdult(e.target.value)}>
-          <option key={1}>{1}</option>
-          <option key={2}>{2}</option>
-          <option key={3}>{3}</option>
-          <option key={4}>{4}</option>
-          <option key={5}>{5}</option>
-        </select>
+        <label>Number of Guests : </label>
 
-        <label>Number of child : </label>
-        <select defaultValue={0} onChange={(e) => setPaxChild(e.target.value)}>
-          <option key={0}>{0}</option>
-          <option key={1}>{1}</option>
-          <option key={2}>{2}</option>
-          <option key={3}>{3}</option>
-          <option key={4}>{4}</option>
-          <option key={5}>{5}</option>
+        <select onChange={(e) => setGuests(e.target.value)}>
+          <option key={0} value={1}>---</option>
+          <option key={1} value={1}>{1}</option>
+          <option key={2} value={2}>{2}</option>
+          <option key={3} value={3}>{3}</option>
+          <option key={4} value={4}>{4}</option>
+          <option key={5} value={5}>{5}</option>
+          <option key={6} value={6}>{6}</option>
         </select>
 
         <Link

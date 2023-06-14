@@ -6,7 +6,7 @@ import ShowRooms from '../Rooms'
 export default function roomlist({
   arriveDate, departDate,
   availableRooms,
-  setSelectedRoom, setSelectedRoomData}) {
+  setSelectedRoom, setSelectedRoomID}) {
 
   const filterText = {
     display: 'flex',
@@ -23,7 +23,7 @@ export default function roomlist({
         <ShowRooms
           availableRooms={availableRooms}
           setSelectedRoom={setSelectedRoom}
-          setSelectedRoomData={setSelectedRoomData}
+          setSelectedRoomID={setSelectedRoomID}
         />
     </>
     

@@ -8,7 +8,7 @@ import '../styles/bookingpage.css'
 
 export default function confirmbookPage({
   arriveDate, departDate,
-  paxAdult, paxChild,
+  guests,
   setFirstName, setLastName,
   setEmail, setPhone,
   selectedRoom, submitHandler
@@ -35,8 +35,7 @@ export default function confirmbookPage({
             <SummaryBox
               arriveDate={arriveDate} 
               departDate={departDate}
-              paxAdult={paxAdult} 
-              paxChild={paxChild}
+              guests={guests}
               selectedRoom={selectedRoom}
             />
             
