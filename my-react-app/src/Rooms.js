@@ -3,7 +3,7 @@ import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
-export default function Rooms({availableRooms, setSelectedRoom, setSelectedRoomID}) {
+export default function Rooms({roomTypes, setSelectedRoom}) {
   
   // the json data was moved in the 'dev-data/available-rooms.js'.
   // the previous calendar page should load that data emulating a post request from the server.
@@ -11,25 +11,24 @@ export default function Rooms({availableRooms, setSelectedRoom, setSelectedRoomI
   return (
     <>
       <div className="combo-box">
-        <select >
+        <select>
           <option value="deluxe">Room Type</option>
           <option value="deluxe">Deluxe</option>
           <option value="junior">Junior</option>
         </select>
       </div>
-      {availableRooms ? availableRooms.map((room) => {
+      {roomTypes ? roomTypes.map((roomType) => {
         return <RoomItem
-          key={room.roomID}
-          room={room}
+          key={roomType.id}
+          roomType={roomType}
           setSelectedRoom={setSelectedRoom}
-          setSelectedRoomID={setSelectedRoomID}
         />
       }) : <div style={{textAlign: 'center', padding: '2em'}}>NO ROOMS AVAILABLE</div>}
     </>
   );
 }
 
-function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
+function RoomItem({roomType, setSelectedRoom}) {
 
   //BUTTON DESIGN
   const buttonStyle = {
@@ -58,7 +57,7 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
       <div className="box-container">
         <div className="room-box">
           <div className="picture-container">
-            <CarouselComponent items={room.images} />
+            <CarouselComponent items={roomType.images} />
           </div>
 
           <div className="room-information">
@@ -73,12 +72,12 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
                   marginBottom: "10px",
                 }}
               >
-                {room.name}
+                {roomType.name}
               </h1>
               <ul>
-                <li> {room.bed} </li>
-                <li> {room.view} </li>
-                <li> {room.areaSqFeet} sq ft; {Math.round(room.areaSqFeet / 10.764)} sq m </li>
+                <li> {roomType.bed_type} </li>
+                {/* <li> {room.view} </li>
+                <li> {room.areaSqFeet} sq ft; {Math.round(room.areaSqFeet / 10.764)} sq m </li> */}
               </ul>
             </div>
 
@@ -105,7 +104,7 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
                     marginBottom: "10px",
                   }}
                 >
-                  $ {room.price} / NIGHT
+                  $ {roomType.price} / NIGHT
                 </p>
                 <p>EXCUDING TAXES & FEES</p>
 
@@ -114,8 +113,7 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
                   style={buttonStyle}
                   className="rooms-booknow-btn"
                   onClick={() => {
-                    setSelectedRoom(room);
-                    setSelectedRoomID(room.roomID);
+                    setSelectedRoom(roomType);
                   }}
                 >
                   BOOK NOW
@@ -124,7 +122,7 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
               </div>
 
               <div style={{ marginBottom: "20px" }}>
-                <button className="additional-details-btn" onClick={handleClick} >ADDITIONAL DETAILS ↓</button> 
+                <button className="additional-details-btn" onClick={handleClick} >AMENITIES & DESCRIPTION ↓</button> 
               </div>
             </div>
           </div>
@@ -133,10 +131,10 @@ function RoomItem({room, setSelectedRoom, setSelectedRoomID}) {
         {isShown && 
       <div className="feautures">
         {
-          room.details.map((detail, index) => {
+          roomType.amenities.split(',\n').map((descripion, index) => {
             return <div key={index}>
-              <img alt="featureslogos" src={detail.image}></img>
-              <p>{detail.description}</p> 
+              {/* <img alt="featureslogos" src={detail.image}></img> */}
+              <p>{descripion}</p> 
             </div>
           })
         }            

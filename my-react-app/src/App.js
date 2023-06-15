@@ -32,16 +32,11 @@ function App() {
 
   const [guests, setGuests] = React.useState(1);
 
-  // the array of available rooms sent by the server after choosing a
-  // range of date in the calendar page.
-  const [availableRooms, setAvailableRooms] = React.useState(null);
+  const [roomTypes, setRoomTypes] = React.useState(null);
 
   // rooms
   const [selectedRoom, setSelectedRoom] = React.useState(null);
   
-  // room data to be sent to the post request route after successful booking.
-  const [selectedRoomID, setSelectedRoomID] = React.useState(null);
-
   // ...
 
   // form
@@ -50,6 +45,23 @@ function App() {
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
 
+  // ---------- rooms ----------
+
+  React.useEffect(() =>{
+    fetch('http://localhost:3001/book/getrooms', {headers: {
+      Accept: 'application/json'
+    }})
+    .then(response => {
+      console.log('response.status = ', response.status);
+      if (response.status === 200) {
+        response.json().then((data) => {
+          setRoomTypes(data);
+        });
+      } else {
+        setRoomTypes(null);
+      }
+    });
+  }, []);
 
   // ---------- booking data ----------
 
@@ -63,7 +75,7 @@ function App() {
       alert('please pick a valid date range');
     } else if (firstName && lastName && email && phone) {
       e.preventDefault();
-      fetch('/book/submit', {
+      fetch('http://localhost:3001/book/submit', {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json'
@@ -73,7 +85,7 @@ function App() {
           arriveDate: arriveDate,
           departDate: departDate,
           guests: guests,
-          selectedRoomID: selectedRoomID,
+          selectedRoomID: selectedRoom.id,
           firstName: firstName,
           lastName: lastName,
           email: email,
@@ -102,6 +114,8 @@ function App() {
             facilityImg1={boxImg1}
             facilityImg2={boxImg2}
             coverImg={coverpicture}
+
+            roomTypes={roomTypes}
           />
         }/>
 
@@ -112,7 +126,6 @@ function App() {
             arriveDate={arriveDate} setArriveDate={setArriveDate}
             departDate={departDate} setDepartDate={setDepartDate}
             setGuests={setGuests}
-            setAvailableRooms={setAvailableRooms}
           />
         }/>
 
@@ -121,9 +134,10 @@ function App() {
             arriveDate={arriveDate}
             departDate={departDate}
 
-            availableRooms={availableRooms}
+            roomTypes={roomTypes}
+            setRoomTypes={setRoomTypes}
+
             setSelectedRoom={setSelectedRoom}
-            setSelectedRoomID={setSelectedRoomID}
           />
         }/>
         

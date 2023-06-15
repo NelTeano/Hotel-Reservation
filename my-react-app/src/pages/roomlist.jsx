@@ -5,8 +5,8 @@ import ShowRooms from '../Rooms'
 
 export default function roomlist({
   arriveDate, departDate,
-  availableRooms,
-  setSelectedRoom, setSelectedRoomID}) {
+  roomTypes, setRoomTypes,
+  setSelectedRoom}) {
 
   const filterText = {
     display: 'flex',
@@ -21,9 +21,8 @@ export default function roomlist({
         <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/calendar'} />
         <p style={filterText} > FILTER</p>
         <ShowRooms
-          availableRooms={availableRooms}
+          roomTypes={roomTypes}
           setSelectedRoom={setSelectedRoom}
-          setSelectedRoomID={setSelectedRoomID}
         />
     </>
     

@@ -24,15 +24,14 @@ export default function summaryBox({
         </div>
 
         <div>
-            {(selectedRoom) ? <img alt='RoomLook' src={selectedRoom.images[0].image} /> : <img alt='RoomLook' src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Blank_image.jpg' />}
+            {(selectedRoom) ? <img alt='RoomLook' src={selectedRoom.images[0]} /> : <img alt='RoomLook' src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Blank_image.jpg' />}
         </div>
             
         <div className='details' style={{
-                textAlign: 'center',
-
+            textAlign: 'center',
         }}>
             <p>Arriving: {arriveDate}</p>
-            <p>Room Type: {(selectedRoom) ? selectedRoom.type : 'N/A'}</p>
+            <p>Room Type: {(selectedRoom) ? selectedRoom.name : 'N/A'}</p>
             <p>Depart: {departDate}</p>
             <p>Guests: {guests} </p>
            

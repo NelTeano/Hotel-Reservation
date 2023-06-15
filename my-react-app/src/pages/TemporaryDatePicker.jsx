@@ -11,8 +11,7 @@ import '../styles/TemporaryDatePicker.css';
 export default function TemporaryDatePicker({
   arriveDate, setArriveDate,
   departDate, setDepartDate,
-  setGuests,
-  setAvailableRooms
+  setGuests
 }) {
 
   return (
@@ -45,18 +44,8 @@ export default function TemporaryDatePicker({
           <option key={6} value={6}>{6}</option>
         </select>
 
-        <Link
-          to='/rooms'
-          className="rooms-booknow-btn"
-          onClick={() => {
-
-            // pretend 'availableRooms' is an array that came from a post request.
-            // the server should implement a post request route where it will look for the only
-            // available rooms at a given date range.
-            setAvailableRooms(availableRooms);
-          }}
-        >
-          View Available Rooms
+        <Link to='/rooms' className="rooms-booknow-btn">
+          View Rooms
         </Link>
       </div>
       <Footer />

@@ -6,10 +6,10 @@ class CarouselComponent extends Component {
   render() {
     return (
       <Carousel showThumbs={false} showStatus={false}>
-        {this.props.items.map((item) => (
-          <div key={item.id}>
-            <img alt="carouselimg" src={item.image} style={{height: '45vh'}}/>
-            <p className="legend">{item.name}</p>
+        {this.props.items.map((url, index) => (
+          <div key={index}>
+            <img alt="carouselimg" src={url} style={{height: '45vh'}}/>
+            {/* <p className="legend">{item.name}</p> */}
           </div>
         ))}
       </Carousel>

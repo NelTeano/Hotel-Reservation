@@ -7,20 +7,17 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
-
-export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle}) {
+export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle, roomTypes}) {
 
     useEffect(() => {
         AOS.init();
-      }, [])
+    }, [])
 
-      const ref = useRef(null);
+    const ref = useRef(null);
 
-      const handleClick = () => {
-        ref.current?.scrollIntoView({behavior: 'smooth'});
-      };
-
+    const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+    };
 
     const imgSrc = {
         cover: coverImg,
@@ -214,7 +211,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                     <img alt='facilities' src={facilityImg1}></img>
                 </div>
 
-                <div 
+                <div
                     className='facilities-context'
                     data-aos="fade-left"
                     data-aos-offset="300"
@@ -300,7 +297,9 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                 data-aos-easing="linear"
                 data-aos-duration="700"
              >
-                    {roomInteriors.map((room) => RoomItem(room))}
+                {roomTypes ? roomTypes.map((room, index) => {
+                    return <RoomItem room={room} key={index}/>}
+                ) : <h3>Cannot get data right now</h3>}
             </div>
         </div>
 
@@ -369,16 +368,12 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
   )
 }
 
-function RoomItem(room) {
-
-    
-
-
+function RoomItem({room}) {
     return(
         <div className='carousel-content'>
             <Carousel  items={room.images}/>
             <h3 style={{marginTop: '20px'}}>{room.name}</h3>
-            <p>{room.bedtype}</p>
+            <p>{room.bed_type}</p>
             <h1 >$ {room.price} / Night</h1>
         </div>
     )
