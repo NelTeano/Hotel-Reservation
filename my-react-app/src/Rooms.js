@@ -70,6 +70,7 @@ function RoomItem({roomType, setSelectedRoom}) {
               <h1
                 style={{
                   marginBottom: "10px",
+                  color: '#1c1c1c'
                 }}
               >
                 {roomType.name}
@@ -92,6 +93,7 @@ function RoomItem({roomType, setSelectedRoom}) {
                   style={{
                     textAlign: "right",
                     fontSize: "1.4vw",
+                    color: '#1c1c1c'
                   }}
                 >
                   FROM
@@ -102,6 +104,7 @@ function RoomItem({roomType, setSelectedRoom}) {
                     textAlign: "right",
                     fontSize: "1.4vw",
                     marginBottom: "10px",
+                    color: '#1c1c1c'
                   }}
                 >
                   $ {roomType.price} / NIGHT

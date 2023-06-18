@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .box-container{
@@ -32,8 +33,9 @@
 .room-box{
     display: flex;
     flex-direction: row;
-    background-color: red;
     margin-top: 30px;
+    box-shadow:  -22px 22px 44px #8d8d8d,
+    22px -22px 44px #ffffff;
 }
 
 .room-box{
@@ -55,10 +57,11 @@ img{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #FFF5EB;
     width: 50%;
-    border-right:1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-right:1px solid #1c1c1c;
+    border-top:  1px solid #1c1c1c;
+    border-bottom: 1px  solid #1c1c1c;
 }
 
 .room-information li{
@@ -87,9 +90,11 @@ img{
     align-items: center;
     flex-wrap: nowrap;
     gap: 20px;
-    background-color: white;
+    background-color: #ffffff;
     height: 300px;
     width: 100%;
+    box-shadow:  -22px 22px 44px #8d8d8d,
+    22px -22px 44px #ffffff;
    
 }
 
@@ -112,7 +117,7 @@ img{
     transition: ease 0.15s;
     text-decoration: none;
     color: black;
-    background-color: white;
+    background-color: #FFF5EB;
 }
 
 .rooms-booknow-btn:visited {
@@ -127,14 +132,18 @@ img{
     scale: 1.075;
     color: white;
     background-color: black;
+
+   
 }
 
 /* ------ ADDITIONAL DETAILS BUTTON ------ */
 
 .additional-details-btn {
     transition: ease 0.15s;
+    margin-right: 20px;
 }
 
 .additional-details-btn:hover {
     scale: 1.075;
+    cursor: pointer;
 }

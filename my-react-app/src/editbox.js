@@ -18,7 +18,7 @@ export default function editbox({arriveDate, departDate, previousPage}) {
         flexDirection: 'row',
         alignItems: 'center',
         position: 'relative',
-        border: '1px solid #e2e2e2',
+        border: '1px solid #1c1c1c',
         height: '100%',
         width: '100%',
         maxHeight: '4vw',
@@ -32,17 +32,17 @@ export default function editbox({arriveDate, departDate, previousPage}) {
 
           <div className='edit-box-link-btn' style={{marginRight: '3vw',
             marginLeft: '5%',
-            borderRight: '1px solid #e2e2e2',
+            borderRight: '1px solid #1c1c1c',
             height: '100%',
             paddingRight: '20px'
                }}>
-            <Link style={{textDecoration: 'none', color: 'black', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
-            <p style={{fontSize: '1vw'}}>EDIT</p></Link>
+            <Link style={{textDecoration: 'none', color: '#1c1c1c', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
+            <p style={{fontSize: '1vw', color: '#1c1c1c'}}>EDIT</p></Link>
           </div>
 
           <div>
-              <h2 style={{textAlign: 'center', fontSize: '1vw'}}>HOTEL NAME</h2>
-              <p style={{fontSize: '1vw' }}>ARRIVE: {arriveDate} | DEPART : {departDate} </p> 
+              <h2 style={{textAlign: 'center', fontSize: '1vw', color: '#1c1c1c'}}>HOTEL NAME</h2>
+              <p style={{fontSize: '1vw' , color: '#1c1c1c'}}>ARRIVE: {arriveDate} | DEPART : {departDate} </p> 
           </div>
         </div>
     </div>

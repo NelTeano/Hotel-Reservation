@@ -13,7 +13,7 @@ export default function navigation2() {
             <h1>CayoHotel</h1>
         </div>
         <div className='closeIcon'>
-            <Link to='/'>X</Link>
+            <Link to='/' >X</Link>
         </div>
     </nav>
   )
