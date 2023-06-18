@@ -6,7 +6,7 @@ import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
-import Link from '@mui/joy/Link';
+
 
 
 
@@ -81,21 +81,6 @@ export default function Login() {
         color: 'white',
         backgroundColor: '#b82693',
       }  }}>Log in</Button>
-          <Typography
-            endDecorator={<Link 
-                sx={{
-                    color: 'black', 
-                    textDecoration: 'none',
-                '&:hover': {
-                    color: '#FFF066',
-                  }
-        }} 
-        href="/sign-up">Sign up</Link>}
-            fontSize="sm"
-            sx={{ alignSelf: 'center' }}
-          >
-            Don&apos;t have an account?
-          </Typography>
         </Sheet>
         
       </main>

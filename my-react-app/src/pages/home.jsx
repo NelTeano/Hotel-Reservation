@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import {useRef} from 'react';
 import '../styles/home.css'
 import Carousel from '../Carousel'
-import SampleRoom from "../images/roomsamplelogo.jpg";
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,10 +13,15 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
     }, [])
 
     const ref = useRef(null);
+    const foot = useRef(null);
 
-    const handleClick = () => {
+    const gotoRoomList = () => {
     ref.current?.scrollIntoView({behavior: 'smooth'});
     };
+
+    const gotoContacts = () => {
+        foot.current?.scrollIntoView({behavior: 'smooth'});
+        };
 
     const imgSrc = {
         cover: coverImg,
@@ -51,100 +55,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
         height: '40px'
     }
 
-    const roomInteriors = [
-        {
-          type: "deluxe",
-          name: "Deluxe Suite",
-          price: 1000,
-          bedtype: '2 Beds',
-          images: [
-            {
-              id: 1,
-              name: "Bedroom",
-              image: SampleRoom,
-            },
-            {
-              id: 2,
-              name: "Living Area",
-              image: SampleRoom,
-            },
-            {
-              id: 3,
-              name: "Kitchen",
-              image: SampleRoom,
-            },
-          ],
-        },
-        {
-          type: "junior",
-          name: "Junior Suite",
-          price: 500,
-          bedtype: '1 Bedroom, 2 Comfort Rooms',
-          images: [
-            {
-                id: 1,
-                name: "Bedroom",
-                image: SampleRoom,
-              },
-              {
-                id: 2,
-                name: "Living Area",
-                image: SampleRoom,
-              },
-              {
-                id: 3,
-                name: "Kitchen",
-                image: SampleRoom,
-              },
-          ],
-        },
-        {
-            type: "Solo",
-            name: "Vip Suite",
-            price: 1500,
-            bedtype: '1 Bedroom, 2 Comfort Rooms with Balcony',
-            images: [
-              {
-                  id: 1,
-                  name: "Bedroom",
-                  image: SampleRoom,
-                },
-                {
-                  id: 2,
-                  name: "Living Area",
-                  image: SampleRoom,
-                },
-                {
-                  id: 3,
-                  name: "Kitchen",
-                  image: SampleRoom,
-                },
-            ],
-          },
-          {
-            type: "Type",
-            name: "Extra Rooms",
-            price: 9999,
-            bedtype: 'No. Beds',
-            images: [
-              {
-                id: 1,
-                name: "Bedroom",
-                image: SampleRoom,
-              },
-              {
-                id: 2,
-                name: "Living Area",
-                image: SampleRoom,
-              },
-              {
-                id: 3,
-                name: "Kitchen",
-                image: SampleRoom,
-              },
-            ],
-          },
-      ];
+  
 
 
   return (
@@ -158,13 +69,13 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
          
         >
             <span>
-                <a style={{fontSize:'2vw'}} href='/#'>CayoHotel</a>
+                <a style={{fontSize:'2vw'}} href='/'>CayoHotel</a>
             </span>
 
             <span className='navbar-links'>
-                <a  style={{fontSize:'1.1vw'}} href='/#'>Home</a>
-                <button  style={{fontSize:'1.1vw'}} href='/' onClick={handleClick}>Services</button>
-                <a  style={{fontSize:'1.1vw'}} href='/#'>Contacts</a>
+                <a  style={{fontSize:'1.1vw'}} href='/'>Home</a>
+                <button  style={{fontSize:'1.1vw'}} href='/' onClick={gotoRoomList}>Services</button>
+                <button  style={{fontSize:'1.1vw'}} href='/' onClick={gotoContacts}>Contacts</button>
             </span>
         </div>
 
@@ -351,7 +262,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
         </div>
 
 
-            <div className='feet'>
+            <div ref={foot} className='feet'>
                 <span>
                     <p>© CayoHotel 2023. All rights reserved</p>
                 </span>
@@ -359,7 +270,6 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                 <span className='links'>
                     <a href='/'>Home</a>
                     <a href='/'>Services</a>
-                    <a href='/#'>Contacts</a>
                 </span>
             </div>   
             
