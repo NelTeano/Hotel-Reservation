@@ -10,8 +10,7 @@ import reserveCover from "./images/reserveCover.png"
 import React from "react";
 
 import './styles/App.css';
-import TemporaryDatePicker from "./pages/TemporaryDatePicker";
-import Calendar from './pages/calendar'
+import DatePicker from './pages/calendar'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,7 +30,7 @@ function App() {
   const [arriveDate, setArriveDate] = React.useState((new Date()).toLocaleDateString());
   const [departDate, setDepartDate] = React.useState((new Date()).toLocaleDateString());
 
-  const [guests, setGuests] = React.useState(1);
+  const [guests, setGuests] = React.useState(null);
 
   const [roomTypes, setRoomTypes] = React.useState(null);
 
@@ -122,14 +121,6 @@ function App() {
 
         <Route path="/login"    element={<Login />} />
 
-        <Route path="/calendar" element={
-          <TemporaryDatePicker
-            arriveDate={arriveDate} setArriveDate={setArriveDate}
-            departDate={departDate} setDepartDate={setDepartDate}
-            setGuests={setGuests}
-          />
-        }/>
-
         <Route path="/rooms"    element={
           <RoomList
             arriveDate={arriveDate}
@@ -162,12 +153,14 @@ function App() {
         }/>
   
   
-      <Route path='/newcalendar' element={
-        
-        // NEW CALENDAR INTERFACE (NOT YET IMPLEMENTED THE SET VALUES)
-          <Calendar />
-      } />
-      </Routes>
+        <Route path='/calendar' element={
+          <DatePicker
+            arriveDate={arriveDate} setArriveDate={setArriveDate}
+            departDate={departDate} setDepartDate={setDepartDate}
+            guests={guests}         setGuests={setGuests}
+          />
+        } />
+        </Routes>
      
     </BrowserRouter>
   );
