@@ -11,6 +11,7 @@ import React from "react";
 
 import './styles/App.css';
 import TemporaryDatePicker from "./pages/TemporaryDatePicker";
+import Calendar from './pages/calendar'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -159,7 +160,15 @@ function App() {
             submitHandler={submitBookingForm}
           />
         }/>
+  
+  
+      <Route path='/newcalendar' element={
+        
+        // NEW CALENDAR INTERFACE (NOT YET IMPLEMENTED THE SET VALUES)
+          <Calendar />
+      } />
       </Routes>
+     
     </BrowserRouter>
   );
 }
