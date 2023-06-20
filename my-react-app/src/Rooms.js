@@ -30,7 +30,7 @@ export default function Rooms({roomTypes, setSelectedRoom}) {
         } else {
           return null;
         }
-      }) : <div style={{textAlign: 'center', padding: '2em'}}>NO ROOMS AVAILABLE</div>}
+      }) : <div style={{textAlign: 'center', padding: '2em'}}>FAILED TO RETRIEVE ROOM DATA</div>}
     </>
   );
 }
