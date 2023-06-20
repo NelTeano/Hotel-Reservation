@@ -1,4 +1,8 @@
-
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 
 .rooms-container{
     display: flex;
@@ -52,8 +56,8 @@ img{
     
 }
 
-
 .room-information{
+    padding: 1.9em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,12 +67,6 @@ img{
     border-top:  1px solid #1c1c1c;
     border-bottom: 1px  solid #1c1c1c;
 }
-
-.room-information li{
-    margin-bottom: 5px;
-    margin-left: 10px;
-}
-
 
 .right-content{
     display: flex;
@@ -80,8 +78,7 @@ img{
 .right-content button{
     background-color: transparent;
     border: none;
-    font-size: 1vw;
-    
+    font-size: 0.825em;
 }
 
 .feautures{

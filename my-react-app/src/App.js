@@ -48,7 +48,7 @@ function App() {
   // ---------- rooms ----------
 
   React.useEffect(() =>{
-    fetch('http://localhost:3001/book/getrooms', {headers: {
+    fetch('http://localhost:3001/rooms', {headers: {
       Accept: 'application/json'
     }})
     .then(response => {
@@ -151,7 +151,6 @@ function App() {
             submitHandler={submitBookingForm}
           />
         }/>
-  
   
         <Route path='/calendar' element={
           <DatePicker
