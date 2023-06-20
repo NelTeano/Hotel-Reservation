@@ -23,5 +23,6 @@ app.get('/', (req, res) => {
   res.status(200).sendFile('index.html', { root: './public' });
 });
 
+app.use('/rooms', require('./routes/rooms'));
 app.use('/book', require('./routes/booking'));
 
