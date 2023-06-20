@@ -60,19 +60,20 @@ function App() {
       } else {
         setRoomTypes(null);
       }
-    });
+    }).catch(() => setRoomTypes(null));
   }, []);
 
   // ---------- booking data ----------
 
   // form post request
-  const submitBookingForm = (e) => {
+  const submitBookingForm = (e, statusCB) => {
     // server/booking.js --> localhost:PORT/book/submit
     const validDateRange = new Date(arriveDate) < new Date(departDate);
 
     if (!validDateRange) {
       e.preventDefault();
       alert('please pick a valid date range');
+      return;
     } else if (firstName && lastName && email && phone) {
       e.preventDefault();
       fetch('http://localhost:3001/book/submit', {
@@ -92,14 +93,9 @@ function App() {
           phoneNo: phone
         })
       }).then(response => {
-        console.log('response = ', response);
-        if (response.status === 200) {
-          console.log('booking success');
-          alert('booking success');
-        } else {
-          console.log('booking failed : response = ', response);
-          alert('booking failed');
-        }
+        statusCB(response.status);
+      }).catch(() => {
+        statusCB(404);
       });
     }
   }

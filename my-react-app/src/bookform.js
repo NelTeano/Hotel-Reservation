@@ -1,7 +1,11 @@
 import React from 'react'
+import SuccessModal from './SuccessModal'
 import './styles/bookform.css'
 
 export default function Bookform({setFirstName, setLastName, setEmail, setPhone, submitHandler}) {
+
+  const [showSuccessModal, setShowSuccessModal] = React.useState(null);
+  const [success, setSuccess] = React.useState(null);
 
   return(
     <form method='post'>
@@ -63,10 +67,17 @@ export default function Bookform({setFirstName, setLastName, setEmail, setPhone,
               textDecoration: 'Underline',
               fontWeight: '300',
             }}
-            type='submit' value='CONFIRM YOUR STAY' onClick={(e) => submitHandler(e)}
+            type='submit' value='CONFIRM YOUR STAY'
+            onClick={(e) => {
+              submitHandler(e, (status) => {
+                setShowSuccessModal(true);
+                setSuccess(status === 200);
+              })
+            }}
           />
         </div>
       </div>
+      <SuccessModal show={showSuccessModal} setShow={setShowSuccessModal} success={success}/>
     </form>
   );
 }
