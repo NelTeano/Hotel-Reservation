@@ -4,21 +4,32 @@ import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
 export default function Rooms({roomTypes, setSelectedRoom}) {
+
+  const [textFilter, setTextFilter] = React.useState('');
+
   return (
     <>
       <div className="combo-box">
-        <select>
-          <option value="deluxe">Room Type</option>
-          <option value="deluxe">Deluxe</option>
-          <option value="junior">Junior</option>
+        <select onChange={(e) => {
+          setTextFilter(e.target.value)
+        }}>
+          <option key={"default"} value="">All</option>
+          <option key={"deluxe"} value="deluxe">Deluxe</option>
+          <option key={"suite"} value="suite">Suite</option>
+          <option key={"junior"} value="junior">Junior</option>
+          <option key={"room"} value="room">Room</option>
         </select>
       </div>
-      {roomTypes ? roomTypes.map((roomType) => {
-        return <RoomItem
-          key={roomType.id}
-          roomType={roomType}
-          setSelectedRoom={setSelectedRoom}
-        />
+      {roomTypes ? roomTypes.map((roomType, index) => {
+        if (roomType.name.toLowerCase().includes(textFilter)) {
+          return <RoomItem
+            key={index}
+            roomType={roomType}
+            setSelectedRoom={setSelectedRoom}
+          />
+        } else {
+          return null;
+        }
       }) : <div style={{textAlign: 'center', padding: '2em'}}>NO ROOMS AVAILABLE</div>}
     </>
   );
