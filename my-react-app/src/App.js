@@ -40,10 +40,10 @@ function App() {
   // ...
 
   // form
-  const [firstName, setFirstName] = React.useState('');
-  const [lastName, setLastName] = React.useState('');
+  const [name, setName] = React.useState('');
+  
   const [email, setEmail] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+
 
   // ---------- rooms ----------
 
@@ -74,7 +74,7 @@ function App() {
       e.preventDefault();
       alert('please pick a valid date range');
       return;
-    } else if (firstName && lastName && email && phone) {
+    } else if (name && email ) {
       e.preventDefault();
       fetch('http://localhost:3001/book/submit', {
         headers: {
@@ -87,10 +87,9 @@ function App() {
           departDate: departDate,
           guests: guests,
           selectedRoomID: selectedRoom.id,
-          firstName: firstName,
-          lastName: lastName,
+          Name: name,
           email: email,
-          phoneNo: phone
+
         })
       }).then(response => {
         statusCB(response.status);
@@ -137,10 +136,9 @@ function App() {
             guests={guests}
 
             // form field onChange handlers.
-            setFirstName={setFirstName}
-            setLastName={setLastName}
+            setName={setName}
             setEmail={setEmail}
-            setPhone={setPhone}
+            
 
             selectedRoom={selectedRoom}
             // -----

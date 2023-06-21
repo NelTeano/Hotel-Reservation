@@ -2,7 +2,7 @@ import React from 'react'
 import SuccessModal from './SuccessModal'
 import './styles/bookform.css'
 
-export default function Bookform({setFirstName, setLastName, setEmail, setPhone, submitHandler}) {
+export default function Bookform({setName,  setEmail,  submitHandler}) {
 
   const [showSuccessModal, setShowSuccessModal] = React.useState(null);
   const [success, setSuccess] = React.useState(null);
@@ -23,15 +23,8 @@ export default function Bookform({setFirstName, setLastName, setEmail, setPhone,
           <div>
             <input
               type="text"
-              placeholder='FIRST NAME'
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-
-            <input
-              type="text"
-              placeholder='LAST NAME'
-              onChange={(e) => setLastName(e.target.value)}
+              placeholder='NAME'
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
@@ -44,12 +37,6 @@ export default function Bookform({setFirstName, setLastName, setEmail, setPhone,
               required
             />
 
-            <input
-              type="tel"
-              placeholder='PHONE'
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
           </div>
         </div>
 
