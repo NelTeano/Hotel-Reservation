@@ -5,7 +5,7 @@ import ShowRooms from '../Rooms'
 import Footer from '../footer'
 
 export default function roomlist({
-  arriveDate, departDate,
+  arriveDate, departDate, guests,
   roomTypes, setRoomTypes,
   setSelectedRoom}) {
 
@@ -29,6 +29,7 @@ export default function roomlist({
         <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/calendar'} />
         <p style={filterText} > FILTER</p>
         <ShowRooms
+          guests={guests}
           roomTypes={roomTypes}
           setSelectedRoom={setSelectedRoom}
         />

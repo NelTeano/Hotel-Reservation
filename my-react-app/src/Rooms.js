@@ -3,7 +3,7 @@ import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
-export default function Rooms({roomTypes, setSelectedRoom}) {
+export default function Rooms({guests, roomTypes, setSelectedRoom}) {
 
   const [textFilter, setTextFilter] = React.useState('');
 
@@ -21,7 +21,7 @@ export default function Rooms({roomTypes, setSelectedRoom}) {
         </select>
       </div>
       {roomTypes ? roomTypes.map((roomType, index) => {
-        if (roomType.name.toLowerCase().includes(textFilter)) {
+        if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
           return <RoomItem
             key={index}
             roomType={roomType}
