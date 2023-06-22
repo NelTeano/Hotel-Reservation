@@ -87,7 +87,7 @@ function App() {
           departDate: departDate,
           guests: guests,
           selectedRoomID: selectedRoom.id,
-          Name: name,
+          name: name,
           email: email,
 
         })
@@ -136,9 +136,11 @@ function App() {
             guests={guests}
 
             // form field onChange handlers.
+            name={name}
             setName={setName}
-            setEmail={setEmail}
             
+            email={email}
+            setEmail={setEmail}
 
             selectedRoom={selectedRoom}
             // -----
