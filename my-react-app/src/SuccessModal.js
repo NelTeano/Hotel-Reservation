@@ -21,7 +21,7 @@ function SuccessModal ({show, success, setShow}) {
         </div>
         <div className="success-modal-body">
           <h3>Booking {success ? 'Success' : 'Failed, Try again later'}</h3>
-          <Link onClick={proceed} to='/'>continue</Link>
+          <Link className="success-modal-btn" onClick={proceed} to='/'>continue</Link>
         </div>
       </div>
     </div> : null
