@@ -23,8 +23,7 @@ booking.post('/submit', (req, res) => {
     )
     VALUES (
       ?, ?, ?, (SELECT id FROM room_types WHERE id=?),
-      ?, ?, (SELECT id FROM status WHERE id=1),
-      (SELECT price FROM room_types WHERE id=?), ?
+      ?, ?, (SELECT id FROM status WHERE id=1), ?, ?
     )`, [
       req.body.name,                                // guest_name
       formatDate(new Date(req.body.arriveDate)),    // check_in_date
@@ -32,7 +31,7 @@ booking.post('/submit', (req, res) => {
       req.body.selectedRoomID,                      // room_type
       req.body.guests,                              // num_guests
       formatDate(new Date()),                       // booking_date
-      req.body.selectedRoomID,                      // amount_paid - based on room_type price.
+      req.body.total,                               // amount_paid
       req.body.email                                // email
     ], (err, result) => {
       if (err) {

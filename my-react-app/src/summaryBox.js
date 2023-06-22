@@ -3,12 +3,21 @@ import './styles/summaryBox.css'
 
 
 
-export default function summaryBox({
+export default function SummaryBox({
     arriveDate, 
     departDate,
     guests,
     selectedRoom
 }) {
+    const [total, setTotal] = React.useState(0);
+
+    React.useEffect(() => {
+        const departDateMillisec = (new Date(departDate)).getTime();
+        const arriveDateMillisec = (new Date(arriveDate)).getTime();
+        const checkInDays = (departDateMillisec - arriveDateMillisec) / (1000 * 3600 * 24);
+        setTotal(checkInDays * selectedRoom.price);
+        console.log('days checked in = ', checkInDays);
+    }, [departDate, arriveDate, selectedRoom]);
 
   return (
     <div className='sumBox-container'>
@@ -43,7 +52,7 @@ export default function summaryBox({
                 marginTop: '5%',
                 marginBottom:'40px',
                 marginRight: '40px',
-        }}>TOTAL : {(selectedRoom) ? selectedRoom.price : '0.0'}</p>
+        }}>TOTAL : {(selectedRoom) ? total : '0'}</p>
         </div>
     </div>
   )

@@ -47,7 +47,7 @@ function App() {
 
   // ---------- rooms ----------
 
-  React.useEffect(() =>{
+  React.useEffect(() => {
     fetch('http://localhost:3001/rooms', {headers: {
       Accept: 'application/json'
     }})
@@ -75,6 +75,9 @@ function App() {
       alert('please pick a valid date range');
       return;
     } else if (name && email ) {
+      const departDateMillisec = (new Date(departDate)).getTime();
+      const arriveDateMillisec = (new Date(arriveDate)).getTime();
+      const checkInDays = (departDateMillisec - arriveDateMillisec) / (1000 * 3600 * 24);
       e.preventDefault();
       fetch('http://localhost:3001/book/submit', {
         headers: {
@@ -87,6 +90,7 @@ function App() {
           departDate: departDate,
           guests: guests,
           selectedRoomID: selectedRoom.id,
+          total: checkInDays * selectedRoom.price,
           name: name,
           email: email,
 
@@ -120,6 +124,7 @@ function App() {
           <RoomList
             arriveDate={arriveDate}
             departDate={departDate}
+            guests={guests}
 
             roomTypes={roomTypes}
             setRoomTypes={setRoomTypes}
