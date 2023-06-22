@@ -26,7 +26,7 @@ booking.post('/submit', (req, res) => {
       ?, ?, (SELECT id FROM status WHERE id=1),
       (SELECT price FROM room_types WHERE id=?), ?
     )`, [
-      `${req.body.firstName} ${req.body.lastName}`, // guest_name
+      req.body.name,                                // guest_name
       formatDate(new Date(req.body.arriveDate)),    // check_in_date
       formatDate(new Date(req.body.departDate)),    // check_out_date
       req.body.selectedRoomID,                      // room_type
