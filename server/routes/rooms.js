@@ -25,6 +25,7 @@ booking.get('/', (req, res) => {
               amenities: row.amenities,
               status: row.status,
               price: row.price,
+              capacity: row.capacity,
               description: row.description,
               images: []
             };
