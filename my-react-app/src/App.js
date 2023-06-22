@@ -41,9 +41,8 @@ function App() {
 
   // form
   const [name, setName] = React.useState('');
-  
   const [email, setEmail] = React.useState('');
-
+  const [total, setTotal] = React.useState(0);
 
   // ---------- rooms ----------
 
@@ -75,9 +74,6 @@ function App() {
       alert('please pick a valid date range');
       return;
     } else if (name && email ) {
-      const departDateMillisec = (new Date(departDate)).getTime();
-      const arriveDateMillisec = (new Date(arriveDate)).getTime();
-      const checkInDays = (departDateMillisec - arriveDateMillisec) / (1000 * 3600 * 24);
       e.preventDefault();
       fetch('http://localhost:3001/book/submit', {
         headers: {
@@ -90,7 +86,7 @@ function App() {
           departDate: departDate,
           guests: guests,
           selectedRoomID: selectedRoom.id,
-          total: checkInDays * selectedRoom.price,
+          total: total,
           name: name,
           email: email,
 
@@ -148,6 +144,9 @@ function App() {
             setEmail={setEmail}
 
             selectedRoom={selectedRoom}
+
+            total={total}
+            setTotal={setTotal}
             // -----
             submitHandler={submitBookingForm}
           />

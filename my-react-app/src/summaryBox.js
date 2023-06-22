@@ -7,17 +7,16 @@ export default function SummaryBox({
     arriveDate, 
     departDate,
     guests,
+    total, setTotal,
     selectedRoom
 }) {
-    const [total, setTotal] = React.useState(0);
-
     React.useEffect(() => {
         const departDateMillisec = (new Date(departDate)).getTime();
         const arriveDateMillisec = (new Date(arriveDate)).getTime();
         const checkInDays = (departDateMillisec - arriveDateMillisec) / (1000 * 3600 * 24);
-        setTotal(checkInDays * selectedRoom.price);
+        setTotal(selectedRoom ? checkInDays * selectedRoom.price : 0);
         console.log('days checked in = ', checkInDays);
-    }, [departDate, arriveDate, selectedRoom]);
+    }, [departDate, arriveDate, selectedRoom, total, setTotal]);
 
   return (
     <div className='sumBox-container'>

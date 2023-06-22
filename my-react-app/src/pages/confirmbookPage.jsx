@@ -11,7 +11,9 @@ export default function confirmbookPage({
   guests,
   name, setName,
   email, setEmail, 
-  selectedRoom, submitHandler
+  selectedRoom,
+  total, setTotal,
+  submitHandler
 })
 {
   return (
@@ -36,6 +38,8 @@ export default function confirmbookPage({
               arriveDate={arriveDate} 
               departDate={departDate}
               guests={guests}
+              total={total}
+              setTotal={setTotal}
               selectedRoom={selectedRoom}
             />
             
