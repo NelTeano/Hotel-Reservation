@@ -43,10 +43,11 @@ export default function Bookform({setName,  setEmail,  submitHandler}) {
         <div className='policyBox' style={{borderTop: '1px solid black'}}>
           <p>
             Cancellation Policy: <br></br>  <br></br>
-            You may Cancel your Reservation Just go to
-            our Cancellation page and fill out the form
-            to cancel your reservation so that will inform us you're
-            not gonna able to attend 
+            Please reminder that after you submit a your Reservation and its done
+             you cannot be able to Cancel your Reservation so please be sure to your
+             decision before making a reseervation or book for our room but if its really emergency
+             just contact our admin so they can cancel your book.
+
           </p>
 
           <input style={{
