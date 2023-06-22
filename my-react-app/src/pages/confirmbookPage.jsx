@@ -9,8 +9,8 @@ import '../styles/bookingpage.css'
 export default function confirmbookPage({
   arriveDate, departDate,
   guests,
-  setName,
-  setEmail, 
+  name, setName,
+  email, setEmail, 
   selectedRoom, submitHandler
 })
 {
@@ -22,7 +22,9 @@ export default function confirmbookPage({
 
         <div >
             <Form
+              name={name}
               setName={setName}
+              email={email}
               setEmail={setEmail}
               submitHandler={submitHandler}
             />
