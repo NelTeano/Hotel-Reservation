@@ -2,11 +2,59 @@ import React from 'react'
 import SuccessModal from './SuccessModal'
 import './styles/bookform.css'
 
-export default function Bookform({name, setName, email, setEmail, submitHandler}) {
-
+export default function Bookform({
+  arriveDate, departDate,
+  guests, selectedRoom, total,
+  name, setName,
+  email, setEmail
+}) {
   const [showSuccessModal, setShowSuccessModal] = React.useState(null);
   const [success, setSuccess] = React.useState(null);
+  const [fetched, setFetched] = React.useState(null);
 
+  // form post request
+  const submitBookingForm = (e) => {
+    // server/booking.js --> localhost:PORT/book/submit
+    const validDateRange = new Date(arriveDate) < new Date(departDate);
+
+    if (!validDateRange) {
+      e.preventDefault();
+      alert('please pick a valid date range');
+      return;
+    } else if (name && email ) {
+      e.preventDefault();
+      setShowSuccessModal(true);
+
+      fetch('http://localhost:3001/book/submit', {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'post',
+        body: JSON.stringify({
+          arriveDate: arriveDate,
+          departDate: departDate,
+          guests: guests,
+          selectedRoomID: selectedRoom.id,
+          total: total,
+          name: name,
+          email: email,
+
+        })
+      }).then(response => {
+        if (response.status === 200) {
+          setSuccess(true);
+        } else {
+          setSuccess(null);
+        }
+      }).catch(() => {
+        setSuccess(null);
+      }).finally(() => {
+        setFetched(true);
+      });
+    }
+  }
+  
   return(
     <form method='post'>
       <div className='form-container'>
@@ -58,16 +106,23 @@ export default function Bookform({name, setName, email, setEmail, submitHandler}
               fontWeight: '300',
             }}
             type='submit' value='CONFIRM YOUR STAY'
-            onClick={(e) => {
-              submitHandler(e, (status) => {
-                setShowSuccessModal(true);
-                setSuccess(status === 200);
-              })
-            }}
+            onClick={submitBookingForm}
           />
         </div>
       </div>
-      <SuccessModal show={showSuccessModal} setShow={setShowSuccessModal} success={success}/>
+      <SuccessModal
+        show={showSuccessModal}
+        setShow={setShowSuccessModal}
+        
+        success={success}
+        setSuccess={setSuccess}
+        
+        fetched={fetched}
+        setFetched={setFetched}
+
+        setName={setName}
+        setEmail={setEmail}
+      />
     </form>
   );
 }

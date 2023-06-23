@@ -92,3 +92,10 @@
     color: grey;
     background-color: whitesmoke;
 }
+
+.success-modal-spinner {
+    border: dotted black 1.5em;
+    border-radius: 50%;
+    width: clamp(70px, 30vh, 150px);
+    height: clamp(70px, 30vh, 150px);
+}

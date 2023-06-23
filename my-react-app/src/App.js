@@ -62,43 +62,6 @@ function App() {
     }).catch(() => setRoomTypes(null));
   }, []);
 
-  // ---------- booking data ----------
-
-  // form post request
-  const submitBookingForm = (e, statusCB) => {
-    // server/booking.js --> localhost:PORT/book/submit
-    const validDateRange = new Date(arriveDate) < new Date(departDate);
-
-    if (!validDateRange) {
-      e.preventDefault();
-      alert('please pick a valid date range');
-      return;
-    } else if (name && email ) {
-      e.preventDefault();
-      fetch('http://localhost:3001/book/submit', {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: 'post',
-        body: JSON.stringify({
-          arriveDate: arriveDate,
-          departDate: departDate,
-          guests: guests,
-          selectedRoomID: selectedRoom.id,
-          total: total,
-          name: name,
-          email: email,
-
-        })
-      }).then(response => {
-        statusCB(response.status);
-      }).catch(() => {
-        statusCB(404);
-      });
-    }
-  }
-
   return (
     <BrowserRouter>
       <ScrollToTop/>
@@ -147,8 +110,6 @@ function App() {
 
             total={total}
             setTotal={setTotal}
-            // -----
-            submitHandler={submitBookingForm}
           />
         }/>
   

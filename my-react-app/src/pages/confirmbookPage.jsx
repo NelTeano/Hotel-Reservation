@@ -12,8 +12,7 @@ export default function confirmbookPage({
   name, setName,
   email, setEmail, 
   selectedRoom,
-  total, setTotal,
-  submitHandler
+  total, setTotal
 })
 {
   return (
@@ -24,11 +23,18 @@ export default function confirmbookPage({
 
         <div >
             <Form
+              arriveDate={arriveDate} 
+              departDate={departDate}
+
+              guests={guests}
+              selectedRoom={selectedRoom}
+              total={total}
+
               name={name}
               setName={setName}
+
               email={email}
               setEmail={setEmail}
-              submitHandler={submitHandler}
             />
         </div>
             
@@ -37,9 +43,12 @@ export default function confirmbookPage({
             <SummaryBox
               arriveDate={arriveDate} 
               departDate={departDate}
+
               guests={guests}
+
               total={total}
               setTotal={setTotal}
+              
               selectedRoom={selectedRoom}
             />
             
