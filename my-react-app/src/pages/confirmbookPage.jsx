@@ -4,6 +4,7 @@ import Navbar from '../navigation2'
 import EditBox from '../editbox'
 import SummaryBox from '../summaryBox'
 import Footer from '../footer'
+import PageGuardModal from '../PageGuardModal'
 import '../styles/bookingpage.css'
 
 export default function confirmbookPage({
@@ -17,44 +18,48 @@ export default function confirmbookPage({
 {
   return (
     <>
-    <Navbar></Navbar>
-    <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
-    <div  className='booking-container' >
+      <Navbar></Navbar>
+      <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
+      <div  className='booking-container' >
 
-        <div >
-            <Form
-              arriveDate={arriveDate} 
-              departDate={departDate}
+          <div >
+              <Form
+                arriveDate={arriveDate} 
+                departDate={departDate}
 
-              guests={guests}
-              selectedRoom={selectedRoom}
-              total={total}
+                guests={guests}
+                selectedRoom={selectedRoom}
+                total={total}
 
-              name={name}
-              setName={setName}
+                name={name}
+                setName={setName}
 
-              email={email}
-              setEmail={setEmail}
-            />
-        </div>
-            
-        <div>
-          {/*  Value from other pages can just pass it via props  ex. IMG value will be the one you selected room earlier will change its src*/}
-            <SummaryBox
-              arriveDate={arriveDate} 
-              departDate={departDate}
-
-              guests={guests}
-
-              total={total}
-              setTotal={setTotal}
+                email={email}
+                setEmail={setEmail}
+              />
+          </div>
               
-              selectedRoom={selectedRoom}
-            />
-            
-        </div>
-    </div>
-    <Footer />
+          <div>
+              <SummaryBox
+                arriveDate={arriveDate} 
+                departDate={departDate}
+
+                guests={guests}
+
+                total={total}
+                setTotal={setTotal}
+                
+                selectedRoom={selectedRoom}
+              />
+          </div>
+      </div>
+      <Footer />
+      <PageGuardModal
+        arriveDate={arriveDate}
+        departDate={departDate}
+        guests={guests}
+        selectedRoom={selectedRoom}
+      />
     </>
   )
 }

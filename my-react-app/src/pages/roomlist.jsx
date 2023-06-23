@@ -4,6 +4,8 @@ import EditBox from '../editbox'
 import ShowRooms from '../Rooms'
 import Footer from '../footer'
 
+import PageGuardModal from '../PageGuardModal'
+
 export default function roomlist({
   arriveDate, departDate, guests,
   roomTypes, setRoomTypes,
@@ -20,7 +22,6 @@ export default function roomlist({
     background: 'linear-gradient(180deg, #FFFFFF 2%, #FFF5EB 100%)',
     height: '20vh',
     widht: '100%'
-    
   }
 
   return (
@@ -35,7 +36,12 @@ export default function roomlist({
         />
         <div style={spacer} ></div>
         <Footer />
+        <PageGuardModal
+          arriveDate={arriveDate}
+          departDate={departDate}
+          guests={guests}
+          selectedRoom={true}
+        />
     </div>
-    
   )
 }
