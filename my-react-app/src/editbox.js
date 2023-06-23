@@ -36,8 +36,12 @@ export default function editbox({arriveDate, departDate, previousPage}) {
             height: '100%',
             paddingRight: '20px'
                }}>
-            <Link style={{textDecoration: 'none', color: '#1c1c1c', fontSize: '1vw'}} to={previousPage}> <h2>←</h2>
-            <p style={{fontSize: '1vw', color: '#1c1c1c'}}>EDIT</p></Link>
+            <Link style={{textDecoration: 'none', color: '#1c1c1c', fontSize: '1vw'}} to={previousPage}>
+              <div className='edit-box-reactrouterdom-link'>
+                <h2>←</h2>
+                <p style={{fontSize: '1vw', color: '#1c1c1c'}}>EDIT</p>
+              </div>
+            </Link>
           </div>
 
           <div>

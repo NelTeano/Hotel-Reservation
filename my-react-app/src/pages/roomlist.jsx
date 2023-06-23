@@ -36,6 +36,8 @@ export default function roomlist({
         />
         <div style={spacer} ></div>
         <Footer />
+
+        {/* when designing the page, you can comment out this component to disable the page guard if it gets annoying */}
         <PageGuardModal
           arriveDate={arriveDate}
           departDate={departDate}
