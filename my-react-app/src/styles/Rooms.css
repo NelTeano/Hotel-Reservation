@@ -144,3 +144,22 @@ img{
     scale: 1.075;
     cursor: pointer;
 }
+
+.reload-rooms-btn {
+    border: none;
+    outline: 0.2em solid black;
+    background-color: white;
+    padding: 0.3em;
+    transition: 0.15s ease;
+
+    cursor: pointer;
+}
+
+.reload-rooms-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.reload-rooms-btn:active {
+    transform: scale(1.2);
+}

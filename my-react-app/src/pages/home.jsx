@@ -55,9 +55,6 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
         height: '40px'
     }
 
-  
-
-
   return (
     <>
         <div
@@ -208,9 +205,25 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                 data-aos-easing="linear"
                 data-aos-duration="700"
              >
-                {roomTypes ? roomTypes.map((room, index) => {
-                    return <RoomItem room={room} key={index}/>}
-                ) : <h3>Cannot get data right now</h3>}
+                {roomTypes ?
+                    roomTypes.map((room, index) => {
+                        return <RoomItem room={room} key={index}/>}
+                    ) :
+                    <div
+                        style={{
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            gap: '1em'
+                        }}
+                    >
+                        <h2>Cannot retrieve room data right now</h2>
+                        <p>There might be a problem in your network</p>
+                        <p>please check you internet connection, then try refreshing the page</p>
+                    </div>
+                }
             </div>
         </div>
 

@@ -32,6 +32,7 @@ export default function roomlist({
         <ShowRooms
           guests={guests}
           roomTypes={roomTypes}
+          setRoomTypes={setRoomTypes}
           setSelectedRoom={setSelectedRoom}
         />
         <div style={spacer} ></div>

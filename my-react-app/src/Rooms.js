@@ -3,9 +3,30 @@ import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
-export default function Rooms({guests, roomTypes, setSelectedRoom}) {
+export default function Rooms({guests, roomTypes, setRoomTypes, setSelectedRoom}) {
 
   const [textFilter, setTextFilter] = React.useState('');
+  const [reloadMsg, setReloadMsg] = React.useState('Failed to load rooms');
+
+  const reloadRooms = () => {
+    setReloadMsg('Reloading rooms, please wait...');
+    fetch('http://localhost:3001/rooms', {headers: {
+      Accept: 'application/json'
+    }})
+    .then(response => {
+      if (response.status === 200) {
+        response.json().then((data) => {
+          setRoomTypes(data);
+        });
+      } else {
+        setRoomTypes(null);
+        setReloadMsg('Failed to reload rooms');
+      }
+    }).catch(() => {
+      setRoomTypes(null)
+      setReloadMsg('Internal error occured when reloading rooms, try again later');
+    });
+  };
 
   return (
     <>
@@ -30,7 +51,27 @@ export default function Rooms({guests, roomTypes, setSelectedRoom}) {
         } else {
           return null;
         }
-      }) : <div style={{textAlign: 'center', padding: '2em'}}>FAILED TO RETRIEVE ROOM DATA</div>}
+      }) :
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignContent: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          gap: '1em',
+          height: '12vh'
+        }}
+      >
+        <p>{reloadMsg}</p>
+        <div>
+          <button
+            className="reload-rooms-btn"
+            onClick={reloadRooms}>
+            Reload Rooms
+          </button>
+        </div>
+      </div>}
     </>
   );
 }
