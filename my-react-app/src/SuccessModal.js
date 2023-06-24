@@ -8,18 +8,6 @@ function SuccessModal ({
   fetched, setFetched,
   setName, setEmail
 }) {
-  const [rotation, setRotation] = React.useState(0);
-
-  React.useEffect(() => {
-    const intervalID = setInterval(() => {
-      setRotation((rotation + 3) % 360);
-    }, 20);
-
-    return () => {
-      clearInterval(intervalID);
-    };
-  }, [rotation, setRotation]);
-
   const proceed = (e) => {
     setSuccess(null);
     setFetched(null);
@@ -49,7 +37,7 @@ function SuccessModal ({
         </div> :
         <div className="success-modal-loading">
           <h1>Please wait...</h1>
-          <div className="success-modal-spinner" style={{transform: `rotate(${rotation}deg)`}}/>
+          <div className="success-modal-spinner"/>
         </div>
       }
     </div> : null

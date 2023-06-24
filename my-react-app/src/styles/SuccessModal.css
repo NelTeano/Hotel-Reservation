@@ -93,9 +93,28 @@
     background-color: whitesmoke;
 }
 
+.success-modal-loading {
+    height: 50%;
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
 .success-modal-spinner {
     border: dotted black 1.5em;
     border-radius: 50%;
     width: clamp(70px, 30vh, 150px);
     height: clamp(70px, 30vh, 150px);
+
+    animation: spin 1.75s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
