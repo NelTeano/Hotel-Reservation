@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import RoomList from "./pages/roomlist";
 import BookingPage from './pages/confirmbookPage'
 import Home from './pages/home'
-import Login from './pages/login'
 import coverpicture from './images/coverhomepage.png'
 import boxImg1 from "./images/beach1.png";
 import boxImg2 from "./images/beach2.png";
@@ -76,8 +75,6 @@ function App() {
             roomTypes={roomTypes}
           />
         }/>
-
-        <Route path="/login"    element={<Login />} />
 
         <Route path="/rooms"    element={
           <RoomList
