@@ -1,13 +1,14 @@
 import React from 'react'
 
-import Navigation from '../Navigation'
-import Editbox from '../Editbox'
-import Form from '../Form'
-import SummaryBox from '../SummaryBox'
-import Footer from '../Footer'
-import PageGuardModal from '../PageGuardModal'
+import Navigation from '../components/Navigation'
+import Editbox from '../components/Editbox'
+import Form from '../components/Form'
+import SummaryBox from '../components/SummaryBox'
+import Footer from '../components/Footer'
 
-import '../styles/Booking.css'
+import PageGuardModal from '../components/PageGuardModal'
+
+import '../assets/Booking.css'
 
 export default function Booking({
   arriveDate, departDate,

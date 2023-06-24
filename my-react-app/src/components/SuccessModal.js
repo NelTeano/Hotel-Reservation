@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import './styles/SuccessModal.css'
+import '../assets/SuccessModal.css'
 
 function SuccessModal ({
   show, setShow,

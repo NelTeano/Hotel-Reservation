@@ -4,11 +4,33 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import Carousel from '../Carousel'
+import coverImg from '../assets/images/coverhomepage.png'
+import facilityImg1 from "../assets/images/beach1.png";
+import facilityImg2 from "../assets/images/beach2.png";
+import smallRectangle from "../assets/images/reserveCover.png"
 
-import '../styles/Home.css'
+import Carousel from '../components/Carousel'
 
-export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle, roomTypes}) {
+import '../assets/Home.css'
+
+export default function Home({roomTypes, setRoomTypes}) {
+
+    React.useEffect(() => {
+        fetch('http://localhost:3001/rooms', {headers: {
+            Accept: 'application/json'
+        }})
+        .then(response => {
+            console.log('response.status = ', response.status);
+            if (response.status === 200) {
+            response.json().then((data) => {
+                setRoomTypes(data);
+            });
+            } else {
+            setRoomTypes(null);
+            }
+        }).catch(() => setRoomTypes(null));
+    }, [setRoomTypes]);
+
     useEffect(() => {
         AOS.init();
     }, [])
@@ -110,7 +132,7 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                 }}> <br></br>We do all kinds of events</p>
             </div>
 
-            <content 
+            <div className='content-tag' 
                 data-aos="fade-left"
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine"
@@ -133,11 +155,11 @@ export default function Home({coverImg, facilityImg1, facilityImg2, smallRectang
                      in beachside activities, live music, and mouthwatering 
                     cuisine, <br></br> creating unforgettable memories against the backdrop of<br></br>
                      crashing waves  and golden sunsets.
-                     </p>
-                   <Link className='linkBtn' to='/calendar'><button>Book Now!</button></Link> 
+                    </p>
+                    <Link className='linkBtn' to='/calendar'><button>Book Now!</button></Link> 
                 </div> 
 
-            </content>
+            </div>
 
             <footer
                 data-aos="fade-right"

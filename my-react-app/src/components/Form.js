@@ -1,6 +1,7 @@
 import React from 'react'
 import SuccessModal from './SuccessModal'
-import './styles/Form.css'
+
+import '../assets/Form.css'
 
 export default function Form({
   arriveDate, departDate,

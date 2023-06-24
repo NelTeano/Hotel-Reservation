@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/SummaryBox.css'
+import '../assets/SummaryBox.css'
 
 export default function SummaryBox({
     arriveDate, 

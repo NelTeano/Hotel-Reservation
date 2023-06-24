@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import './styles/PageGuardModal.css'
+import '../assets/PageGuardModal.css'
 
 function PageGuardModal ({
   arriveDate, departDate,

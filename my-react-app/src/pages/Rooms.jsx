@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Navigation from '../Navigation'
-import Editbox from '../Editbox'
-import RoomCollection from '../RoomCollection'
-import Footer from '../Footer'
+import Navigation from '../components/Navigation'
+import Editbox from '../components/Editbox'
+import RoomCollection from '../components/RoomCollection'
+import Footer from '../components/Footer'
 
-import PageGuardModal from '../PageGuardModal'
+import PageGuardModal from '../components/PageGuardModal'
 
 export default function Rooms({
   arriveDate, departDate,

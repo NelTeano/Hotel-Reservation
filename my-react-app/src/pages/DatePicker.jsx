@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import ReactCalendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
-import Navigation from '../Navigation'
-import Editbox from '../Editbox'
-import Footer from '../Footer'
+import Navigation from '../components/Navigation'
+import Editbox from '../components/Editbox'
+import Footer from '../components/Footer'
 
-import '../styles/Calendar.css'
+import '../assets/DatePicker.css'
 
 export default function DatePicker({
     arriveDate, setArriveDate,

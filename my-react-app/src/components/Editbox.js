@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './styles/Editbox.css'
+import '../assets/Editbox.css'
 
 export default function Editbox({arriveDate, departDate, previousPage}) {
 

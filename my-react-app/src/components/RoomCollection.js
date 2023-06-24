@@ -1,7 +1,8 @@
 import React,{useState} from "react";
-import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
+
+import '../assets/RoomCollection.css'
 
 export default function RoomCollection({guests, roomTypes, setRoomTypes, setSelectedRoom}) {
 

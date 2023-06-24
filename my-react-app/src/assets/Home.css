@@ -60,7 +60,7 @@
     padding-bottom: 180px;
 }
 
-.home-facilities content, .home-facilities footer{
+.home-facilities .content-tag, .home-facilities footer{
     display: flex;
     flex-direction: row;
     align-items: center;
