@@ -1,56 +1,63 @@
-import React from 'react'
-import '../assets/SummaryBox.css'
+import React from 'react';
+import '../assets/SummaryBox.css';
 
-export default function SummaryBox({
-    arriveDate, 
-    departDate,
-    guests,
-    total, setTotal,
-    selectedRoom
-}) {
-    React.useEffect(() => {
-        const departDateMillisec = (new Date(departDate)).getTime();
-        const arriveDateMillisec = (new Date(arriveDate)).getTime();
-        const checkInDays = (departDateMillisec - arriveDateMillisec) / (1000 * 3600 * 24);
-        setTotal(selectedRoom ? checkInDays * selectedRoom.price : 0);
-        console.log('days checked in = ', checkInDays);
-    }, [departDate, arriveDate, selectedRoom, total, setTotal]);
+export default function SummaryBox({ arriveDate, departDate, guests, total, setTotal, selectedRoom }) {
+  React.useEffect(() => {
+    const departMilliSec = new Date(departDate).getTime();
+    const arriveMilliSec = new Date(arriveDate).getTime();
+    const checkInDays = (departMilliSec - arriveMilliSec) / (1000 * 3600 * 24);
+    setTotal(selectedRoom ? checkInDays * selectedRoom.price : 0);
+    console.log('days checked in = ', checkInDays);
+  }, [departDate, arriveDate, selectedRoom, total, setTotal]);
 
   return (
     <div className='sumBox-container'>
-        <div>
-            <p style={{
-                marginTop: '5%',
-                marginBottom: '15px',
-                textAlign: 'center',
-             }} >STAY SUMMARY</p>
-
-            <h1 >EQUINOX HOTEL HUDSON NEW YORK(HOTELNAME)</h1>
-
-        </div>
-
-        <div>
-            {(selectedRoom) ? <img alt='RoomLook' src={selectedRoom.images[0]} /> : <img alt='RoomLook' src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Blank_image.jpg' />}
-        </div>
-            
-        <div className='details' style={{
+      <div>
+        <p
+          style={{
+            marginTop: '5%',
+            marginBottom: '15px',
             textAlign: 'center',
-        }}>
-            <p>Arriving: {arriveDate}</p>
-            <p>Room Type: {(selectedRoom) ? selectedRoom.name : 'N/A'}</p>
-            <p>Depart: {departDate}</p>
-            <p>Guests: {guests} </p>
-           
-        </div>
+          }}
+        >
+          STAY SUMMARY
+        </p>
 
-        <div style={{borderTop: '1px solid black',}}>
-            <p style={{
-                textAlign: 'right',
-                marginTop: '5%',
-                marginBottom:'40px',
-                marginRight: '40px',
-        }}>TOTAL : {(selectedRoom) ? total : '0'}</p>
-        </div>
+        <h1>EQUINOX HOTEL HUDSON NEW YORK(HOTELNAME)</h1>
+      </div>
+
+      <div>
+        {selectedRoom ? (
+          <img alt='RoomLook' src={selectedRoom.images[0]} />
+        ) : (
+          <img alt='RoomLook' src='https://upload.wikimedia.org/wikipedia/commons/a/a7/Blank_image.jpg' />
+        )}
+      </div>
+
+      <div
+        className='details'
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <p>Arriving: {arriveDate}</p>
+        <p>Room Type: {selectedRoom ? selectedRoom.name : 'N/A'}</p>
+        <p>Depart: {departDate}</p>
+        <p>Guests: {guests} </p>
+      </div>
+
+      <div style={{ borderTop: '1px solid black' }}>
+        <p
+          style={{
+            textAlign: 'right',
+            marginTop: '5%',
+            marginBottom: '40px',
+            marginRight: '40px',
+          }}
+        >
+          TOTAL : {selectedRoom ? total : '0'}
+        </p>
+      </div>
     </div>
-  )
+  );
 }

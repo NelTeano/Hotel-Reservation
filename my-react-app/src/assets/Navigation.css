@@ -1,38 +1,36 @@
-nav{
-    display: flex;
-    position: fixed;
-    align-items: center;
-    justify-content: flex-end;
-    height: 90px;
-    width: 100%;
-    background-color: #FFF5EB;
-    z-index: 1000;
-    border-bottom: 1px #1c1c1c solid;
+nav {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: flex-end;
+  height: 90px;
+  width: 100%;
+  background-color: #fff5eb;
+  z-index: 1000;
+  border-bottom: 1px #1c1c1c solid;
 }
 
-.logo{
-    margin-right: 43%;
+.logo {
+  margin-right: 43%;
 }
 
-.logo h1{
-    color: #1c1c1c;
-    cursor: default;
+.logo h1 {
+  color: #1c1c1c;
+  cursor: default;
 }
 
-.closeIcon{
-    margin-right: 50px;
-    transition: ease 0.15s;
-    
+.closeIcon {
+  margin-right: 50px;
+  transition: ease 0.15s;
 }
 
-
-.closeIcon a{
-    text-decoration: none;
-    color: #1c1c1c;
-    font-size: 60px;
-    font-weight: 100;
+.closeIcon a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-size: 60px;
+  font-weight: 100;
 }
 
 .closeIcon:hover {
-    scale: 1.15;
+  scale: 1.15;
 }

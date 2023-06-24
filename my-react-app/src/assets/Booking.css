@@ -1,8 +1,8 @@
-.booking-container{
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 120px;
-    align-items: center;
-    height: 130vh;
-    background: linear-gradient(180deg, #FFFFFF 51.13%, #FFF5EB 100%);
+.booking-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 120px;
+  align-items: center;
+  height: 130vh;
+  background: linear-gradient(180deg, #ffffff 51.13%, #fff5eb 100%);
 }

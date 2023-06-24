@@ -1,20 +1,15 @@
-import React from 'react'
-import SuccessModal from './SuccessModal'
+import React from 'react';
+import SuccessModal from './SuccessModal';
 
-import '../assets/Form.css'
+import '../assets/Form.css';
 
-export default function Form({
-  arriveDate, departDate,
-  guests, selectedRoom, total,
-  name, setName,
-  email, setEmail
-}) {
+export default function Form({ arriveDate, departDate, guests, selectedRoom, total, name, setName, email, setEmail }) {
   const [showSuccessModal, setShowSuccessModal] = React.useState(null);
   const [success, setSuccess] = React.useState(null);
   const [fetched, setFetched] = React.useState(null);
 
   // form post request
-  const submitBookingForm = (e) => {
+  const submitBookingForm = e => {
     // server/booking.js --> localhost:PORT/book/submit
     const validDateRange = new Date(arriveDate) < new Date(departDate);
 
@@ -22,14 +17,14 @@ export default function Form({
       e.preventDefault();
       alert('please pick a valid date range');
       return;
-    } else if (name && email ) {
+    } else if (name && email) {
       e.preventDefault();
       setShowSuccessModal(true);
 
       fetch('http://localhost:3001/book/submit', {
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         method: 'post',
         body: JSON.stringify({
@@ -40,73 +35,64 @@ export default function Form({
           total: total,
           name: name,
           email: email,
-
+        }),
+      })
+        .then(response => {
+          if (response.status === 200) {
+            setSuccess(true);
+          } else {
+            setSuccess(null);
+          }
         })
-      }).then(response => {
-        if (response.status === 200) {
-          setSuccess(true);
-        } else {
+        .catch(() => {
           setSuccess(null);
-        }
-      }).catch(() => {
-        setSuccess(null);
-      }).finally(() => {
-        setFetched(true);
-      });
+        })
+        .finally(() => {
+          setFetched(true);
+        });
     }
-  }
-  
-  return(
+  };
+
+  return (
     <form method='post'>
       <div className='form-container'>
         <div>
-          <p style={{
-            marginTop: '30px',
-            fontSize: '20px',
-          }}>
+          <p
+            style={{
+              marginTop: '30px',
+              fontSize: '20px',
+            }}
+          >
             FILL UP THE FORM
           </p>
         </div>
 
         <div>
           <div>
-            <input
-              type="text"
-              placeholder='NAME'
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              required
-            />
+            <input type='text' placeholder='NAME' onChange={e => setName(e.target.value)} value={name} required />
           </div>
 
           <div>
-            <input
-              type="text"
-              placeholder='EMAIL'
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
-
+            <input type='text' placeholder='EMAIL' onChange={e => setEmail(e.target.value)} value={email} required />
           </div>
         </div>
 
-        <div className='policyBox' style={{borderTop: '1px solid black'}}>
+        <div className='policyBox' style={{ borderTop: '1px solid black' }}>
           <p>
-            Cancellation Policy: <br></br>  <br></br>
-            Please reminder that after you submit a your Reservation and its done
-             you cannot be able to Cancel your Reservation so please be sure to your
-             decision before making a reseervation or book for our room but if its really emergency
-             just contact our admin so they can cancel your book.
-
+            Cancellation Policy: <br></br> <br></br>
+            Please reminder that after you submit a your Reservation and its done you cannot be able to Cancel your
+            Reservation so please be sure to your decision before making a reseervation or book for our room but if its
+            really emergency just contact our admin so they can cancel your book.
           </p>
 
-          <input style={{
+          <input
+            style={{
               backgroundColor: 'transparent',
               textDecoration: 'Underline',
               fontWeight: '300',
             }}
-            type='submit' value='CONFIRM YOUR STAY'
+            type='submit'
+            value='CONFIRM YOUR STAY'
             onClick={submitBookingForm}
           />
         </div>
@@ -114,21 +100,13 @@ export default function Form({
       <SuccessModal
         show={showSuccessModal}
         setShow={setShowSuccessModal}
-        
         success={success}
         setSuccess={setSuccess}
-        
         fetched={fetched}
         setFetched={setFetched}
-
         setName={setName}
         setEmail={setEmail}
       />
     </form>
   );
 }
-  
-
-
-
-  

@@ -1,73 +1,68 @@
-.calendar-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70vh;
-    background-color: white;
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  background-color: white;
 }
 
-.calendar-box{
-    display: flex;
-    flex-direction: column;
-    border: solid rgb(28, 28, 28) 1px;
-    width: 60vw;
-    background-color: white;
+.calendar-box {
+  display: flex;
+  flex-direction: column;
+  border: solid rgb(28, 28, 28) 1px;
+  width: 60vw;
+  background-color: white;
 }
 
-.calendar-box h1{
-    text-align: center;
-    font-size: 1.6vw;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #1c1c1c;
+.calendar-box h1 {
+  text-align: center;
+  font-size: 1.6vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1c1c1c;
 }
 
-.calendars{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
+.calendars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.calendars p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 1vw;
-    text-align: center;
-    color: #1c1c1c;
+.calendars p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1vw;
+  text-align: center;
+  color: #1c1c1c;
 }
 
-
-.calendars div{
-    width: 100%;
-    height: 100%;
-    
+.calendars div {
+  width: 100%;
+  height: 100%;
 }
 
-.guest-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 10vh;
-    border-top: solid rgb(28, 28, 28) 1px;
-    
+.guest-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10vh;
+  border-top: solid rgb(28, 28, 28) 1px;
 }
 
-.viewrooms-btn{
-    border-top: solid rgb(28, 28, 28) 1px;
-    padding: 0.75em;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    font-size: 1.3vw;
-    color: #1c1c1c;
-    background-color: #FFF5EB;
+.viewrooms-btn {
+  border-top: solid rgb(28, 28, 28) 1px;
+  padding: 0.75em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3vw;
+  color: #1c1c1c;
+  background-color: #fff5eb;
 }
 
 .viewrooms-btn:hover {
-    background-color: black;
-    color: white;
-    transition: 0.5s;
-    
+  background-color: black;
+  color: white;
+  transition: 0.5s;
 }

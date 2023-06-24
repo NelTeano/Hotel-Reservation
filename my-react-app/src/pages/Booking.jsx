@@ -1,70 +1,61 @@
-import React from 'react'
+import React from 'react';
 
-import Navigation from '../components/Navigation'
-import Editbox from '../components/Editbox'
-import Form from '../components/Form'
-import SummaryBox from '../components/SummaryBox'
-import Footer from '../components/Footer'
+import Navigation from '../components/Navigation';
+import Editbox from '../components/Editbox';
+import Form from '../components/Form';
+import SummaryBox from '../components/SummaryBox';
+import Footer from '../components/Footer';
 
-import PageGuardModal from '../components/PageGuardModal'
+import PageGuardModal from '../components/PageGuardModal';
 
-import '../assets/Booking.css'
+import '../assets/Booking.css';
 
 export default function Booking({
-  arriveDate, departDate,
+  arriveDate,
+  departDate,
   guests,
-  name, setName,
-  email, setEmail, 
+  name,
+  setName,
+  email,
+  setEmail,
   selectedRoom,
-  total, setTotal
-})
-{
+  total,
+  setTotal,
+}) {
   return (
     <>
       <Navigation />
-      <Editbox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
-      <div  className='booking-container' >
+      <Editbox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'} />
+      <div className='booking-container'>
+        <div>
+          <Form
+            arriveDate={arriveDate}
+            departDate={departDate}
+            guests={guests}
+            selectedRoom={selectedRoom}
+            total={total}
+            name={name}
+            setName={setName}
+            email={email}
+            setEmail={setEmail}
+          />
+        </div>
 
-          <div >
-              <Form
-                arriveDate={arriveDate} 
-                departDate={departDate}
-
-                guests={guests}
-                selectedRoom={selectedRoom}
-                total={total}
-
-                name={name}
-                setName={setName}
-
-                email={email}
-                setEmail={setEmail}
-              />
-          </div>
-              
-          <div>
-              <SummaryBox
-                arriveDate={arriveDate} 
-                departDate={departDate}
-
-                guests={guests}
-
-                total={total}
-                setTotal={setTotal}
-                
-                selectedRoom={selectedRoom}
-              />
-          </div>
+        <div>
+          <SummaryBox
+            arriveDate={arriveDate}
+            departDate={departDate}
+            guests={guests}
+            total={total}
+            setTotal={setTotal}
+            selectedRoom={selectedRoom}
+          />
+        </div>
       </div>
       <Footer />
 
       {/* when designing the page, you can comment out this component to disable the page guard if it gets annoying */}
-      <PageGuardModal
-        arriveDate={arriveDate}
-        departDate={departDate}
-        guests={guests}
-        selectedRoom={selectedRoom}
-      />
+      <PageGuardModal arriveDate={arriveDate} departDate={departDate} guests={guests} selectedRoom={selectedRoom} />
     </>
-  )
+  );
 }
