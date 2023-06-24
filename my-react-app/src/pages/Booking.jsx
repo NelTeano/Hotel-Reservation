@@ -1,13 +1,15 @@
 import React from 'react'
-import Form from '../bookform'
-import Navbar from '../navigation2'
-import EditBox from '../editbox'
-import SummaryBox from '../summaryBox'
-import Footer from '../footer'
-import PageGuardModal from '../PageGuardModal'
-import '../styles/bookingpage.css'
 
-export default function confirmbookPage({
+import Navigation from '../Navigation'
+import Editbox from '../Editbox'
+import Form from '../Form'
+import SummaryBox from '../SummaryBox'
+import Footer from '../Footer'
+import PageGuardModal from '../PageGuardModal'
+
+import '../styles/Booking.css'
+
+export default function Booking({
   arriveDate, departDate,
   guests,
   name, setName,
@@ -18,8 +20,8 @@ export default function confirmbookPage({
 {
   return (
     <>
-      <Navbar></Navbar>
-      <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
+      <Navigation />
+      <Editbox arriveDate={arriveDate} departDate={departDate} previousPage={'/rooms'}/>
       <div  className='booking-container' >
 
           <div >

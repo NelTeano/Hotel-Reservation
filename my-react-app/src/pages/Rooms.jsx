@@ -1,15 +1,18 @@
 import React from 'react'
-import Navbar from '../navigation2'
-import EditBox from '../editbox'
-import ShowRooms from '../Rooms'
-import Footer from '../footer'
+
+import Navigation from '../Navigation'
+import Editbox from '../Editbox'
+import RoomCollection from '../RoomCollection'
+import Footer from '../Footer'
 
 import PageGuardModal from '../PageGuardModal'
 
-export default function roomlist({
-  arriveDate, departDate, guests,
+export default function Rooms({
+  arriveDate, departDate,
+  guests,
   roomTypes, setRoomTypes,
-  setSelectedRoom}) {
+  setSelectedRoom
+}) {
 
   const filterText = {
     display: 'flex',
@@ -26,10 +29,10 @@ export default function roomlist({
 
   return (
     <div >
-        <Navbar />
-        <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/calendar'} />
+        <Navigation />
+        <Editbox arriveDate={arriveDate} departDate={departDate} previousPage={'/calendar'} />
         <p style={filterText} > FILTER</p>
-        <ShowRooms
+        <RoomCollection
           guests={guests}
           roomTypes={roomTypes}
           setRoomTypes={setRoomTypes}

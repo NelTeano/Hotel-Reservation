@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './styles/editbox.css'
+import './styles/Editbox.css'
 
-export default function editbox({arriveDate, departDate, previousPage}) {
+export default function Editbox({arriveDate, departDate, previousPage}) {
 
     const containerFormat = {
         display: 'flex',

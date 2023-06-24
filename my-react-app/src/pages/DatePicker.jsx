@@ -1,15 +1,13 @@
 import React from 'react'
-import Footer from '../footer'
-import Navbar from '../navigation2'
-import EditBox from '../editbox'
-
-import Calendar from 'react-calendar'
-// https://www.npmjs.com/package/react-calendar
-
-import '../styles/calendar.css'
 import { Link } from 'react-router-dom';
+import ReactCalendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 
+import Navigation from '../Navigation'
+import Editbox from '../Editbox'
+import Footer from '../Footer'
+
+import '../styles/Calendar.css'
 
 export default function DatePicker({
     arriveDate, setArriveDate,
@@ -20,12 +18,12 @@ export default function DatePicker({
     const [calendarBorder, setCalendarBorder] = React.useState('solid black 1px');
     const [guestDropBoxBorder, setGuestDropBoxBorder] = React.useState('solid black 1px');
 
-    React.useEffect(() =>{
+    React.useEffect(() => {
         setGuests(0);
         setArriveDate((new Date()).toLocaleDateString());
         setDepartDate((new Date()).toLocaleDateString());
         console.log('test load date picker');
-    }, []);
+    }, [setGuests, setArriveDate, setDepartDate]);
     
     const spacer = {
         background: 'linear-gradient(180deg, #FFFFFF 2%, #FFF5EB 100%)',
@@ -47,8 +45,8 @@ export default function DatePicker({
 
     return (
         <>
-            <Navbar />
-            <EditBox arriveDate={arriveDate} departDate={departDate} previousPage={'/'} />
+            <Navigation />
+            <Editbox arriveDate={arriveDate} departDate={departDate} previousPage={'/'} />
                 <div className='calendar-container'>
                     <div className='calendar-box'>
 
@@ -59,7 +57,7 @@ export default function DatePicker({
                         <div className='calendars' style={{border: calendarBorder}}>
                             <div>
                                 <p>Arriving Date </p>
-                                <Calendar onChange={(value) => {
+                                <ReactCalendar onChange={(value) => {
                                     setCalendarBorder('solid black 1px');
                                     setArriveDate(value.toLocaleDateString())
                                 }} />
@@ -67,7 +65,7 @@ export default function DatePicker({
 
                             <div>
                             <p>Depart Date </p>
-                                <Calendar onChange={(value) => {
+                                <ReactCalendar onChange={(value) => {
                                     setCalendarBorder('solid black 1px');
                                     setDepartDate(value.toLocaleDateString())
                                 }} />

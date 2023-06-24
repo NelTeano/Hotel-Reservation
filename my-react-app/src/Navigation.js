@@ -1,12 +1,8 @@
 import React from 'react'
-import './styles/navigation2.css'
+import './styles/Navigation.css'
 import { Link } from 'react-router-dom'
 
-
-export default function navigation2() {
-
-
-
+export default function Navigation() {
   return (
     <nav >
         <div className='logo'>

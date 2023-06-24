@@ -1,8 +1,8 @@
 import React from 'react'
 import SuccessModal from './SuccessModal'
-import './styles/bookform.css'
+import './styles/Form.css'
 
-export default function Bookform({
+export default function Form({
   arriveDate, departDate,
   guests, selectedRoom, total,
   name, setName,

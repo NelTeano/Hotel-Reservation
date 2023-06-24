@@ -1,15 +1,16 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import RoomList from "./pages/roomlist";
-import BookingPage from './pages/confirmbookPage'
-import Home from './pages/home'
 import coverpicture from './images/coverhomepage.png'
 import boxImg1 from "./images/beach1.png";
 import boxImg2 from "./images/beach2.png";
 import reserveCover from "./images/reserveCover.png"
 import React from "react";
 
+import Home from './pages/Home'
+import DatePicker from './pages/DatePicker'
+import Rooms from "./pages/Rooms"
+import Booking from './pages/Booking'
+
 import './styles/App.css';
-import DatePicker from './pages/calendar'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -76,8 +77,16 @@ function App() {
           />
         }/>
 
+        <Route path='/calendar' element={
+          <DatePicker
+            arriveDate={arriveDate} setArriveDate={setArriveDate}
+            departDate={departDate} setDepartDate={setDepartDate}
+            guests={guests}         setGuests={setGuests}
+          />
+        } />
+
         <Route path="/rooms"    element={
-          <RoomList
+          <Rooms
             arriveDate={arriveDate}
             departDate={departDate}
             guests={guests}
@@ -90,7 +99,7 @@ function App() {
         }/>
         
         <Route path="/form"     element={
-          <BookingPage
+          <Booking
             arriveDate={arriveDate}
             departDate={departDate}
 
@@ -109,14 +118,7 @@ function App() {
             setTotal={setTotal}
           />
         }/>
-  
-        <Route path='/calendar' element={
-          <DatePicker
-            arriveDate={arriveDate} setArriveDate={setArriveDate}
-            departDate={departDate} setDepartDate={setDepartDate}
-            guests={guests}         setGuests={setGuests}
-          />
-        } />
+
         </Routes>
      
     </BrowserRouter>

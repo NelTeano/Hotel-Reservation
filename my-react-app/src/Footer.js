@@ -1,8 +1,8 @@
 import React from 'react'
-import './styles/footer.css'
+import './styles/Footer.css'
 
 
-export default function footer() {
+export default function Footer() {
 
     const instagramIcon = {
         xmlns: 'http://www.w3.org/2000/svg',

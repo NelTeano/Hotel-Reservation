@@ -3,7 +3,7 @@ import './styles/Rooms.css'
 import CarouselComponent from "./Carousel";
 import { Link } from 'react-router-dom';
 
-export default function Rooms({guests, roomTypes, setRoomTypes, setSelectedRoom}) {
+export default function RoomCollection({guests, roomTypes, setRoomTypes, setSelectedRoom}) {
 
   const [textFilter, setTextFilter] = React.useState('');
   const [reloadMsg, setReloadMsg] = React.useState('Failed to load rooms');

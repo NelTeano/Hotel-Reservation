@@ -1,13 +1,14 @@
-import React,{useEffect} from 'react'
-import {useRef} from 'react';
-import '../styles/home.css'
-import Carousel from '../Carousel'
+import React, { useEffect } from 'react'
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle, roomTypes}) {
+import Carousel from '../Carousel'
 
+import '../styles/Home.css'
+
+export default function Home({coverImg, facilityImg1, facilityImg2, smallRectangle, roomTypes}) {
     useEffect(() => {
         AOS.init();
     }, [])
