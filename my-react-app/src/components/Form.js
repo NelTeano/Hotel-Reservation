@@ -56,36 +56,25 @@ export default function Form({ arriveDate, departDate, guests, selectedRoom, tot
   return (
     <form method='post'>
       <div className='form-container'>
-        <div>
-          <p
-            style={{
-              marginTop: '30px',
-              fontSize: '20px',
-            }}
-          >
-            FILL UP THE FORM
-          </p>
-        </div>
+        <p>FILL UP THE FORM</p>
 
-        <div>
-          <div>
-            <input type='text' placeholder='NAME' onChange={e => setName(e.target.value)} value={name} required />
-          </div>
-
-          <div>
-            <input type='text' placeholder='EMAIL' onChange={e => setEmail(e.target.value)} value={email} required />
-          </div>
+        <div className='form-fields'>
+          <input type='text' placeholder='NAME' onChange={e => setName(e.target.value)} value={name} required />
+          <input type='text' placeholder='EMAIL' onChange={e => setEmail(e.target.value)} value={email} required />
         </div>
 
         <div className='policyBox' style={{ borderTop: '1px solid black' }}>
           <p>
             Cancellation Policy: <br></br> <br></br>
-            Please reminder that after you submit a your Reservation and its done you cannot be able to Cancel your
-            Reservation so please be sure to your decision before making a reseervation or book for our room but if its
-            really emergency just contact our admin so they can cancel your book.
+            Kindly note that once you have submitted your reservation and it has been confirmed, it may not be possible
+            to cancel it. We kindly advise you to carefully consider your decision before proceeding with the
+            reservation or booking a room. However, in the event of a genuine emergency, we recommend reaching out to
+            our administrator, as they might be able to assist you with the cancellation process.
           </p>
+        </div>
 
-          <input
+        <input
+            className='form-submit-btn'
             style={{
               backgroundColor: 'transparent',
               textDecoration: 'Underline',
@@ -95,7 +84,6 @@ export default function Form({ arriveDate, departDate, guests, selectedRoom, tot
             value='CONFIRM YOUR STAY'
             onClick={submitBookingForm}
           />
-        </div>
       </div>
       <SuccessModal
         show={showSuccessModal}

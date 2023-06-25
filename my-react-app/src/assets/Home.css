@@ -148,7 +148,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 883px;
+  height: clamp(500px, 90vh, 883px);
   width: 100%;
   background: linear-gradient(180deg, #ffffff 51.13%, #fff5eb 100%);
 }
@@ -156,7 +156,7 @@
 .carousel-rooms {
   display: flex;
   width: 80%;
-  height: 70vh;
+  height: 65%;
   margin: auto;
   border: none;
   gap: 30px;

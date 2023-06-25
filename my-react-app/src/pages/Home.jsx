@@ -128,7 +128,7 @@ export default function Home({ roomTypes, setRoomTypes }) {
               lineHeight: '125%',
             }}
           >
-            Enjoy with us!{' '}
+            Enjoy with us!
           </h1>
           <p
             style={{
@@ -136,7 +136,6 @@ export default function Home({ roomTypes, setRoomTypes }) {
               lineHeight: '125%',
             }}
           >
-            {' '}
             <br></br>We do all kinds of events
           </p>
         </div>

@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 
 import '../assets/RoomCollection.css';
 
+const USD = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+});
+
 export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSelectedRoom }) {
   const [textFilter, setTextFilter] = React.useState('');
   const [reloadMsg, setReloadMsg] = React.useState('Failed to load rooms');
@@ -146,7 +152,7 @@ function RoomItem({ roomType, setSelectedRoom }) {
                     color: '#1c1c1c',
                   }}
                 >
-                  FROM <br />$ {roomType.price} / NIGHT
+                  FROM <br /> {USD.format(roomType.price)} / NIGHT
                 </p>
 
                 <p> EXCLUDING TAXES & FEES </p>

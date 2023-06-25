@@ -1,6 +1,12 @@
 import React from 'react';
 import '../assets/SummaryBox.css';
 
+const USD = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+});
+
 export default function SummaryBox({ arriveDate, departDate, guests, total, setTotal, selectedRoom }) {
   React.useEffect(() => {
     const departMilliSec = new Date(departDate).getTime();
@@ -55,7 +61,7 @@ export default function SummaryBox({ arriveDate, departDate, guests, total, setT
             marginRight: '40px',
           }}
         >
-          TOTAL : {selectedRoom ? total : '0'}
+          TOTAL : {selectedRoom ? USD.format(total) : USD.format(0)}
         </p>
       </div>
     </div>
