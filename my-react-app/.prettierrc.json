@@ -9,5 +9,6 @@
   "bracketSameLine": false,
   "arrowParens": "avoid",
   "singleAttributePerLine": false,
-  "tabWidth": 2
+  "tabWidth": 2,
+  "endOfLine": "auto"
 }
