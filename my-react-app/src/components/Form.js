@@ -74,16 +74,16 @@ export default function Form({ arriveDate, departDate, guests, selectedRoom, tot
         </div>
 
         <input
-            className='form-submit-btn'
-            style={{
-              backgroundColor: 'transparent',
-              textDecoration: 'Underline',
-              fontWeight: '300',
-            }}
-            type='submit'
-            value='CONFIRM YOUR STAY'
-            onClick={submitBookingForm}
-          />
+          className='form-submit-btn'
+          style={{
+            backgroundColor: 'transparent',
+            textDecoration: 'Underline',
+            fontWeight: '300',
+          }}
+          type='submit'
+          value='CONFIRM YOUR STAY'
+          onClick={submitBookingForm}
+        />
       </div>
       <SuccessModal
         show={showSuccessModal}

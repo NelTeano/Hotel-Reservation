@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactCalendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 
 import Navigation from '../components/Navigation';
 import Editbox from '../components/Editbox';
 import Footer from '../components/Footer';
 
 import '../assets/DatePicker.css';
+import '../assets/ReactCalendar.css';
 
 export default function DatePicker({ arriveDate, setArriveDate, departDate, setDepartDate, guests, setGuests }) {
   const [calendarBorder, setCalendarBorder] = React.useState('solid black 1px');
   const [selectionBorder, setSelectionBorder] = React.useState('solid black 1px');
+
+  const [startDate, setStartDate] = React.useState(null);
+  const [endDate, setEndDate] = React.useState(null);
 
   React.useEffect(() => {
     setGuests(0);
@@ -57,8 +60,17 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
             <div>
               <p>Arriving Date </p>
               <ReactCalendar
+                returnValue='start'
+                maxDetail={'month'}
+                minDate={new Date()}
+                allowPartialRange={true}
+                value={[startDate, endDate]}
                 onChange={value => {
                   setCalendarBorder('solid black 1px');
+
+                  setStartDate(value);
+                  setEndDate(value);
+
                   setArriveDate(value.toLocaleDateString());
                 }}
               />
@@ -67,8 +79,15 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
             <div>
               <p>Depart Date </p>
               <ReactCalendar
+                returnValue='end'
+                maxDetail={'month'}
+                minDate={new Date()}
+                allowPartialRange={true}
+                value={[startDate, endDate]}
                 onChange={value => {
                   setCalendarBorder('solid black 1px');
+
+                  setEndDate(value);
                   setDepartDate(value.toLocaleDateString());
                 }}
               />
