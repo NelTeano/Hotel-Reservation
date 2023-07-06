@@ -7,10 +7,7 @@ export default function Navigation() {
   return (
     <nav>
       <div className='logo'>
-        <h1>CayoHotel</h1>
-      </div>
-      <div className='closeIcon'>
-        <Link to='/'>X</Link>
+      <Link to='/'><h1>CayoHotel</h1></Link>
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ nav {
   display: flex;
   position: fixed;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   height: 90px;
   width: 100%;
   background-color: #fff5eb;
@@ -10,27 +10,28 @@ nav {
   border-bottom: 1px #1c1c1c solid;
 }
 
-.logo {
-  margin-right: 43%;
-}
+
 
 .logo h1 {
+  cursor: pointer;
   color: #1c1c1c;
-  cursor: default;
+
 }
 
-.closeIcon {
-  margin-right: 50px;
+.logo  {
+  
   transition: ease 0.15s;
 }
 
-.closeIcon a {
+.logo a{
   text-decoration: none;
   color: #1c1c1c;
-  font-size: 60px;
+  font-size: 18px;
   font-weight: 100;
+  
 }
 
-.closeIcon:hover {
+.logo:hover {
   scale: 1.15;
+  
 }
