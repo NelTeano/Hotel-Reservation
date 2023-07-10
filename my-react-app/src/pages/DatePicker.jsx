@@ -23,8 +23,6 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
     console.log('test load date picker');
   }, [setGuests, setArriveDate, setDepartDate]);
 
-
-
   const checkProceed = e => {
     if (new Date(arriveDate) >= new Date(departDate)) {
       e.preventDefault();
@@ -47,7 +45,6 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
             style={{
               borderBottom: 'solid rgb(184, 178, 178) 1px',
               backgroundColor: '#34a0a4',
-             
             }}
           >
             <h1>SELECT YOUR DATES</h1>
@@ -115,7 +112,7 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
           </Link>
         </div>
       </div>
-      
+
       <Footer />
     </>
   );

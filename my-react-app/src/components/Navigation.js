@@ -7,7 +7,9 @@ export default function Navigation() {
   return (
     <nav>
       <div className='logo'>
-      <Link to='/'><h1>CayoHotel</h1></Link>
+        <Link to='/'>
+          <h1>CayoHotel</h1>
+        </Link>
       </div>
     </nav>
   );

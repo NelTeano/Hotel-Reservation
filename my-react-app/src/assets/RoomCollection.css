@@ -14,7 +14,6 @@
   width: 100%;
   padding-bottom: 70px;
   margin-bottom: 150px;
-  
 }
 
 .combo-box select {
@@ -26,7 +25,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 60px;
-  
 }
 
 .box-container {
@@ -34,8 +32,6 @@
   height: 100%;
   max-width: 1000px;
   max-height: 300px;
- 
- 
 }
 
 .room-box {
@@ -44,13 +40,10 @@
   justify-content: center;
   margin-top: 30px;
   border-radius: 50%;
- 
- 
 }
 
 .room-box {
   background-color: white;
-  
 }
 
 .picture-container {
@@ -58,15 +51,13 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid  rgb(184, 178, 178);
+  border-left: 1px solid rgb(184, 178, 178);
   border-top: 1px solid rgb(184, 178, 178);
   border-bottom: 1px solid rgb(184, 178, 178);
-  border-top-left-radius:    40px;
+  border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   border-right: none;
-  
 }
-
 
 img {
   width: 100%;
@@ -84,12 +75,9 @@ img {
   border-right: 1px solid rgb(184, 178, 178);
   border-top: 1px solid rgb(184, 178, 178);
   border-bottom: 1px solid rgb(184, 178, 178);
-  border-top-right-radius:    40px;
+  border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  
 }
-
-
 
 .right-content {
   display: flex;
@@ -102,8 +90,6 @@ img {
   border: none;
   font-size: 0.825em;
 }
-
-
 
 .feautures {
   display: flex;
@@ -138,12 +124,9 @@ img {
   color: #34a0a4;
   background-color: white;
   border-radius: 40px;
-
-  
-  
 }
 
-.rooms-booknow-btn a{
+.rooms-booknow-btn a {
   font-size: 1px;
 }
 
@@ -166,8 +149,6 @@ img {
 .additional-details-btn {
   transition: ease 0.15s;
   margin-right: 20px;
-
-  
 }
 
 .additional-details-btn:hover {

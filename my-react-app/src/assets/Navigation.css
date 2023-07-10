@@ -6,10 +6,7 @@ nav {
   width: 100%;
   background-color: white;
   z-index: 1000;
-  
 }
-
-
 
 .logo h1 {
   cursor: pointer;
@@ -17,20 +14,17 @@ nav {
   margin-left: 40%;
 }
 
-.logo  {
-  
+.logo {
   transition: ease 0.15s;
 }
 
-.logo a{
+.logo a {
   text-decoration: none;
   color: #1c1c1c;
   font-size: 18px;
   font-weight: 100;
-  
 }
 
 .logo:hover {
   scale: 1.15;
-  
 }

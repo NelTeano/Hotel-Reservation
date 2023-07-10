@@ -29,7 +29,9 @@ export default function SummaryBox({ arriveDate, departDate, guests, total, setT
           STAY SUMMARY
         </p>
 
-        <h1>CayoHotel <br></br> Beach And Resort</h1>
+        <h1>
+          CayoHotel <br></br> Beach And Resort
+        </h1>
       </div>
 
       <div>
