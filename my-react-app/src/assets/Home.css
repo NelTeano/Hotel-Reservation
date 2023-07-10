@@ -1,0 +1,249 @@
+.navbar-home {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  height: 120px;
+  width: 100%;
+  z-index: 1;
+}
+.navbar-home a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: white;
+  z-index: 100;
+}
+
+.navbar-home button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navbar-links a:hover,
+.navbar-links button:hover {
+  color: black;
+  transition: 0.4s;
+}
+
+.homecover {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 840px;
+  width: 100%;
+}
+
+.homecover p {
+  margin-left: 20%;
+  color: white;
+  font-size: 56px;
+}
+
+.home-facilities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  background-image: linear-gradient(#fff5eb, #ffffff);
+  width: 100%;
+  height: 1345px;
+  padding-bottom: 180px;
+}
+
+.home-facilities .content-tag,
+.home-facilities footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 58px;
+}
+.spacer {
+  height: 40px;
+  width: 100%;
+  background-color: #fff5eb;
+}
+
+.home-facilities img {
+  width: 39vw;
+  height: 41vh;
+  border-radius: 20px;
+}
+
+.facilities-context {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.facilities-context p {
+  margin-bottom: 40px;
+}
+
+.facilities-context button {
+  background-color: #34a0a4;
+  color: white;
+  border-radius: 64px;
+  font-size: 0.8vw;
+  width: 143px;
+  height: 4.5vh;
+  box-shadow: 24px 24px 48px #bebebe, -24px -24px 48px #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+}
+
+.facilities-context button:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #319194;
+  transition: 0.7s;
+  border: 1px solid #319194;
+}
+
+.reserve-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 290px;
+  width: 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 80px;
+}
+
+.reserve-box p {
+  font-weight: 700;
+  font-size: 2vw;
+  line-height: 125%;
+  color: white;
+}
+
+.reserve-box button {
+  background-color: white;
+  width: 178px;
+  height: 56px;
+  box-shadow: 0px 89px 35px rgba(0, 0, 0, 0.01), 0px 50px 30px rgba(0, 0, 0, 0.05), 0px 22px 22px rgba(0, 0, 0, 0.09),
+    0px 6px 12px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 64px;
+  color: #34a0a4;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+
+.reserve-box button:hover {
+  background-color: #34a0a4;
+  color: white;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.rooms-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: clamp(500px, 90vh, 883px);
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 51.13%, #fff5eb 100%);
+}
+
+.carousel-rooms {
+  display: flex;
+  width: 80%;
+  height: 65%;
+  margin: auto;
+  border: none;
+  gap: 30px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-rooms div {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  width: 25vw;
+  scroll-snap-align: start;
+}
+
+.carousel-rooms p {
+  font-size: 1vw;
+}
+
+.carousel-rooms h3 {
+  font-size: 1.2vw;
+}
+
+.carousel-rooms h1 {
+  font-size: 1.7vw;
+}
+
+.carousel-rooms::-webkit-scrollbar-track {
+  border: none;
+  background-color: transparent;
+}
+
+.carousel-rooms::-webkit-scrollbar {
+  width: 1px;
+}
+
+.carousel-rooms::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff5eb;
+  height: 35vh;
+}
+
+.home-footer p {
+  color: #222222;
+  font-size: 1.3vw;
+}
+
+.home-footer a {
+  text-decoration: none;
+  color: black;
+  margin-right: 11%;
+}
+
+.feet {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+  background-color: #fff5eb;
+}
+
+.links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-size: 1vw;
+}
+
+.links a:hover {
+  color: #319194;
+  transition: 0.6s;
+}
+
+.bi-instagram:hover,
+.bi-facebook:hover,
+.bi-messenger:hover,
+.bi-twitter:hover {
+  color: #319194;
+  transition: 0.6s;
+}

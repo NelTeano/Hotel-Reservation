@@ -2,75 +2,49 @@ const express = require('express');
 const booking = express.Router();
 const pool = require('../database');
 
-// localhost:PORT/test
-booking.get('/test', (req, res) => {
-  pool.execute('INSERT INTO `hotel_bookings` (`guest_name`, `check_in_date`,`check_out_date`, `room_type`,`num_guests` ) VALUES (?, ?,?,?,?)', [
-    'Maria',
-    '2023-09-16',
-    '2023-09-19',
-    'deluxe',
-    '2'
-  ], (err, result) => {
-    if (err) {
-      console.log('booking query error', err);
-    } else {
-      console.log('affected rows = ', result.affectedRows);
-      res.send('get request response from client');
-    }
-  });
-});
+/** format date into yyyy-mm-dd string form. */ 
+function formatDate(date) {
+  const yyyy = date.getFullYear().toString().padStart(4, '0');
+  const mm = (date.getMonth() + 1).toString().padStart(2, '0');
+  const dd = date.getDate().toString().padStart(2, '0');
 
+  return `${yyyy}/${mm}/${dd}`;
+}
 
-//localhost:PORT/get/<id>
-booking.get('/get/:id', (req,res) =>{
-  const book_id = req.params.id;
-  pool.execute('SELECT * FROM `hotel_bookings` WHERE id=?',[book_id], (err, result) =>{
-    if (err) {
-      console.log('booking query error', err);
-    } else {
-      console.log('affected rows = ', result.affectedRows);
-      res.send(result);
-    }
-  } )
+// localhost:PORT/book/submit
+// for the submit button in the booking form page.
+booking.post('/submit', (req, res) => {
+  console.log('req.body = ', req.body);
 
-
-
-})
-
-//localhost:PORT/api/book/
-booking.post( '/api/book/', (req,res) => {
-
-  const {guestName,checkinDate,checkoutDate,roomType,numGuest} = req.body;
-
-  pool.execute('SELECT id FROM room_types WHERE room_type = ?', [roomType], (err, results) => {
-    if (err) {
-      console.log('Error querying the RoomTypes table:', err);
-      return res.status(500).json({ error: 'An error occurred while processing the booking' });
-    }
-
-    if (results.length === 0) {
-      console.log('Invalid roomType:', roomType);
-      return res.status(400).json({ error: 'Invalid roomType' });
-    }
-
-    const roomTypeId = results[0].id;
-
-    // Insert the booking into the bookings table
-    pool.execute(
-      'INSERT INTO hotel_bookings (guest_name, check_in_date, check_out_date, room_type, num_guests) VALUES (?, ?, ?, ?, ?)',
-      [guestName, checkinDate, checkoutDate, roomTypeId, numGuest],
-      (error, result) => {
-        if (error) {
-          console.log('Error inserting into Rooms table:', error);
-          return res.status(500).json({ error: 'An error occurred while processing the booking' });
+  pool.execute(`
+    INSERT INTO hotel_bookings (
+      guest_name, check_in_date, check_out_date, room_type,
+      num_guests, booking_date, status_id, amount_paid, email
+    )
+    VALUES (
+      ?, ?, ?, (SELECT id FROM room_types WHERE id=?),
+      ?, ?, (SELECT id FROM status WHERE id=1), ?, ?
+    )`, [
+      req.body.name,                                // guest_name
+      formatDate(new Date(req.body.arriveDate)),    // check_in_date
+      formatDate(new Date(req.body.departDate)),    // check_out_date
+      req.body.selectedRoomID,                      // room_type
+      req.body.guests,                              // num_guests
+      formatDate(new Date()),                       // booking_date
+      req.body.total,                               // amount_paid
+      req.body.email                                // email
+    ], (err, result) => {
+      if (err) {
+        res.status(500).json({ msg: 'failed to retrieve data'});
+      } else {
+        if (result.affectedRows === 1) {
+          res.status(200).json({ msg: 'successfully booked'});
+        } else {
+          res.status(403).json({ msg: 'booking attempt failed'});
         }
-
-        console.log('affected rows = ', result.affectedRows);
-        res.send('post success');
       }
-    );
-  });
+    }
+  );
 });
-
 
 module.exports = booking;

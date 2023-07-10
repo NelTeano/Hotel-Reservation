@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  /* outline: 1px solid red; */
+}
+
+/* SCROLL BARS */
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(39, 38, 38);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(100, 98, 93);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+/*---------------------WELCOME WINDOW HOMEPAGE CSS------------------------------*/
+
+.aboutcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: clamp(400px, 100vh, 800px);
+}
+
+.aboutcontainer h1 {
+  color: white;
+  font-size: 3.25em;
+  text-align: center;
+}
+
+.aboutcontainer p {
+  font-size: 1.25em;
+  color: white;
+}
+
+.aboutcontainer button {
+  border: solid white;
+  background-color: transparent;
+  color: white;
+  margin-top: 100px;
+  font-size: 0.7em;
+  height: 100%;
+  max-height: 60px;
+  width: 100%;
+  max-width: 200px;
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .aboutcontainer {
+    height: 600px;
+  }
+
+  .aboutcontainer h1 {
+    font-size: 5vw;
+  }
+
+  .aboutcontainer p {
+    font-size: 2vw;
+  }
+
+  .aboutcontainer button {
+    max-height: 4vw;
+  }
+}

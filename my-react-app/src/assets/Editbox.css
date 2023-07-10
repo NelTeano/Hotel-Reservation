@@ -1,0 +1,14 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.edit-box-reactrouterdom-link {
+  transition: ease 0.15s;
+}
+
+.edit-box-reactrouterdom-link:hover {
+  scale: 1.075;
+  font-weight: bolder;
+}

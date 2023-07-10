@@ -1,0 +1,73 @@
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.calendar-box {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-box h1 {
+  text-align: center;
+  font-size: 1.6vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.calendars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.calendars p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1vw;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.calendars div {
+  width: 100%;
+  height: 100%;
+}
+
+.guest-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10vh;
+  border-top: solid rgb(184, 178, 178) 1px;
+}
+
+.viewrooms-btn {
+  border-top: solid rgb(184, 178, 178) 1px;
+  padding: 0.75em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3vw;
+  color: #34a0a4;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
+}
+
+.viewrooms-btn:hover {
+  background-color: #34a0a4;
+  color: white;
+  transition: 0.5s;
+}

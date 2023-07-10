@@ -1,0 +1,176 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.rooms-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 70px;
+  margin-bottom: 150px;
+}
+
+.combo-box select {
+  font-size: 20px;
+}
+
+.combo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.box-container {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 300px;
+}
+
+.room-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  border-radius: 50%;
+}
+
+.room-box {
+  background-color: white;
+}
+
+.picture-container {
+  width: 40%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid rgb(184, 178, 178);
+  border-top: 1px solid rgb(184, 178, 178);
+  border-bottom: 1px solid rgb(184, 178, 178);
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-right: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.room-information {
+  padding: 1.9em;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 50%;
+  border-right: 1px solid rgb(184, 178, 178);
+  border-top: 1px solid rgb(184, 178, 178);
+  border-bottom: 1px solid rgb(184, 178, 178);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-content button {
+  background-color: transparent;
+  border: none;
+  font-size: 0.825em;
+}
+
+.feautures {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  background-color: #ffffff;
+  width: 90%;
+  padding-inline: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.feautures p {
+  display: flex;
+  text-align: center;
+}
+
+.feautures img {
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 20px;
+}
+
+/* ------ BOOK NOW BUTTON ------ */
+
+.rooms-booknow-btn {
+  transition: ease 0.15s;
+  text-decoration: none;
+  color: black;
+  color: #34a0a4;
+  background-color: white;
+  border-radius: 40px;
+}
+
+.rooms-booknow-btn a {
+  font-size: 1px;
+}
+
+.rooms-booknow-btn:visited {
+  text-decoration: none;
+}
+
+.rooms-booknow-btn:active {
+  text-decoration: none;
+}
+
+.rooms-booknow-btn:hover {
+  scale: 1.075;
+  color: white;
+  background-color: #34a0a4;
+}
+
+/* ------ ADDITIONAL DETAILS BUTTON ------ */
+
+.additional-details-btn {
+  transition: ease 0.15s;
+  margin-right: 20px;
+}
+
+.additional-details-btn:hover {
+  scale: 1.075;
+  cursor: pointer;
+}
+
+.reload-rooms-btn {
+  border: none;
+  outline: 0.2em solid black;
+  background-color: white;
+  padding: 0.3em;
+  transition: 0.15s ease;
+
+  cursor: pointer;
+}
+
+.reload-rooms-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.reload-rooms-btn:active {
+  transform: scale(1.2);
+}

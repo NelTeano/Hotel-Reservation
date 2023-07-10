@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90px;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+}
+
+.logo h1 {
+  cursor: pointer;
+  color: #1c1c1c;
+  margin-left: 40%;
+}
+
+.logo {
+  transition: ease 0.15s;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.logo:hover {
+  scale: 1.15;
+}
