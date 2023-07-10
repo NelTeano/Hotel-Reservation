@@ -12,9 +12,10 @@
 .calendar-box {
   display: flex;
   flex-direction: column;
-  border: solid rgb(184, 178, 178) 1px;
   width: 80vw;
   background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .calendar-box h1 {
@@ -61,6 +62,9 @@
   font-size: 1.3vw;
   color: #34a0a4;
   background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
 }
 
 .viewrooms-btn:hover {

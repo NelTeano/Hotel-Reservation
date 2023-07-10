@@ -52,7 +52,7 @@ export default function SummaryBox({ arriveDate, departDate, guests, total, setT
         <p>Guests: {guests} </p>
       </div>
 
-      <div style={{ borderTop: '1px solid black' }}>
+      <div style={{ borderTop: '1px solid gray' }}>
         <p
           style={{
             textAlign: 'right',

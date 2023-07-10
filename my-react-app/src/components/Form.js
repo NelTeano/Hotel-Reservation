@@ -63,7 +63,7 @@ export default function Form({ arriveDate, departDate, guests, selectedRoom, tot
           <input type='text' placeholder='EMAIL' onChange={e => setEmail(e.target.value)} value={email} required />
         </div>
 
-        <div className='policyBox' style={{ borderTop: '1px solid black' }}>
+        <div className='policyBox' style={{ borderTop: '1px solid gray' }}>
           <p>
             Cancellation Policy: <br></br> <br></br>
             Kindly note that once you have submitted your reservation and it has been confirmed, it may not be possible

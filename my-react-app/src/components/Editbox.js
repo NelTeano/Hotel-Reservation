@@ -34,7 +34,7 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
           style={{
             marginRight: '3vw',
             marginLeft: '5%',
-            borderRight: '1px solid #1c1c1c',
+            borderRight: '0.4px solid #1c1c1c',
             height: '100%',
             paddingRight: '20px',
           }}

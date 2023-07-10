@@ -45,12 +45,13 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
         <div className='calendar-box'>
           <div
             style={{
-              borderBottom: 'solid rgb(184, 178, 178) 1px',
+              borderTopLeftRadius: '20px',
+              borderTopRightRadius: '20px',
               backgroundColor: '#34a0a4',
-             
+              
             }}
           >
-            <h1>SELECT YOUR DATES</h1>
+            <h1>Select your Dates</h1>
           </div>
 
           <div className='calendars' style={{ border: calendarBorder }}>
@@ -82,7 +83,7 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
                 allowPartialRange={true}
                 value={[startDate, endDate]}
                 onChange={value => {
-                  setCalendarBorder('solid black 1px');
+                  setCalendarBorder('');
 
                   setEndDate(value);
                   setDepartDate(value.toLocaleDateString());

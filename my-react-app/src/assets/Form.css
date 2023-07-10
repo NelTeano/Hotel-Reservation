@@ -10,11 +10,14 @@
   width: 50vw;
   gap: 0.75em;
 
-  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   background-color: white;
   padding-block: 1em;
 }
-
+.form-container > p {
+  margin-top: 60px;
+}
 .form-fields {
   display: flex;
   justify-content: center;
@@ -52,5 +55,5 @@
 }
 
 .form-submit-btn:hover {
-  outline: 3px solid black;
+  outline: 3px solid #34a0a4;
 }
