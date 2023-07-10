@@ -49,16 +49,16 @@ export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSel
           <option key={'deluxe'} value='deluxe' label='Deluxe' />
           <option key={'suite'} value='suite' label='Suite' />
           <option key={'junior'} value='junior' label='Junior' />
-          <option key={'room'} value='room' label='room' />
+          <option key={'room'} value='room' label='Room' />
         </select>
       </div>
       {roomTypes ? (
         roomTypes.map((roomType, index) => {
-          if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
+        //   if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
             return <RoomItem key={index} roomType={roomType} setSelectedRoom={setSelectedRoom} />;
-          } else {
-            return null;
-          }
+        //   } else {
+        //     return null;
+        //   }
         })
       ) : (
         <div
@@ -88,16 +88,16 @@ function RoomItem({ roomType, setSelectedRoom }) {
   //BUTTON DESIGN
   const buttonStyle = {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
-    border: ' 1px solid black',
+    border: ' 1px solid rgb(184, 178, 178)',
     fontSize: '20px',
     height: '100%',
     // widht: "100%",
     maxHeight: '40px',
     padding: '10px',
     // marginTop: "10px",
-    marginLeft: '28%',
+    
     cursor: ' pointer',
   };
 
@@ -112,7 +112,9 @@ function RoomItem({ roomType, setSelectedRoom }) {
       <div className='box-container'>
         <div className='room-box'>
           <div className='picture-container'>
-            <CarouselComponent items={roomType.images} />
+            <div>
+              <CarouselComponent items={roomType.images} />
+            </div>
           </div>
 
           <div className='room-information'>
@@ -156,7 +158,8 @@ function RoomItem({ roomType, setSelectedRoom }) {
                 </p>
 
                 <p> EXCLUDING TAXES & FEES </p>
-
+                <div className='buttons'>
+                
                 <Link
                   to='/form'
                   style={buttonStyle}
@@ -169,11 +172,20 @@ function RoomItem({ roomType, setSelectedRoom }) {
                 </Link>
               </div>
 
+                
+              </div>
+
+             
+              
               <div>
-                <button className='additional-details-btn' onClick={handleClick}>
+              <button className='additional-details-btn' onClick={handleClick}>
                   AMENITIES & DESCRIPTION ↓
                 </button>
+
               </div>
+              
+             
+              
             </div>
           </div>
         </div>

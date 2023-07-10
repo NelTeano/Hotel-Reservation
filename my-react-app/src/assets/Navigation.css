@@ -1,13 +1,12 @@
 nav {
   display: flex;
-  position: fixed;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 90px;
   width: 100%;
-  background-color: #fff5eb;
+  background-color: white;
   z-index: 1000;
-  border-bottom: 1px #1c1c1c solid;
+  
 }
 
 
@@ -15,7 +14,7 @@ nav {
 .logo h1 {
   cursor: pointer;
   color: #1c1c1c;
-
+  margin-left: 40%;
 }
 
 .logo  {

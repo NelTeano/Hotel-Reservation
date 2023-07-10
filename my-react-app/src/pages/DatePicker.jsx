@@ -23,11 +23,7 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
     console.log('test load date picker');
   }, [setGuests, setArriveDate, setDepartDate]);
 
-  const spacer = {
-    background: 'linear-gradient(180deg, #FFFFFF 2%, #FFF5EB 100%)',
-    height: '20vh',
-    widht: '100%',
-  };
+
 
   const checkProceed = e => {
     if (new Date(arriveDate) >= new Date(departDate)) {
@@ -49,8 +45,9 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
         <div className='calendar-box'>
           <div
             style={{
-              borderBottom: 'solid black 1px',
-              backgroundColor: '#FFF5EB',
+              borderBottom: 'solid rgb(184, 178, 178) 1px',
+              backgroundColor: '#34a0a4',
+             
             }}
           >
             <h1>SELECT YOUR DATES</h1>
@@ -118,7 +115,7 @@ export default function DatePicker({ arriveDate, setArriveDate, departDate, setD
           </Link>
         </div>
       </div>
-      <div style={spacer}></div>
+      
       <Footer />
     </>
   );

@@ -8,7 +8,7 @@ class Carousel extends Component {
       <ImageCarousel showThumbs={false} showStatus={false}>
         {this.props.items.map((url, index) => (
           <div key={index}>
-            <img alt='carouselimg' src={url} style={{ height: '45vh' }} />
+            <img alt='carouselimg' src={url} style={{ height: '35vh' }} />
             {/* <p className="legend">{item.name}</p> */}
           </div>
         ))}

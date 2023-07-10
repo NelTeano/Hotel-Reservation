@@ -15,11 +15,7 @@ export default function Rooms({ arriveDate, departDate, guests, roomTypes, setRo
     marginTop: '30px',
   };
 
-  const spacer = {
-    background: 'linear-gradient(180deg, #FFFFFF 2%, #FFF5EB 100%)',
-    height: '20vh',
-    widht: '100%',
-  };
+  
 
   return (
     <div>
@@ -32,7 +28,6 @@ export default function Rooms({ arriveDate, departDate, guests, roomTypes, setRo
         setRoomTypes={setRoomTypes}
         setSelectedRoom={setSelectedRoom}
       />
-      <div style={spacer}></div>
       <Footer />
 
       {/* when designing the page, you can comment out this component to disable the page guard if it gets annoying */}

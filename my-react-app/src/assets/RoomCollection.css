@@ -13,10 +13,12 @@
   height: 100%;
   width: 100%;
   padding-bottom: 70px;
+  margin-bottom: 150px;
+  
 }
 
 .combo-box select {
-  font-size: 1.2vw;
+  font-size: 20px;
 }
 
 .combo-box {
@@ -24,45 +26,70 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 60px;
+  
 }
 
 .box-container {
   width: 100%;
   height: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
+  max-height: 300px;
+ 
+ 
 }
 
 .room-box {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin-top: 30px;
-  box-shadow: -22px 22px 44px #8d8d8d, 22px -22px 44px #ffffff;
+  border-radius: 50%;
+ 
+ 
 }
 
 .room-box {
   background-color: white;
+  
 }
 
 .picture-container {
-  width: 50%;
+  width: 40%;
   height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid  rgb(184, 178, 178);
+  border-top: 1px solid rgb(184, 178, 178);
+  border-bottom: 1px solid rgb(184, 178, 178);
+  border-top-left-radius:    40px;
+  border-bottom-left-radius: 40px;
+  border-right: none;
+  
 }
+
+
 img {
   width: 100%;
   height: 100%;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .room-information {
   padding: 1.9em;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  background-color: #fff5eb;
+  background-color: white;
   width: 50%;
-  border-right: 1px solid #1c1c1c;
-  border-top: 1px solid #1c1c1c;
-  border-bottom: 1px solid #1c1c1c;
+  border-right: 1px solid rgb(184, 178, 178);
+  border-top: 1px solid rgb(184, 178, 178);
+  border-bottom: 1px solid rgb(184, 178, 178);
+  border-top-right-radius:    40px;
+  border-bottom-right-radius: 40px;
+  
 }
+
+
 
 .right-content {
   display: flex;
@@ -76,6 +103,8 @@ img {
   font-size: 0.825em;
 }
 
+
+
 .feautures {
   display: flex;
   justify-content: space-between;
@@ -83,8 +112,7 @@ img {
   flex-wrap: nowrap;
   gap: 20px;
   background-color: #ffffff;
-  width: 100%;
-  box-shadow: -22px 22px 44px #8d8d8d, 22px -22px 44px #ffffff;
+  width: 90%;
   padding-inline: 1em;
   padding-top: 2em;
   padding-bottom: 2em;
@@ -107,7 +135,16 @@ img {
   transition: ease 0.15s;
   text-decoration: none;
   color: black;
-  background-color: #fff5eb;
+  color: #34a0a4;
+  background-color: white;
+  border-radius: 40px;
+
+  
+  
+}
+
+.rooms-booknow-btn a{
+  font-size: 1px;
 }
 
 .rooms-booknow-btn:visited {
@@ -121,7 +158,7 @@ img {
 .rooms-booknow-btn:hover {
   scale: 1.075;
   color: white;
-  background-color: black;
+  background-color: #34a0a4;
 }
 
 /* ------ ADDITIONAL DETAILS BUTTON ------ */
@@ -129,6 +166,8 @@ img {
 .additional-details-btn {
   transition: ease 0.15s;
   margin-right: 20px;
+
+  
 }
 
 .additional-details-btn:hover {

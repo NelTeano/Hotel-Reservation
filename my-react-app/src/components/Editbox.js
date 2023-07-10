@@ -8,20 +8,21 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    height: '200px',
+    height: '150px',
     width: '100%',
   };
 
   const boxSize = {
     display: 'flex',
     flexDirection: 'row',
+    
     alignItems: 'center',
     position: 'relative',
     border: '1px solid #1c1c1c',
     height: '100%',
     width: '100%',
-    maxHeight: '4vw',
-    maxWidth: '30vw',
+    maxHeight: '10vh',
+    maxWidth: '50vw',
     top: '30%',
   };
 
@@ -48,14 +49,14 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
           >
             <div className='edit-box-reactrouterdom-link'>
               <h2>←</h2>
-              <p style={{ fontSize: '1vw', color: '#1c1c1c' }}>EDIT</p>
+              <p style={{ fontSize: '18px', color: '#1c1c1c' }}>EDIT</p>
             </div>
           </Link>
         </div>
 
-        <div>
-          <h2 style={{ textAlign: 'center', fontSize: '1vw', color: '#1c1c1c' }}>HOTEL NAME</h2>
-          <p style={{ fontSize: '1vw', color: '#1c1c1c' }}>
+        <div style={{marginLeft: '10%'}}>
+          <h2 style={{ textAlign: 'center', fontSize: '18px', color: '#1c1c1c' }}>CayoHotel </h2>
+          <p style={{ fontSize: '18px', color: '#1c1c1c' }}>
             ARRIVE: {arriveDate} | DEPART : {departDate}{' '}
           </p>
         </div>

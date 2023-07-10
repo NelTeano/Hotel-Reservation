@@ -3,12 +3,13 @@
   flex-direction: column;
   position: relative;
   bottom: 0;
+ 
 }
 .foot {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #fff5eb;
+  background-color: white;
   height: 23vh;
 }
 
@@ -27,7 +28,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #fff5eb;
+  background-color: white;
   height: 7vh;
   color: #c8c8c8;
 }
