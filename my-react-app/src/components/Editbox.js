@@ -15,8 +15,10 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
   const boxSize = {
     display: 'flex',
     flexDirection: 'row',
-    
+
     alignItems: 'center',
+    justifyContent: 'center',
+
     position: 'relative',
     border: '1px solid #1c1c1c',
     height: '100%',
@@ -34,9 +36,11 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
           style={{
             marginRight: '3vw',
             marginLeft: '5%',
-            borderRight: '0.4px solid #1c1c1c',
+            borderRight: '1px solid #1c1c1c',
             height: '100%',
-            paddingRight: '20px',
+            position: 'absolute',
+            left: '0px',
+            paddingInline: '1.7em',
           }}
         >
           <Link
@@ -44,6 +48,7 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
               textDecoration: 'none',
               color: '#1c1c1c',
               fontSize: '1vw',
+              textAlign: 'center',
             }}
             to={previousPage}
           >
@@ -54,7 +59,7 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
           </Link>
         </div>
 
-        <div style={{marginLeft: '10%'}}>
+        <div>
           <h2 style={{ textAlign: 'center', fontSize: '18px', color: '#1c1c1c' }}>CayoHotel </h2>
           <p style={{ fontSize: '18px', color: '#1c1c1c' }}>
             ARRIVE: {arriveDate} | DEPART : {departDate}{' '}

@@ -54,11 +54,11 @@ export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSel
       </div>
       {roomTypes ? (
         roomTypes.map((roomType, index) => {
-        //   if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
+          if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
             return <RoomItem key={index} roomType={roomType} setSelectedRoom={setSelectedRoom} />;
-        //   } else {
-        //     return null;
-        //   }
+          } else {
+            return null;
+          }
         })
       ) : (
         <div
@@ -97,7 +97,7 @@ function RoomItem({ roomType, setSelectedRoom }) {
     maxHeight: '40px',
     padding: '10px',
     // marginTop: "10px",
-    
+
     cursor: ' pointer',
   };
 
@@ -159,33 +159,24 @@ function RoomItem({ roomType, setSelectedRoom }) {
 
                 <p> EXCLUDING TAXES & FEES </p>
                 <div className='buttons'>
-                
-                <Link
-                  to='/form'
-                  style={buttonStyle}
-                  className='rooms-booknow-btn'
-                  onClick={() => {
-                    setSelectedRoom(roomType);
-                  }}
-                >
-                  BOOK NOW
-                </Link>
+                  <Link
+                    to='/form'
+                    style={buttonStyle}
+                    className='rooms-booknow-btn'
+                    onClick={() => {
+                      setSelectedRoom(roomType);
+                    }}
+                  >
+                    BOOK NOW
+                  </Link>
+                </div>
               </div>
 
-                
-              </div>
-
-             
-              
               <div>
-              <button className='additional-details-btn' onClick={handleClick}>
+                <button className='additional-details-btn' onClick={handleClick}>
                   AMENITIES & DESCRIPTION ↓
                 </button>
-
               </div>
-              
-             
-              
             </div>
           </div>
         </div>

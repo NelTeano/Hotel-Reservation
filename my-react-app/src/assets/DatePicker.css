@@ -6,7 +6,6 @@
   background-color: white;
   margin-top: 40px;
   margin-bottom: 100px;
-  
 }
 
 .calendar-box {
@@ -23,7 +22,7 @@
   font-size: 1.6vw;
   margin-top: 20px;
   margin-bottom: 20px;
-  color:white;
+  color: white;
 }
 
 .calendars {
@@ -54,7 +53,7 @@
 }
 
 .viewrooms-btn {
-  border-top: solid rgb(184, 178, 178)  1px;
+  border-top: solid rgb(184, 178, 178) 1px;
   padding: 0.75em;
   text-decoration: none;
   display: flex;

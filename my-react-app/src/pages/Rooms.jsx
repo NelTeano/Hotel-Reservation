@@ -15,8 +15,6 @@ export default function Rooms({ arriveDate, departDate, guests, roomTypes, setRo
     marginTop: '30px',
   };
 
-  
-
   return (
     <div>
       <Navigation />
