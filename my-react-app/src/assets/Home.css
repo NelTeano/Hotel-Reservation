@@ -19,7 +19,7 @@
   background-color: transparent;
   color: white;
   border: none;
-  margin-left: 10px;
+  margin-right: 40px;
   cursor: pointer;
 }
 
@@ -90,7 +90,6 @@
   font-size: 0.8vw;
   width: 143px;
   height: 4.5vh;
-  box-shadow: 24px 24px 48px #bebebe, -24px -24px 48px #ffffff;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
@@ -169,6 +168,7 @@
 .carousel-rooms div {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 40vh;
   width: 25vw;
   scroll-snap-align: start;

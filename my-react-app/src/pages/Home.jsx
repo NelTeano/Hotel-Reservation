@@ -90,13 +90,13 @@ export default function Home({ roomTypes, setRoomTypes }) {
         data-aos-duration='400'
       >
         <span>
-          <a style={{ fontSize: '2vw' }} href='/'>
+          <a className='logo' style={{ fontSize: '2vw', marginRight: '600px' }} href='/'>
             CayoHotel
           </a>
         </span>
 
         <span className='navbar-links'>
-          <a style={{ fontSize: '1.1vw' }} href='/'>
+          <a style={{ fontSize: '1.1vw', marginRight: '40px' }} href='/'>
             Home
           </a>
           <button style={{ fontSize: '1.1vw' }} href='/' onClick={gotoRoomList}>
@@ -351,8 +351,10 @@ function RoomItem({ room }) {
   return (
     <div className='carousel-content'>
       <Carousel items={room.images} />
-      <h3 style={{ marginTop: '20px' }}>{room.name}</h3>
+     
+      <h3 style={{ marginTop: '20px', textDecoration: 'center' }}>{room.name}</h3>
       <p>{room.bed_type}</p>
+
       <h1>$ {room.price} / Night</h1>
     </div>
   );

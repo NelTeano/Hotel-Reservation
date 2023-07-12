@@ -20,7 +20,8 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
     justifyContent: 'center',
 
     position: 'relative',
-    border: '1px solid #1c1c1c',
+    borderRadius: '20px',
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
     height: '100%',
     width: '100%',
     maxHeight: '10vh',
@@ -36,7 +37,7 @@ export default function Editbox({ arriveDate, departDate, previousPage }) {
           style={{
             marginRight: '3vw',
             marginLeft: '5%',
-            borderRight: '1px solid #1c1c1c',
+            borderRight: '1px solid rgba(0, 0, 0, 0.2)',
             height: '100%',
             position: 'absolute',
             left: '0px',

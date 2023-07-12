@@ -13,7 +13,7 @@
   height: 100%;
   width: 100%;
   padding-bottom: 70px;
-  margin-bottom: 150px;
+  margin-bottom: 90px;
 }
 
 .combo-box select {
@@ -54,6 +54,7 @@
   border-left: 1px solid rgb(184, 178, 178);
   border-top: 1px solid rgb(184, 178, 178);
   border-bottom: 1px solid rgb(184, 178, 178);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   border-right: none;
@@ -75,6 +76,7 @@ img {
   border-right: 1px solid rgb(184, 178, 178);
   border-top: 1px solid rgb(184, 178, 178);
   border-bottom: 1px solid rgb(184, 178, 178);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -98,7 +100,7 @@ img {
   flex-wrap: nowrap;
   gap: 20px;
   background-color: #ffffff;
-  width: 90%;
+  width: 100%;
   padding-inline: 1em;
   padding-top: 2em;
   padding-bottom: 2em;
