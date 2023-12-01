@@ -7,7 +7,7 @@ app.use(cors());
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 require('./shownet')(PORT);
 
 app.use(express.json());
@@ -26,3 +26,4 @@ app.get('/', (req, res) => {
 app.use('/rooms', require('./routes/rooms'));
 app.use('/book', require('./routes/booking'));
 
+//test 
