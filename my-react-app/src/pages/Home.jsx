@@ -14,6 +14,8 @@ import Carousel from '../components/Carousel';
 import '../assets/Home.css';
 
 export default function Home({ roomTypes, setRoomTypes }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
   React.useEffect(() => {
     fetch('http://localhost:3001/rooms', {
       headers: {
@@ -42,10 +44,12 @@ export default function Home({ roomTypes, setRoomTypes }) {
 
   const gotoRoomList = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   const gotoContacts = () => {
     foot.current?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   const imgSrc = {
@@ -90,19 +94,29 @@ export default function Home({ roomTypes, setRoomTypes }) {
         data-aos-duration='400'
       >
         <span>
-          <a className='logo' style={{ fontSize: '2vw', marginRight: '600px' }} href='/'>
+          <a className='logo' href='/'>
             CayoHotel
           </a>
         </span>
 
-        <span className='navbar-links'>
-          <a style={{ fontSize: '1.1vw', marginRight: '40px' }} href='/'>
+        <button 
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <span className={`navbar-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <a href='/'>
             Home
           </a>
-          <button style={{ fontSize: '1.1vw' }} href='/' onClick={gotoRoomList}>
+          <button onClick={gotoRoomList}>
             Services
           </button>
-          <button style={{ fontSize: '1.1vw' }} href='/' onClick={gotoContacts}>
+          <button onClick={gotoContacts}>
             Contacts
           </button>
         </span>

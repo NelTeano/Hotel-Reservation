@@ -38,7 +38,7 @@ export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSel
   };
 
   return (
-    <>
+    <div className='rooms-container'>
       <div className='combo-box'>
         <select
           onChange={e => {
@@ -52,35 +52,28 @@ export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSel
           <option key={'room'} value='room' label='Room' />
         </select>
       </div>
-      {roomTypes ? (
-        roomTypes.map((roomType, index) => {
-          if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
-            return <RoomItem key={index} roomType={roomType} setSelectedRoom={setSelectedRoom} />;
-          } else {
-            return null;
-          }
-        })
-      ) : (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignContent: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            gap: '1em',
-            height: '12vh',
-          }}
-        >
-          <p>{reloadMsg}</p>
-          <div>
-            <button className='reload-rooms-btn' onClick={reloadRooms}>
-              Reload Rooms
-            </button>
+      
+      <div className='rooms-list'>
+        {roomTypes ? (
+          roomTypes.map((roomType, index) => {
+            if (roomType.name.toLowerCase().includes(textFilter) && roomType.capacity >= guests) {
+              return <RoomItem key={index} roomType={roomType} setSelectedRoom={setSelectedRoom} />;
+            } else {
+              return null;
+            }
+          })
+        ) : (
+          <div className='error-container'>
+            <p>{reloadMsg}</p>
+            <div>
+              <button className='reload-rooms-btn' onClick={reloadRooms}>
+                Reload Rooms
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-    </>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -108,91 +101,89 @@ function RoomItem({ roomType, setSelectedRoom }) {
   };
 
   return (
-    <div className='rooms-container'>
-      <div className='box-container'>
-        <div className='room-box'>
-          <div className='picture-container'>
-            <div>
-              <CarouselComponent items={roomType.images} />
-            </div>
-          </div>
-
-          <div className='room-information'>
-            <div
-              style={{
-                width: '55%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.85em',
-              }}
-            >
-              <h1
-                style={{
-                  color: '#1c1c1c',
-                }}
-              >
-                {roomType.name}
-              </h1>
-              <div style={{ width: '85%' }}>
-                <p> {roomType.description} </p>
-              </div>
-            </div>
-
-            <div className='right-content' style={{ width: '45%', textAlign: 'right' }}>
-              <div
-                style={{
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.75em',
-                }}
-              >
-                <p
-                  style={{
-                    textAlign: 'right',
-                    fontSize: '1.4vw',
-                    color: '#1c1c1c',
-                  }}
-                >
-                  FROM <br /> {USD.format(roomType.price)} / NIGHT
-                </p>
-
-                <p> EXCLUDING TAXES & FEES </p>
-                <div className='buttons'>
-                  <Link
-                    to='/form'
-                    style={buttonStyle}
-                    className='rooms-booknow-btn'
-                    onClick={() => {
-                      setSelectedRoom(roomType);
-                    }}
-                  >
-                    BOOK NOW
-                  </Link>
-                </div>
-              </div>
-
-              <div>
-                <button className='additional-details-btn' onClick={handleClick}>
-                  AMENITIES & DESCRIPTION ↓
-                </button>
-              </div>
-            </div>
+    <div className='room-item'>
+      <div className='room-box'>
+        <div className='picture-container'>
+          <div>
+            <CarouselComponent items={roomType.images} />
           </div>
         </div>
 
-        {isShown && (
-          <div className='feautures'>
-            {roomType.amenities.split(',\n').map((descripion, index) => {
-              return (
-                <div key={index}>
-                  <p>{descripion}</p>
-                </div>
-              );
-            })}
+        <div className='room-information'>
+          <div
+            style={{
+              width: '55%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.85em',
+            }}
+          >
+            <h1
+              style={{
+                color: '#1c1c1c',
+              }}
+            >
+              {roomType.name}
+            </h1>
+            <div style={{ width: '85%' }}>
+              <p> {roomType.description} </p>
+            </div>
           </div>
-        )}
+
+          <div className='right-content' style={{ width: '45%', textAlign: 'right' }}>
+            <div
+              style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.75em',
+              }}
+            >
+              <p
+                style={{
+                  textAlign: 'right',
+                  fontSize: '1.4vw',
+                  color: '#1c1c1c',
+                }}
+              >
+                FROM <br /> {USD.format(roomType.price)} / NIGHT
+              </p>
+
+              <p> EXCLUDING TAXES & FEES </p>
+              <div className='buttons'>
+                <Link
+                  to='/form'
+                  style={buttonStyle}
+                  className='rooms-booknow-btn'
+                  onClick={() => {
+                    setSelectedRoom(roomType);
+                  }}
+                >
+                  BOOK NOW
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <button className='additional-details-btn' onClick={handleClick}>
+                AMENITIES & DESCRIPTION ↓
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {isShown && (
+        <div className='feautures'>
+          {roomType.amenities.split(',\n').map((descripion, index) => {
+            return (
+              <div key={index}>
+                <p>{descripion}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

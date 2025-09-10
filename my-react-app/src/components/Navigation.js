@@ -9,7 +9,7 @@ export default function Navigation() {
     <nav>
       <div className='logo'>
         <Link to='/'>
-          <img src={Logo} style={{width: '300px', marginTop: '30px',height: '150px'}} ></img>
+          <img src={Logo} alt="CayoHotel Logo" />
         </Link>
       </div>
     </nav>

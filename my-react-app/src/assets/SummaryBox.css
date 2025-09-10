@@ -1,29 +1,242 @@
 .sumBox-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 30px;
   width: 100%;
-  height: 100%;
-  max-width: 35vw;
-  min-height: 85vh;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  max-width: 400px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  position: sticky;
+  top: var(--space-xl);
 }
 
-.sumBox-container h1 {
+.summary-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-white);
+  padding: var(--space-xl);
   text-align: center;
-  font-size: 1.5vw;
 }
 
-.sumBox-container img {
+.summary-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-white);
+}
+
+.hotel-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--text-white);
+}
+
+.hotel-info p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: var(--text-white);
+}
+
+.room-image-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.room-image {
   width: 100%;
   height: 100%;
-  max-height: 20vw;
-  height: 100vh;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.details p {
-  margin-top: 10px;
+.room-image:hover {
+  transform: scale(1.05);
+}
+
+.no-room-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
+.no-room-placeholder svg {
+  margin-bottom: var(--space-sm);
+  color: var(--text-muted);
+}
+
+.no-room-placeholder p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.booking-details {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.booking-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.pricing-breakdown {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.pricing-breakdown h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+}
+
+.price-row:not(.total-row) {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.price-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.price-value {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.total-row {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--gray-200);
+  border-bottom: none;
+}
+
+.total-row .price-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.total-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.no-pricing {
+  text-align: center;
+  padding: var(--space-lg);
+  color: var(--text-muted);
+}
+
+.no-pricing p {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.summary-footer {
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-secondary);
+}
+
+.security-badges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.badge svg {
+  color: var(--success-color);
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sumBox-container {
+    max-width: 100%;
+    position: static;
+    margin-top: var(--space-xl);
+  }
+  
+  .summary-header {
+    padding: var(--space-lg);
+  }
+  
+  .summary-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hotel-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .room-image-container {
+    height: 150px;
+  }
+  
+  .booking-details,
+  .pricing-breakdown {
+    padding: var(--space-lg);
+  }
+  
+  .summary-footer {
+    padding: var(--space-md) var(--space-lg);
+  }
+  
+  .security-badges {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }

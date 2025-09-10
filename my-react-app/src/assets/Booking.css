@@ -1,7 +1,18 @@
 .booking-container {
   display: flex;
-  justify-content: space-around;
-  padding-bottom: 120px;
-  align-items: center;
-  height: 130vh;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-3xl);
+  padding: var(--space-3xl) var(--space-xl);
+  min-height: 100vh;
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-md);
+  }
 }
