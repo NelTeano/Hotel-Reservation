@@ -8,6 +8,14 @@ import coverImg from '../assets/images/coverhomepage.png';
 import facilityImg1 from '../assets/images/beach1.png';
 import facilityImg2 from '../assets/images/beach2.png';
 import smallRectangle from '../assets/images/reserveCover.png';
+// Import video with fallback handling
+let heroVideo;
+try {
+  heroVideo = require('../assets/videos/hero-video.mp4');
+} catch (error) {
+  console.log('Hero video not found, using fallback image');
+  heroVideo = null;
+}
 
 import Carousel from '../components/Carousel';
 
@@ -122,8 +130,27 @@ export default function Home({ roomTypes, setRoomTypes }) {
         </span>
       </div>
 
-      <div style={{ backgroundImage: `url(${imgSrc.cover})` }} className='homecover'>
-        <div data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine' data-aos-duration='1200'>
+      <div className='homecover'>
+        {heroVideo ? (
+          <video 
+            className='hero-video' 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster={imgSrc.cover}
+          >
+            <source src={heroVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <div 
+            className='hero-fallback' 
+            style={{ backgroundImage: `url(${imgSrc.cover})` }}
+          ></div>
+        )}
+        <div className='hero-overlay'></div>
+        <div className='hero-content' data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine' data-aos-duration='1200'>
           <p>
             "Live an experience <br></br> unique in our multitudinous events"
           </p>
