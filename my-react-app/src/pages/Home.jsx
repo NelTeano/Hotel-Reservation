@@ -8,6 +8,9 @@ import coverImg from '../assets/images/coverhomepage.png';
 import facilityImg1 from '../assets/images/beach1.png';
 import facilityImg2 from '../assets/images/beach2.png';
 import smallRectangle from '../assets/images/reserveCover.png';
+import Carousel from '../components/Carousel';
+
+import '../assets/Home.css';
 // Import video with fallback handling
 let heroVideo;
 try {
@@ -17,9 +20,7 @@ try {
   heroVideo = null;
 }
 
-import Carousel from '../components/Carousel';
 
-import '../assets/Home.css';
 
 export default function Home({ roomTypes, setRoomTypes }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
