@@ -318,7 +318,7 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
- 
+  text-decoration: underline;
 }
 
 .home-facilities {
