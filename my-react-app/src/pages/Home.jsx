@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
@@ -19,8 +19,6 @@ try {
   console.log('Hero video not found, using fallback image');
   heroVideo = null;
 }
-
-
 
 export default function Home({ roomTypes, setRoomTypes }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -48,6 +46,14 @@ export default function Home({ roomTypes, setRoomTypes }) {
     AOS.init();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // adjust threshold as needed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const ref = useRef(null);
   const foot = useRef(null);
 
@@ -92,11 +98,12 @@ export default function Home({ roomTypes, setRoomTypes }) {
     width: '25px',
     height: '40px',
   };
+  const [scrolled, setScrolled] = useState(false);
 
   return (
     <>
       <div
-        className='navbar-home'
+        className={`navbar-home ${scrolled ? 'scrolled' : ''}`}
         data-aos='fade-down'
         data-aos-offset='300'
         data-aos-easing='ease-in-sine'
@@ -108,10 +115,10 @@ export default function Home({ roomTypes, setRoomTypes }) {
           </a>
         </span>
 
-        <button 
+        <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle mobile menu"
+          aria-label='Toggle mobile menu'
         >
           <span></span>
           <span></span>
@@ -119,42 +126,44 @@ export default function Home({ roomTypes, setRoomTypes }) {
         </button>
 
         <span className={`navbar-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <a href='/'>
-            Home
-          </a>
-          <button onClick={gotoRoomList}>
-            Services
-          </button>
-          <button onClick={gotoContacts}>
-            Contacts
-          </button>
+          <a href='/'>Home</a>
+          <button onClick={gotoRoomList}>Services</button>
+          <button onClick={gotoContacts}>Contacts</button>
         </span>
       </div>
 
       <div className='homecover'>
         {heroVideo ? (
-          <video 
-            className='hero-video' 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            poster={imgSrc.cover}
-          >
-            <source src={heroVideo} type="video/mp4" />
+          <video className='hero-video' autoPlay muted loop playsInline poster={imgSrc.cover}>
+            <source src={heroVideo} type='video/mp4' />
             Your browser does not support the video tag.
           </video>
         ) : (
-          <div 
-            className='hero-fallback' 
-            style={{ backgroundImage: `url(${imgSrc.cover})` }}
-          ></div>
+          <div className='hero-fallback' style={{ backgroundImage: `url(${imgSrc.cover})` }}></div>
         )}
         <div className='hero-overlay'></div>
-        <div className='hero-content' data-aos='fade-left' data-aos-offset='300' data-aos-easing='ease-in-sine' data-aos-duration='1200'>
-          <p>
-            "Live an experience <br></br> unique in our multitudinous events"
-          </p>
+        <div
+          className='hero-content'
+          data-aos='fade-left'
+          data-aos-offset='300'
+          data-aos-easing='ease-in-sine'
+          data-aos-duration='1200'
+        >
+          <div className='hero-text'>
+            <h1>Experience Luxury & Comfort</h1>
+            <p>
+              Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering <br /> unparalleled
+              comfort and breathtaking sea views.
+            </p>
+            <button className='book-btn' to='/calendar'>
+              Book Your Stay
+            </button>
+            <Link to='/calendar'>
+              <button className='explore-btn'>
+                Explore Rooms
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -393,7 +402,7 @@ function RoomItem({ room }) {
   return (
     <div className='carousel-content'>
       <Carousel items={room.images} />
-     
+
       <h3 style={{ marginTop: '20px', textDecoration: 'center' }}>{room.name}</h3>
       <p>{room.bed_type}</p>
 
