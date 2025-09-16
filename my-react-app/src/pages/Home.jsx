@@ -24,7 +24,7 @@ export default function Home({ roomTypes, setRoomTypes }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
-    fetch('http://localhost:3001/rooms', {
+    fetch('http://localhost:5000/api/rooms', {
       headers: {
         Accept: 'application/json',
       },

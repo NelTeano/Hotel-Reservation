@@ -64,7 +64,7 @@ export default function Form({ arriveDate, departDate, guests, selectedRoom, tot
     
     setShowSuccessModal(true);
 
-    fetch('http://localhost:3001/book/submit', {
+    fetch('/api/book/submit', {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

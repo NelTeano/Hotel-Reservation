@@ -16,7 +16,7 @@ export default function RoomCollection({ guests, roomTypes, setRoomTypes, setSel
 
   const reloadRooms = () => {
     setReloadMsg('Reloading rooms, please wait...');
-    fetch('http://localhost:3001/rooms', {
+    fetch('http://localhost:5000/api/rooms', {
       headers: {
         Accept: 'application/json',
       },
