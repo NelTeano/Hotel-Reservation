@@ -152,17 +152,16 @@ export default function Home({ roomTypes, setRoomTypes }) {
           <div className='hero-text'>
             <h1>Experience Luxury & Comfort</h1>
             <p>
-              Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering <br /> unparalleled
-              comfort and breathtaking sea views.
+              Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering <br />{' '}
+              unparalleled comfort and breathtaking sea views.
             </p>
-            <button className='book-btn' to='/calendar'>
-              Book Your Stay
-            </button>
-            <Link to='/calendar'>
-              <button className='explore-btn'>
-                Explore Rooms
+            <Link to='/calendar' className='linkBtn'>
+              <button className='book-btn' to='/calendar'>
+                Book Your Stay
               </button>
             </Link>
+
+            <button className='explore-btn'>Explore Rooms</button>
           </div>
         </div>
       </div>
